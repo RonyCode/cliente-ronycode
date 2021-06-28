@@ -1,0 +1,33 @@
+.dash {
+    display: grid;
+    background: antiquewhite;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    width: 15rem;
+    position: fixed;
+}
+
+.link {
+    margin: 2rem auto;
+}
+
+.links {
+    transition: .3s;
+    margin-top: 1rem;
+    border-radius: 5px;
+    list-style: none;
+
+}
+
+.link a {
+    color: coral;
+    padding: .3rem;
+}
+
+
+.link a:hover, .link a:focus {
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #333333;
+
+}

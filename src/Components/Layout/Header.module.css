@@ -1,0 +1,38 @@
+.header {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 300px auto;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #f1f1f1, #f9f9f9, #fdfdfd);
+    z-index: 10000;
+    grid-gap: 3rem;
+}
+
+.logo_img {
+    grid-column: 1/1;
+    background: url("../../Assets/novo-logo-composto.png") center center/cover no-repeat;
+    width: 150px;
+    height: 5rem;
+    border-radius: 8px;
+    margin-left: 2.5rem;
+    margin-top: 0.3rem;
+
+}
+
+.navlink {
+    grid-column: 2/3;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link{
+    margin-right: 3rem;
+}

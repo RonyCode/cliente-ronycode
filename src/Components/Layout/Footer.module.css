@@ -1,0 +1,14 @@
+.footer {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #f1f1f1, #f9f9f9, #fdfdfd);
+    text-align: center;
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    height: 3.8rem;
+    margin-left: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
