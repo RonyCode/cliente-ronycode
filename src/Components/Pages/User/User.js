@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import UserProfile from "./UserProfile";
+import UserPhoto from "./UserPhoto";
 
 const User = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<UserProfile />} />
+        <Route path="/" element={<UserPhoto />} />
       </Routes>
     </div>
   );

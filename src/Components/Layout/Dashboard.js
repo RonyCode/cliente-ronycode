@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
 import { Link } from "react-router-dom";
-import MyContext from "../MyContext";
+import { UserStorage } from "../UserStorage";
 
 const Dashboard = ({ username }) => {
-  const { email, setEmail, id, setId } = React.useContext(MyContext);
+  const { email, setEmail, id, setId } = React.useContext(UserStorage);
 
   return (
     <div className={styles.dash}>

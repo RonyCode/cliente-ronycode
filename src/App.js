@@ -7,15 +7,12 @@ import Login from "./Components/Pages/Login/Login";
 import Header from "./Components/Layout/Header";
 import Logout from "./Helper/Logout";
 import Footer from "./Components/Layout/Footer";
-import MyContext from "./Components/MyContext";
+import { UserStorage } from "./Components/UserStorage";
 
 function App() {
-  const [email, setEmail] = React.useState("");
-  const [id, setId] = React.useState("");
-
   return (
     <div className="App">
-      <MyContext.Provider value={{ email, setEmail, id, setId }}>
+      <UserStorage>
         <BrowserRouter>
           <Header />
           <section className="content">
@@ -28,7 +25,7 @@ function App() {
           </section>
           <Footer />
         </BrowserRouter>
-      </MyContext.Provider>
+      </UserStorage>
     </div>
   );
 }

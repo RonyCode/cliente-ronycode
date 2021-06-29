@@ -3,44 +3,41 @@ import axios from "axios";
 import { GET_ALL_STD } from "../../../api/api";
 
 function ListStudents() {
-  const [data, setData] = React.useState([]);
+  const [stdData, setStdData] = React.useState("");
   React.useEffect(() => {
     const getStds = async () => {
       try {
         const { url, options } = GET_ALL_STD();
         const response = await axios(url, options);
-        response && setData(response.data.data);
-        console.log(response);
+        response && setStdData(response.data.data);
+        console.log(response.data);
       } catch (response) {
         console.log(response);
       }
     };
     getStds();
   }, []);
+
   return (
     <div className="App">
       <h1> metodo GETAll</h1>
-
-      {<p></p>}
-      {data &&
-        data.map((item) => (
-          <div key={item.id}>
-            <div>Id User: {item.id}</div>
-            <div>Name: {item.name}</div>
-            <div>Email: {item.email}</div>
-            <div>Telefone: {item.phone}</div>
-            <div>Endereço: {item.address}</div>
-            <div>Data Nascimento: {item.birthday}</div>
-            <div>Boletim Escolar: {item.report}</div>
-            <div>Grau Escolar: {item.grade}</div>
-            <div>Data da matrícula: {item.registrationDate}</div>
-            <div>Data término curso: {item.expirationDate}</div>
-            <div>Resultado: {item.result}</div>
-            <p></p>
-          </div>
+      {stdData &&
+        stdData.map((item) => (
+          <ul key={item.id}>
+            <li></li>
+            <li>Id User: {item.id}</li>
+            <li>Name: {item.name}</li>
+            <li>Email: {item.email}</li>
+            <li>Telefone: {item.phone}</li>
+            <li>Endereço: {item.address}</li>
+            <li>Data Nascimento: {item.birthday}</li>
+            <li>Boletim Escolar: {item.report}</li>
+            <li>Grau Escolar: {item.grade}</li>
+            <li>Data da matrícula: {item.registrationDate}</li>
+            <li>Data término curso: {item.expirationDate}</li>
+            <li>Resultado: {item.result}</li>
+          </ul>
         ))}
-      {<p>{data.data}</p>}
-      {}
     </div>
   );
 }

@@ -18,7 +18,7 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
-const UserProfile = () => {
+const UserPhoto = () => {
   const { id } = useParams();
 
   // const user = window.localStorage.getItem("token");
@@ -73,4 +73,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default UserPhoto;

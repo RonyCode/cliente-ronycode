@@ -1,38 +1,22 @@
 import React from "react";
-import axios from "axios";
-import { POST_LOGIN } from "../../../api/api";
-import { Link, useNavigate } from "react-router-dom";
-import MayContext from "../../MyContext";
-import MyContext from "../../MyContext";
+import { Link } from "react-router-dom";
+import { UserStorage } from "../../UserStorage";
 
 function Auth() {
-  const [pass, setPass] = React.useState();
-  const { email, setEmail, id, setId } = React.useContext(MyContext);
+  const [email, setEmail] = React.useState("");
+  const [pass, setPass] = React.useState("");
+  const { userLogin, data, userLogout, error, login, loading } =
+    React.useContext(UserStorage);
 
   const formData = new FormData();
-  const navigate = useNavigate();
-  const data = React.useContext(MayContext);
   formData.append("email", email);
   formData.append("pass", pass);
 
   function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = POST_LOGIN(formData);
-
-    axios(url, options)
-      .then((response) => {
-        console.log("Success: ", response);
-        window.localStorage.setItem("token", response.data.data);
-        console.log(response.data);
-        setEmail(response.data.username);
-        setId(response.data.id);
-        console.log(response.data.id);
-        if (response) navigate("/login/dashboard");
-      })
-      .catch((error) => {
-        console.log("Error: ", error.response.data);
-      });
+    userLogin(formData);
   }
+
   console.log(data);
   return (
     <div className="App">
@@ -63,7 +47,6 @@ function Auth() {
 
       {email}
       {<p></p>}
-      {pass}
     </div>
   );
 }

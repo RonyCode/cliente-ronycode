@@ -80,18 +80,6 @@ export function PHOTO_USER(body) {
   };
 }
 
-export function GET_PERFIL_USER() {
-  return {
-    url: API_URL + "/usuario/perfil",
-    options: {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + window.localStorage.getItem("token"),
-      },
-    },
-  };
-}
-
 export function GET_ALL_STD() {
   return {
     url: API_URL + "/aluno",
