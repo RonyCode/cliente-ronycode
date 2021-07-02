@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Auth from "./Auth";
+import LoginForm from "./LoginForm";
 import LoginRegister from "./LoginRegister";
 import LoginRecover from "./LoginRecover";
 import LoginReset from "./LoginReset";
@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Auth />} />
+        <Route path="/" element={<LoginForm />} />
         <Route path="cadastrar" element={<LoginRegister />} />
         <Route path="recuperar" element={<LoginRecover />} />
         <Route path="resetar" element={<LoginReset />} />

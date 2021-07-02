@@ -7,15 +7,24 @@
     position: fixed;
 }
 
-.link {
+.links {
     margin: 2rem auto;
 }
 
-.links {
+.link {
     transition: .3s;
     margin-top: 1rem;
     border-radius: 5px;
     list-style: none;
+cursor: pointer;
+}
+
+.link_button{
+    transition: .3s;
+    margin-top: 1rem;
+    border-radius: 5px;
+    list-style: none;
+    color: coral;
 
 }
 

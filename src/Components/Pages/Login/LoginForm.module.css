@@ -1,0 +1,53 @@
+.loginForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: coral;
+    width: calc(100% - 4rem);
+    padding: 2rem;
+    height: 100%;
+}
+
+.columnRight {
+    display: flex;
+    grid-column: 2/2;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: .5rem 3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.label {
+    margin: .5rem 0;
+    font-family: "Raleway SemiBold", sans-serif;
+}
+
+.button {
+    margin-top: .5rem;
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.linkRecover{
+    margin: .3rem 0 ;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+.link {
+    font-size: 1.2rem;
+
+}

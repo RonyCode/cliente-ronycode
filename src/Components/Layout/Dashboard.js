@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Dashboard.module.css";
 import { Link } from "react-router-dom";
-import { UserStorage } from "../UserStorage";
+import { UserContext } from "../UserStorage";
 
-const Dashboard = ({ username }) => {
-  const { email, setEmail, id, setId } = React.useContext(UserStorage);
-
+const Dashboard = () => {
+  const { data, userLogout } = useContext(UserContext);
   return (
-    <div className={styles.dash}>
-      <ul className={styles.link}>
+    <div className={styles.dash + " animeLeft"}>
+      <ul className={styles.links}>
         <h3>Bem vindo</h3>
-        <p>{email}</p>
-        <li className={styles.links}>
+        {data ? data : ""}
+        <li className={styles.link}>
           <Link to="/login/aluno/lista">ALunos</Link>
         </li>
-        <li className={styles.links}>
+        <li className={styles.link}>
           <Link to="/login/aluno/adicionar">Cadastrar aluno</Link>
         </li>
-        <li className={styles.links}>
-          <Link to="/sair">Sair</Link>
+        <li className={styles.link}>
+          {data && (
+            <a type="submit" onClick={userLogout}>
+              Sair
+            </a>
+          )}
         </li>
       </ul>
     </div>

@@ -13,6 +13,20 @@ export function POST_LOGIN(body) {
   };
 }
 
+export function GET_USER(body) {
+  return {
+    url: API_URL + "/usuario",
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      data: body,
+    },
+  };
+}
+
 export function POST_CREATE_LOGIN(body) {
   return {
     url: API_URL + "/login/cadastrar",

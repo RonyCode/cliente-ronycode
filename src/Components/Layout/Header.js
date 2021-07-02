@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import { UserContext } from "../UserStorage";
 
 const Header = () => {
+  const { login, data } = useContext(UserContext);
   return (
     <div>
       <header className={styles.header}>
@@ -10,12 +12,20 @@ const Header = () => {
           <img src="../../Assets/novo-logo-composto.png" width="1080" alt="" />
         </NavLink>
         <nav className={styles.navlink}>
-          <NavLink className={styles.link} to="/login">
-            Login
-          </NavLink>
+          {login === true ? (
+            <NavLink className={styles.link} to="/login/dashboard">
+              {data}
+            </NavLink>
+          ) : (
+            <NavLink className={styles.link} to="/login">
+              Login
+            </NavLink>
+          )}
+
           <NavLink className={styles.link} to="/login">
             Sobre
           </NavLink>
+
           <NavLink className={styles.link} to="/login">
             Contato
           </NavLink>
