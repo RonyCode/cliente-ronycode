@@ -1,53 +1,265 @@
-.loginForm {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: coral;
-    width: calc(100% - 4rem);
-    padding: 2rem;
-    height: 100%;
-}
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+@import 'https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-.columnRight {
+.loginForm {
     display: flex;
-    grid-column: 2/2;
     flex-direction: column;
+    width: 50rem;
+    height: 100%;
+    margin: auto;
+    padding: 1rem 0;
     justify-content: space-between;
     align-items: center;
 
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    gap: 1px;
+    box-shadow: 5px 5px 15px -8px;
+}
+
+.tittle {
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Cookie", sans-serif;
+    margin-bottom: 1rem;
+    text-shadow: 5px 5px 15px -8px;
+    font-weight: 400;
+}
+
+.subtittle {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Cookie', sans-serif;
+    vertical-align: center;
+    margin-top: 2rem;
+    text-shadow: 5px 5px 15px -8px;
+    font-weight: 400;
+
+}
+
+
+.columnLeft {
+
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -8px;
+    background: url("../../../Assets/login-3938432-cut (1).jpg") center / cover no-repeat;
+
+
+}
+
+.columnRight {
+    display: flex;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-left: 2rem;
+}
+
+.imgUser {
+    border-radius: 50%;
+    width: 212px;
+    height: 212px;
+    box-shadow: 5px 5px 15px -8px;
+
+}
+
+.imgUser img {
+    border-radius: 50%;
+    width: 212px;
+}
+
 .form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.div_input {
     display: flex;
     flex-direction: column;
 }
 
+.div_input_pass {
+    display: flex;
+    align-items: center;
+
+}
+
 .input {
-    padding: .5rem 3rem;
+    padding: .5rem .5rem;
     border-radius: 5px;
     outline: none;
     border: none;
+    box-shadow: 3px 3px 10px -3px;
 }
 
+.revelPass {
+    cursor: pointer;
+    padding: .5rem .5rem;
+}
+
+.input::-webkit-input-placeholder {
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 16.5rem;
+    padding-top: 2px;
+    color: coral;
+}
+
+.input::-moz-placeholder {
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    color: coral;
+
+}
+
+.input:-ms-input-placeholder {
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    color: coral;
+
+}
+
+
 .label {
-    margin: .5rem 0;
-    font-family: "Raleway SemiBold", sans-serif;
+    margin: .3rem 0;
+    font-size: .9rem;
+    font-family: "Quicksand", sans-serif;
+    text-shadow: 5px 5px 15px -8px;
 }
 
 .button {
-    margin-top: .5rem;
-    padding: .5rem 2rem;
+    box-shadow: 5px 5px 15px -8px;
+    margin-top: .8rem;
+    padding: .5rem .5rem;
     border-radius: 5px;
     outline: none;
     border: none;
     cursor: pointer;
+    transition: .3s ease;
+    background: coral;
+    font-weight: bolder;
+    font-family: 'Quicksand', sans-serif;
+    width: 90%;
+
 }
 
-.linkRecover{
-    margin: .3rem 0 ;
+.button:hover {
+    background: #8d4b35;
+    box-shadow: 5px 5px 15px -8px;
+
+}
+
+.linkRecover {
+    font-family: 'Quicksand', sans-serif;
     font-size: 0.8rem;
     font-style: italic;
+    margin: .3rem 0;
+    text-shadow: 5px 5px 15px -8px;
 }
-.link {
-    font-size: 1.2rem;
 
+.linkRecover:hover {
+    transition: .3s ease-in-out;
+    text-decoration: underline coral;
+    color: coral;
+}
+
+.divCheckbox {
+    display: flex;
+}
+
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.labelCheckbox {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-shadow: 5px 5px 15px -8px;
+    margin-top: 1px;
+    position: relative;
+    cursor: pointer;
+    padding-left: 20px;
+    opacity: 1;
+
+}
+
+.checkbox + .labelCheckbox::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    bottom: 0;
+    border: solid 2px;
+    vertical-align: bottom;
+
+}
+
+.checkbox:checked + .labelCheckbox::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: 4px;
+    height: 8px;
+    border-right: solid 2px coral;
+    border-bottom: solid 2px coral;
+    transform: rotate(45deg);
+
+}
+
+.linkSign {
+    grid-column: 2/2;
+    text-shadow: 5px 5px 15px -8px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.linkSign:hover {
+    transition: .3s ease-in-out;
+    text-decoration: underline coral;
+    color: coral;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.loginFolder {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 2rem;
 }

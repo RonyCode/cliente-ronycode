@@ -6,6 +6,7 @@ import LoginRecover from "./LoginRecover";
 import LoginReset from "./LoginReset";
 import Student from "../Student/Student";
 import Dashboard from "../../Layout/Dashboard";
+import User from "../User/User";
 
 const Login = () => {
   return (
@@ -16,6 +17,7 @@ const Login = () => {
         <Route path="recuperar" element={<LoginRecover />} />
         <Route path="resetar" element={<LoginReset />} />
         <Route path="aluno/*" element={<Student />} />
+        <Route path="usuario/*" element={<User />} />
         <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </div>

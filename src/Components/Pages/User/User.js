@@ -1,13 +1,20 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import UserPhoto from "./UserPhoto";
+import UserProfile from "./UserProfile";
+import styles from "./User.module.css";
+import UserForm from "./UserForm";
+import Dashboard from "../../Layout/Dashboard";
 
 const User = () => {
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<UserPhoto />} />
-      </Routes>
+      <Dashboard />
+      <div className={styles.user}>
+        <Routes>
+          <Route path="/" element={<UserForm />} />
+          <Route path="perfil" element={<UserProfile />} />
+        </Routes>
+      </div>
     </div>
   );
 };

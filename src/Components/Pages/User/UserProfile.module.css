@@ -1,0 +1,43 @@
+.userProfile{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.input{
+    display: none;
+    padding: .5rem;
+
+}
+.label{
+    cursor: pointer;
+    padding: .5rem;
+    background: #ffbb11;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+}
+.label:hover{
+    outline: none;
+    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+
+}
+.form{
+    grid-column: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: center;
+
+}
+.imgForm{
+    width: 164px;
+    height: 164px;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/4;
+
+}

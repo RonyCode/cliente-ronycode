@@ -12,6 +12,7 @@
     background: linear-gradient(45deg, #f1f1f1, #f9f9f9, #fdfdfd);
     z-index: 10000;
     grid-gap: 3rem;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .logo_img {
@@ -31,8 +32,35 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
+    transition: .2s ease;
+
 }
 
-.link{
+.navlink{
+    list-style: none;
+}
+
+.navlink a{
     margin-right: 3rem;
+    padding: .5rem .5rem;
+    list-style: none;
+    border-radius: 5px;
+
+}
+
+.link a:hover, .link a:focus {
+    color: coral;
+    border-radius: 5px;
+    border: solid coral 1px;
+    /*border: none;*/
+    padding: .5rem .5rem;
+    transition: .2s ease;
+}
+.navlink a.active {
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+    color: coral;
+    border-radius: 5px;
+
 }

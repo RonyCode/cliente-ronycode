@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Pages/Home/Home";
-import User from "./Components/Pages/User/User";
 import Login from "./Components/Pages/Login/Login";
 import Header from "./Components/Layout/Header";
 import Footer from "./Components/Layout/Footer";
@@ -18,7 +17,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="login/*" element={<Login />} />
-              <Route path="usuario/*" element={<User />} />
             </Routes>
           </section>
           <Footer />

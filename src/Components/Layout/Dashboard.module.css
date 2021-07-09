@@ -1,14 +1,41 @@
 .dash {
-    display: grid;
-    background: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    background: #f1f1f1;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     height: 100vh;
     width: 15rem;
     position: fixed;
+    font-family: 'Quicksand',sans-serif;
+
+}
+.dash h3{
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Quicksand',sans-serif;
+    font-weight: 600;
+
+}
+
+
+.imgProfile{
+    width: 164px;
+    height: 164px;
+    border-radius: 100%;
+    margin: 1rem auto 0 auto;
+    background: #fdfdfd;
 }
 
 .links {
-    margin: 2rem auto;
+margin: 1rem auto 0 4.8rem;
+}
+
+.links a.active {
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+    border-radius: 5px;
+
 }
 
 .link {
@@ -16,10 +43,10 @@
     margin-top: 1rem;
     border-radius: 5px;
     list-style: none;
-cursor: pointer;
+    cursor: pointer;
 }
 
-.link_button{
+.link_button {
     transition: .3s;
     margin-top: 1rem;
     border-radius: 5px;
@@ -28,15 +55,18 @@ cursor: pointer;
 
 }
 
-.link a {
+.link a,.bnt_out {
     color: coral;
     padding: .3rem;
 }
 
 
-.link a:hover, .link a:focus {
-    border: 1px solid #333;
+
+.link a:hover, .link a:focus,.bnt_out:hover{
+    color: coral;
     border-radius: 5px;
-    color: #333333;
+    border: solid coral 1px;
+    padding: .3rem .3rem;
+    transition: .4s ease;
 
 }

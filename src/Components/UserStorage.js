@@ -6,7 +6,13 @@ import { useNavigate } from "react-router-dom";
 export const UserContext = React.createContext();
 
 export const UserStorage = ({ children }) => {
-  const [data, setData] = React.useState(null);
+  const [id, setId] = React.useState(null);
+  const [email, setEmail] = React.useState(null);
+  const [token, setToken] = React.useState(null);
+  const [username, setUsername] = React.useState(null);
+  const [photo_name, setPhotoName] = React.useState(null);
+  const [size, setSize] = React.useState(null);
+  const [src, setSrc] = React.useState(null);
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
@@ -14,11 +20,17 @@ export const UserStorage = ({ children }) => {
 
   const userLogout = React.useCallback(
     async function () {
-      setData(null);
+      setId(null);
+      setEmail(null);
+      setUsername(null);
+      setPhotoName(null);
+      setSize(null);
+      setSrc(null);
       setError(null);
       setLogin(false);
       setLoading(false);
       window.localStorage.removeItem("token");
+      window.localStorage.removeItem("img_profile");
       navigate("/login");
     },
     [navigate]
@@ -31,11 +43,18 @@ export const UserStorage = ({ children }) => {
       setLogin(true);
       const { url, options } = POST_LOGIN(body);
       const tokenRes = await axios(url, options);
-      const { username, data } = await tokenRes.data;
-      window.localStorage.setItem("token", data);
-      username.split(" ", 1);
-      setData(username.split(" ", 1));
-      navigate("/login/dashboard");
+      const { id, email, username, token, photo_name, size, src } =
+        await tokenRes.data;
+      window.localStorage.setItem("token", token);
+      setId(id);
+      setEmail(email);
+      setToken(token);
+      setUsername(username.split(" ", 1));
+      const nameTrated = photo_name.split("_");
+      nameTrated.shift();
+      setPhotoName(nameTrated);
+      setSize(size);
+      setSrc(src);
       if (!tokenRes) throw new Error("Erro: falha ao se logar");
     } catch (err) {
       setError(err.message);
@@ -45,8 +64,8 @@ export const UserStorage = ({ children }) => {
     }
   }
 
-  function parseJwt(token) {
-    const base64Url = token.split(".")[1];
+  function parseJwt(tokenData) {
+    const base64Url = tokenData.split(".")[1];
     const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
     const jsonPayload = decodeURIComponent(
       atob(base64)
@@ -62,23 +81,30 @@ export const UserStorage = ({ children }) => {
 
   React.useEffect(() => {
     async function autoLogin() {
-      const token = window.localStorage.getItem("token");
-      if (token) {
+      const tokenLocal = window.localStorage.getItem("token");
+
+      if (tokenLocal) {
         try {
+          const tokenDecode = parseJwt(tokenLocal);
+          const formData = new FormData();
+          const emailPost = tokenDecode.data[0];
+          formData.append("email", emailPost);
+          const { url, options } = GET_USER(formData);
+          const tokenRes = await axios(url, options);
+          const { id, email, username, photo_name, size, src } =
+            await tokenRes.data;
           setLogin(true);
           setError(null);
           setLoading(true);
-
-          const tokenDecode = parseJwt(token);
-          const formData = new FormData();
-          const email = tokenDecode.data[0];
-
-          formData.append("email", email);
-          const { url, options } = GET_USER(formData);
-          const tokenRes = await axios(url, options);
-          const { username } = await tokenRes.data;
-          setData(username.split(" ", 1));
-          navigate("/login/dashboard");
+          setId(id);
+          setEmail(email);
+          setToken(tokenLocal);
+          setUsername(username.split(" ", 1));
+          const nameTrated = photo_name.split("_");
+          nameTrated.shift();
+          setPhotoName(nameTrated);
+          setSrc(src);
+          setSize(size);
         } catch (err) {
           await userLogout();
         } finally {
@@ -97,7 +123,13 @@ export const UserStorage = ({ children }) => {
       <UserContext.Provider
         value={{
           userLogin,
-          data,
+          id,
+          email,
+          username,
+          token,
+          photo_name,
+          size,
+          src,
           userLogout,
           error,
           login,

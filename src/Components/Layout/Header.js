@@ -4,32 +4,38 @@ import styles from "./Header.module.css";
 import { UserContext } from "../UserStorage";
 
 const Header = () => {
-  const { login, data } = useContext(UserContext);
+  const { login, username } = useContext(UserContext);
   return (
     <div>
       <header className={styles.header}>
         <NavLink className={styles.logo_img} to="/" arial-label="Educar - Home">
           <img src="../../Assets/novo-logo-composto.png" width="1080" alt="" />
         </NavLink>
-        <nav className={styles.navlink}>
+        <ul className={styles.navlink}>
           {login === true ? (
-            <NavLink className={styles.link} to="/login/dashboard">
-              {data}
-            </NavLink>
+            <li className={styles.link}>
+              <NavLink activeClassName={styles.active} to="/login/dashboard">
+                {username}
+              </NavLink>
+            </li>
           ) : (
-            <NavLink className={styles.link} to="/login">
-              Login
-            </NavLink>
+            <li className={styles.link}>
+              <NavLink activeClassName={styles.active} to="/login">
+                Login
+              </NavLink>
+            </li>
           )}
-
-          <NavLink className={styles.link} to="/login">
-            Sobre
-          </NavLink>
-
-          <NavLink className={styles.link} to="/login">
-            Contato
-          </NavLink>
-        </nav>
+          <li className={styles.link}>
+            <NavLink activeClassName={styles.active} to="/home">
+              Sobre
+            </NavLink>
+          </li>
+          <li className={styles.link}>
+            <NavLink activeClassName={styles.active} to="/usuario">
+              Contato
+            </NavLink>
+          </li>
+        </ul>
       </header>
     </div>
   );
