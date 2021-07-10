@@ -9,7 +9,7 @@
     width: 50rem;
     height: 100%;
     margin: auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
     justify-content: space-between;
     align-items: center;
 
@@ -18,12 +18,13 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     background: #f9f9f9;
     padding: 2rem;
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    gap: 1px;
+    gap: 2rem;
     box-shadow: 5px 5px 15px -8px;
 }
 
@@ -49,25 +50,28 @@
 
 
 .columnLeft {
-
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 1/4;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -8px;
     background: url("../../../Assets/login-3938432-cut (1).jpg") center / cover no-repeat;
-
+    height: 100%;
+    width: 100%;
 
 }
 
 .columnRight {
     display: flex;
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 1/4;
+    height: 100%;
+    width: 100%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
-    margin-left: 2rem;
+    margin:auto;
+
 }
 
 .imgUser {
@@ -87,12 +91,23 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: auto;
+    height: 100%;
+    align-content: center;
+    justify-content: space-between;
+
 }
 
 .div_input {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: .3rem .3rem;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    box-shadow: 3px 3px 10px -3px;
+    margin-bottom: 1rem;
+
 }
 
 .div_input_pass {
@@ -102,16 +117,21 @@
 }
 
 .input {
-    padding: .5rem .5rem;
-    border-radius: 5px;
     outline: none;
     border: none;
-    box-shadow: 3px 3px 10px -3px;
+    width: 95%;
+    padding: .5rem;
 }
 
-.revelPass {
+.img_icon_reveal {
+    width: 16px;
+    align-self: center;
     cursor: pointer;
-    padding: .5rem .5rem;
+    margin-right:.5rem;
+}
+
+.img_icon_reveal:hover {
+    opacity: .5;
 }
 
 .input::-webkit-input-placeholder {
@@ -122,7 +142,7 @@
     display: inline-block !important;
     padding-left: 16.5rem;
     padding-top: 2px;
-    color: coral;
+    color: #333333;
 }
 
 .input::-moz-placeholder {
@@ -155,11 +175,11 @@
     font-size: .9rem;
     font-family: "Quicksand", sans-serif;
     text-shadow: 5px 5px 15px -8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .button {
     box-shadow: 5px 5px 15px -8px;
-    margin-top: .8rem;
     padding: .5rem .5rem;
     border-radius: 5px;
     outline: none;
@@ -169,8 +189,8 @@
     background: coral;
     font-weight: bolder;
     font-family: 'Quicksand', sans-serif;
-    width: 90%;
-
+    width: 100%;
+    margin-left: .3rem;
 }
 
 .button:hover {
@@ -241,13 +261,24 @@
 
 }
 
+.loginFolder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-left:.5rem;
+
+}
+
 .linkSign {
+    width: 100%;
+    height: 100%;
     grid-column: 2/2;
+    grid-row: 4/4;
     text-shadow: 5px 5px 15px -8px;
     text-align: center;
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
-
 }
 
 .linkSign:hover {
@@ -255,11 +286,9 @@
     text-decoration: underline coral;
     color: coral;
     font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+
 }
 
-.loginFolder {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: 2rem;
-}
+
+

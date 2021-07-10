@@ -52,7 +52,6 @@
     color: coral;
     border-radius: 5px;
     border: solid coral 1px;
-    /*border: none;*/
     padding: .5rem .5rem;
     transition: .2s ease;
 }
