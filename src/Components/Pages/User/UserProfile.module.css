@@ -4,12 +4,13 @@
 }
 .input{
     display: none;
-    padding: .5rem;
+    padding: .7rem;
+    box-sizing: border-box;
 
 }
 .label{
     cursor: pointer;
-    padding: .5rem;
+    padding: .7rem;
     background: #ffbb11;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -27,11 +28,12 @@
     justify-content: space-between;
     align-items: center;
     vertical-align: center;
+    color: #764701;
 
 }
 .imgForm{
-    width: 164px;
-    height: 164px;
+    width: 128px;
+    height: 128px;
     border-radius: 100%;
     margin-bottom: 1rem;
 }

@@ -4,26 +4,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 .loginForm {
-    display: flex;
-    flex-direction: column;
     width: 50rem;
     height: 100%;
     margin: auto;
-    padding: 2rem 0;
-    justify-content: space-between;
-    align-items: center;
-
+    padding: 1rem;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     background: #f9f9f9;
     padding: 2rem;
     border-radius: 5px;
     width: 100%;
-    height: 100%;
+    height: 450px;
     gap: 2rem;
     box-shadow: 5px 5px 15px -8px;
 }
@@ -32,69 +27,36 @@
     font-size: 3rem;
     text-align: center;
     font-family: "Cookie", sans-serif;
-    margin-bottom: 1rem;
     text-shadow: 5px 5px 15px -8px;
     font-weight: 400;
+    margin: auto;
+    padding-bottom: 1.5rem;
 }
-
-.subtittle {
-    font-size: 2rem;
-    text-align: center;
-    font-family: 'Cookie', sans-serif;
-    vertical-align: center;
-    margin-top: 2rem;
-    text-shadow: 5px 5px 15px -8px;
-    font-weight: 400;
-
-}
-
 
 .columnLeft {
     grid-column: 1/2;
-    grid-row: 1/4;
+    grid-row: 1/5;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -8px;
     background: url("../../../Assets/login-3938432-cut (1).jpg") center / cover no-repeat;
-    height: 100%;
-    width: 100%;
 
 }
 
 .columnRight {
     display: flex;
     grid-column: 2/3;
-    grid-row: 1/4;
-    height: 100%;
-    width: 100%;
+    grid-row: 1/5;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     border-radius: 8px;
-    margin:auto;
-
-}
-
-.imgUser {
-    border-radius: 50%;
-    width: 212px;
-    height: 212px;
-    box-shadow: 5px 5px 15px -8px;
-
-}
-
-.imgUser img {
-    border-radius: 50%;
-    width: 212px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 100%;
-    align-content: center;
-    justify-content: space-between;
-
+    align-items: center;
 }
 
 .div_input {
@@ -112,22 +74,20 @@
 
 .div_input_pass {
     display: flex;
-    align-items: center;
-
 }
 
 .input {
     outline: none;
     border: none;
     width: 95%;
-    padding: .5rem;
+    padding: .3rem;
 }
 
 .img_icon_reveal {
     width: 16px;
     align-self: center;
     cursor: pointer;
-    margin-right:.5rem;
+    margin-right: .5rem;
 }
 
 .img_icon_reveal:hover {
@@ -140,7 +100,7 @@
     overflow: visible;
     vertical-align: top;
     display: inline-block !important;
-    padding-left: 16.5rem;
+    padding-left: 17.5rem;
     padding-top: 2px;
     color: #333333;
 }
@@ -179,31 +139,38 @@
 }
 
 .button {
-    box-shadow: 5px 5px 15px -8px;
-    padding: .5rem .5rem;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: .3s ease;
-    background: coral;
-    font-weight: bolder;
+
     font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    margin-left: .3rem;
+    cursor: pointer;
+    border: none;
+    border-radius: .4rem;
+    background: #fb1;
+    color: #764701;
+    padding: .7rem;
+    box-sizing: border-box;
+    min-width: 10rem;
+    transition: .1s;
+    box-shadow: 5px 5px 15px -8px;
+    font-weight: bolder;
+    width: 80%;
+    margin-bottom: 1rem;
+
 }
 
 .button:hover {
-    background: #8d4b35;
-    box-shadow: 5px 5px 15px -8px;
+    outline: none;
+    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+}
 
+.button:disabled {
+    opacity: 0.5;
+    cursor: wait;
 }
 
 .linkRecover {
     font-family: 'Quicksand', sans-serif;
     font-size: 0.8rem;
     font-style: italic;
-    margin: .3rem 0;
     text-shadow: 5px 5px 15px -8px;
 }
 
@@ -228,7 +195,6 @@
     font-size: 0.8rem;
     font-style: italic;
     text-shadow: 5px 5px 15px -8px;
-    margin-top: 1px;
     position: relative;
     cursor: pointer;
     padding-left: 20px;
@@ -264,17 +230,12 @@
 .loginFolder {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 80%;
-    margin-left:.5rem;
+    margin-bottom: 1rem;
 
 }
 
 .linkSign {
-    width: 100%;
-    height: 100%;
-    grid-column: 2/2;
-    grid-row: 4/4;
     text-shadow: 5px 5px 15px -8px;
     text-align: center;
     text-decoration: none;

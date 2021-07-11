@@ -85,6 +85,9 @@ export const UserStorage = ({ children }) => {
 
       if (tokenLocal) {
         try {
+          setLogin(true);
+          setError(null);
+          setLoading(true);
           const tokenDecode = parseJwt(tokenLocal);
           const formData = new FormData();
           const emailPost = tokenDecode.data[0];
@@ -93,9 +96,6 @@ export const UserStorage = ({ children }) => {
           const tokenRes = await axios(url, options);
           const { id, email, username, photo_name, size, src } =
             await tokenRes.data;
-          setLogin(true);
-          setError(null);
-          setLoading(true);
           setId(id);
           setEmail(email);
           setToken(tokenLocal);

@@ -18,9 +18,9 @@
 .logo_img {
     grid-column: 1/1;
     background: url("../../Assets/novo-logo-composto.png") center center/cover no-repeat;
-    width: 150px;
+    width: 128px;
     height: 5rem;
-    border-radius: 8px;
+    border-radius: 25%;
     margin-left: 2.5rem;
     margin-top: 0.3rem;
 

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./Dashboard.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { UserContext } from "../UserStorage";
 
 const Dashboard = () => {
@@ -12,8 +12,11 @@ const Dashboard = () => {
       </div>
       <h3>Bem vindo usuário(a): </h3>
       <ul className={styles.links}>
-        {username ? username : ""}
-
+        <li className={styles.link}>
+          <NavLink activeClassName={styles.active} to="/login/dashboard">
+            {username ? username : ""}
+          </NavLink>
+        </li>
         <li className={styles.link}>
           <NavLink activeClassName={styles.active} to="/login/usuario/perfil">
             Meu Perfil

@@ -7,17 +7,19 @@
     border-radius: .4rem;
     background: #fb1;
     color: #764701;
-    padding: .8rem 1.2rem;
+    padding: .7rem;
     box-sizing: border-box;
-    min-width: 8rem;
+    min-width: 15rem;
     transition: .1s;
+    box-shadow: 5px 5px 15px -8px;
 }
 
 .button:hover, .button:focus {
     outline: none;
     box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
 }
-.button:disabled{
+
+.button:disabled {
     opacity: 0.5;
     cursor: wait;
 }
