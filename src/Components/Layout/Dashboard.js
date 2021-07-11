@@ -13,7 +13,7 @@ const Dashboard = () => {
       <h3>Bem vindo usuário(a): </h3>
       <ul className={styles.links}>
         <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/dashboard">
+          <NavLink activeClassName={styles.active} to="/login/usuario">
             {username ? username : ""}
           </NavLink>
         </li>

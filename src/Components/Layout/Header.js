@@ -14,7 +14,7 @@ const Header = () => {
         <ul className={styles.navlink}>
           {login === true ? (
             <li className={styles.link}>
-              <NavLink activeClassName={styles.active} to="/login/dashboard">
+              <NavLink activeClassName={styles.active} to="/login/usuario">
                 {username}
               </NavLink>
             </li>
