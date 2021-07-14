@@ -1,45 +1,39 @@
 .userProfile{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem;
 }
-.input{
-    display: none;
-    padding: .7rem;
-    box-sizing: border-box;
 
+.img{
+
+    border-radius: 50%;
+    width: 192px;
+    height: 192px;
 }
-.label{
-    cursor: pointer;
-    padding: .7rem;
-    background: #ffbb11;
+input[type='file'] {
+    display: none
+}
+
+.input-wrapper label {
+    background-color: #3498db;
     border-radius: 5px;
-    margin-bottom: 1rem;
-
+    color: #fff;
+    margin: 10px;
+    padding: 6px 20px
 }
-.label:hover{
-    outline: none;
-    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
 
+.input-wrapper label:hover {
+    background-color: #2980b9
 }
-.form{
-    grid-column: 1/1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    vertical-align: center;
-    color: #764701;
+/* Esconde o input */
+input[type='file'] {
+    display: none
+}
 
-}
-.imgForm{
-    width: 128px;
-    height: 128px;
-    border-radius: 100%;
-    margin-bottom: 1rem;
-}
-.forms{
-    display: flex;
-    flex-direction: column;
-    grid-column: 2/4;
-
+/* Aparência que terá o seletor de arquivo */
+label {
+    background-color: #3498db;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 6px 20px
 }

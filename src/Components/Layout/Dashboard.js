@@ -1,42 +1,26 @@
 import React, { useContext } from "react";
 import styles from "./Dashboard.module.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { UserContext } from "../UserStorage";
 
 const Dashboard = () => {
-  const { src, username, userLogout } = useContext(UserContext);
+  const { data, userLogout } = useContext(UserContext);
   return (
-    <div className={styles.dash}>
-      <div>
-        <img className={styles.imgProfile} src={src} alt="" />
-      </div>
-      <h3>Bem vindo usuário(a): </h3>
+    <div className={styles.dash + " animeLeft"}>
       <ul className={styles.links}>
+        <h3>Bem vindo</h3>
+        {data ? data : ""}
         <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/usuario">
-            {username ? username : ""}
-          </NavLink>
+          <Link to="/login/aluno/lista">ALunos</Link>
         </li>
         <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/usuario/perfil">
-            Meu Perfil
-          </NavLink>
+          <Link to="/login/aluno/adicionar">Cadastrar aluno</Link>
         </li>
         <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/aluno/lista">
-            ALunos
-          </NavLink>
-        </li>
-        <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/aluno/adicionar">
-            Cadastrar aluno
-          </NavLink>
-        </li>
-        <li className={styles.link}>
-          {username && (
-            <div className={styles.bnt_out} onClick={userLogout}>
+          {data && (
+            <a type="submit" onClick={userLogout}>
               Sair
-            </div>
+            </a>
           )}
         </li>
       </ul>

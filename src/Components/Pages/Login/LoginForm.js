@@ -85,7 +85,7 @@ function LoginForm() {
               <button className={styles.button}>Entrar</button>
             )}
           </form>
-          {error && "Senha ou email inválidos tente novamente"}
+          {error && <p style={{color:'red'}}>Senha ou email inválidos tente novamente</p>}
 
           <div className={styles.loginFolder}>
             <div className={styles.divCheckbox}>
