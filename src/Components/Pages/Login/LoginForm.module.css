@@ -21,6 +21,8 @@
     height: 450px;
     gap: 2rem;
     box-shadow: 5px 5px 15px -8px;
+    /*align-items: center;*/
+    /*justify-items: center;*/
 }
 
 .tittle {
@@ -34,12 +36,11 @@
 }
 
 .columnLeft {
-    grid-column: 1/2;
+    display:block;
     grid-row: 1/5;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -8px;
     background: url("../../../Assets/login-3938432-cut (1).jpg") center / cover no-repeat;
-
 }
 
 .columnRight {
@@ -176,7 +177,6 @@
 
 .linkRecover:hover {
     transition: .3s ease-in-out;
-    text-decoration: underline coral;
     color: coral;
 }
 
@@ -244,7 +244,6 @@
 
 .linkSign:hover {
     transition: .3s ease-in-out;
-    text-decoration: underline coral;
     color: coral;
     font-family: 'Quicksand', sans-serif;
     cursor: pointer;

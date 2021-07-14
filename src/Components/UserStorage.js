@@ -16,6 +16,8 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const [brand, setBrand] = React.useState("");
+  const [link, setLink] = React.useState("");
   const navigate = useNavigate();
 
   const userLogout = React.useCallback(
@@ -134,6 +136,10 @@ export const UserStorage = ({ children }) => {
           error,
           login,
           loading,
+          setBrand,
+          brand,
+          link,
+          setLink,
         }}
       >
         {children}

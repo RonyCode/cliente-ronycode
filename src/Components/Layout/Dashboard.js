@@ -22,16 +22,7 @@ const Dashboard = () => {
             Meu Perfil
           </NavLink>
         </li>
-        <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/aluno/lista">
-            ALunos
-          </NavLink>
-        </li>
-        <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/aluno/adicionar">
-            Cadastrar aluno
-          </NavLink>
-        </li>
+
         <li className={styles.link}>
           {username && (
             <div className={styles.bnt_out} onClick={userLogout}>
