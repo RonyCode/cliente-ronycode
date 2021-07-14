@@ -1,9 +1,13 @@
 import React from "react";
 import axios from "axios";
 import { GET_ALL_STD } from "../../../api/api";
+import { UserContext } from "../../UserStorage";
+import { NavLink } from "react-router-dom";
 
 function ListStudents() {
   const [stdData, setStdData] = React.useState("");
+  const { brand } = React.useContext(UserContext);
+
   React.useEffect(() => {
     const getStds = async () => {
       try {
@@ -21,6 +25,8 @@ function ListStudents() {
   return (
     <div className="App">
       <h1> metodo GETAll</h1>
+      <div></div>
+
       {stdData &&
         stdData.map((item) => (
           <ul key={item.id}>
