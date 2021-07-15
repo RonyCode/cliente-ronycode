@@ -13,16 +13,19 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserStorage>
-          <Header />
+          <header className="header">
+            <Header />
+          </header>
           <section className="content">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="login/*" element={<Login />} />
               {/*<Route path="*" element={<Error404 />} />*/}
-
             </Routes>
           </section>
-          <Footer />
+          <footer className="footer">
+            <Footer />
+          </footer>
         </UserStorage>
       </BrowserRouter>
     </div>

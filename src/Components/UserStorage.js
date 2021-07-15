@@ -3,7 +3,6 @@ import { GET_USER, POST_LOGIN } from "../api/api";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 export const UserContext = React.createContext();
 
 export const UserStorage = ({ children }) => {
@@ -48,16 +47,26 @@ export const UserStorage = ({ children }) => {
       const tokenRes = await axios(url, options);
       const { id, email, username, token, photo_name, size, src } =
         await tokenRes.data;
-      window.localStorage.setItem("token", token);
-      setId(id);
-      setEmail(email);
-      setToken(token);
-      setUsername(username.split(" ", 1));
-      const nameTrated = photo_name.split("_");
-      nameTrated.shift();
-      setPhotoName(nameTrated);
-      setSize(size);
-      setSrc(src);
+
+      if (
+        username !== null ||
+        photo_name !== null ||
+        src !== null ||
+        size !== null
+      ) {
+        window.localStorage.setItem("token", token);
+        setId(id);
+        setEmail(email);
+        setToken(token);
+        setUsername(username.split(" ", 1));
+        if (photo_name) {
+          const name_photo_trated = photo_name.split("_");
+          name_photo_trated.shift();
+          setPhotoName(name_photo_trated);
+        }
+        setSize(size);
+        setSrc(src);
+      }
       if (!tokenRes) throw new Error("Erro: falha ao se logar");
     } catch (err) {
       setError(err.message);
@@ -99,17 +108,27 @@ export const UserStorage = ({ children }) => {
           const tokenRes = await axios(url, options);
           const { id, email, username, photo_name, size, src } =
             await tokenRes.data;
-          setId(id);
-          setEmail(email);
-          setToken(tokenLocal);
-          setUsername(username.split(" ", 1));
-          const nameTrated = photo_name.split("_");
-          nameTrated.shift();
-          setPhotoName(nameTrated);
-          setSrc(src);
-          setSize(size);
+
+          if (
+            username !== null ||
+            photo_name !== null ||
+            src !== null ||
+            size !== null
+          ) {
+            setId(id);
+            setEmail(email);
+            setToken(tokenLocal);
+            setUsername(username.split(" ", 1));
+            if (photo_name) {
+              const name_photo_trated = photo_name.split("_");
+              name_photo_trated.shift();
+              setPhotoName(name_photo_trated);
+            }
+            setSrc(src);
+            setSize(size);
+          }
         } catch (err) {
-          await userLogout();
+          // await userLogout();
         } finally {
           setLoading(false);
         }

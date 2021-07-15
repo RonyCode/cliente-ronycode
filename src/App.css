@@ -1,77 +1,101 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #333;
-    --type-first: Helvetica, Arial, sans-serif;
-    --type-second: 'Spectral', georgia;
-    font-family: var(--type-first);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: "Spectral", georgia;
+  font-family: var(--type-first);
 }
 
-h1, h2, h3, h4, p, ul, li {
-    margin: 0;
-    padding: 0;
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 img {
-    display: block;
+  display: block;
 }
 
 a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
+.App {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem auto auto;
+  height: 100%;
+  width: 100%;
+  background: #ffeeaa;
+}
+
+.header {
+  grid-area: header;
+  background: #ffbb11;
+  grid-row: 1/1;
+  top:0;
+  position: fixed;
+  height: 5rem;
+  width: 100%;
+}
 
 .content {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    width: calc(100vw - 12px);
-    height: calc(100vh - 5rem);
-    background: #f9f9f9;
-    margin-top: 5rem;
+  grid-row: 2/3;
+  min-height: 100vh;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+}
+
+.footer {
+  grid-row: 3/3;
+  background: #3f271a;
+  position: absolute;
+  width: 100%;
 }
 
 .animeLeft {
-    opacity: 0;
-    transform: translateX(-300px);
-    animation: animeLeft 0.8s forwards;
-
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: animeLeft 0.8s forwards;
 }
 
 @keyframes animeLeft {
-    to {
-        opacity: 1;
-        transform: initial;
-
-    }
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }
 
 .animeRight {
-    opacity: 0;
-    transform: translateX(300px);
-    animation: animeLeft 0.8s forwards;
-
+  opacity: 0;
+  transform: translateX(300px);
+  animation: animeLeft 0.8s forwards;
 }
 
 @keyframes animeRight {
-    to {
-        opacity: 1;
-        transform: initial;
-
-    }
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }
 
 .animeUp {
-    opacity: 0;
-    transform: translateY(-300px);
-    animation: animeUp 0.8s forwards;
-
+  opacity: 0;
+  transform: translateY(-300px);
+  animation: animeUp 0.8s forwards;
 }
 
 @keyframes animeUp {
-    to {
-        opacity: 1;
-        transform: initial;
-
-    }
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }

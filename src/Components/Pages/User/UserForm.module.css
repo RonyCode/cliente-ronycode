@@ -1,56 +1,57 @@
 
 .user_form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 9rem);
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw ;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15rem;
+  align-items: center;
+  vertical-align: center;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 1rem;
-    border-radius: 8px;
-    width: 50%;
-    height: calc(100% - 15rem);
-    padding: 2rem;
-    background: #f8f8f8;
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+  border-radius: 8px;
+  width: 50%;
+  height: 300px;
+  padding: 2rem;
+  background: #f8f8f8;
 }
 
-.tittle{
-    align-self: baseline;
+.tittle {
+  /*align-self: baseline;*/
 }
+
 .img_icon {
-    width: 64px;
-    height: 64px;
-    text-align: center;
-    border-radius: 8px;
-    background: #f9f9f9;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  border-radius: 8px;
+  background: #f9f9f9;
 
 }
 
 .icon {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    background: #f7f7f7;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 1rem;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #f7f7f7;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .icon:hover {
-    box-shadow: 3px 3px 15px -5px;
-    transition: .3s ease;
+  box-shadow: 3px 3px 15px -5px;
+  transition: .3s ease;
 }
 
-.icon_name{
-    text-align: center;
+.icon_name {
+  text-align: center;
 }

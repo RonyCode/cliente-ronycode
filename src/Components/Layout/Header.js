@@ -9,7 +9,11 @@ const Header = () => {
     <div>
       <header className={styles.header}>
         <NavLink className={styles.logo_img} to="/" arial-label="Educar - Home">
-          <img src="../../Assets/novo-logo-composto.png" width="1080" alt="" />
+          <img
+            src="https://i.ibb.co/TtVP093/logo2.png"
+            alt="logo2"
+            border="0"
+          />
         </NavLink>
         <ul className={styles.navlink}>
           {login === true ? (

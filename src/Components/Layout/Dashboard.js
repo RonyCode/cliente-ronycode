@@ -11,26 +11,21 @@ const Dashboard = () => {
         <img className={styles.imgProfile} src={src} alt="" />
       </div>
       <h3>Bem vindo usuário(a): </h3>
-      <ul className={styles.links}>
-        <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/usuario">
-            {username ? username : ""}
-          </NavLink>
-        </li>
-        <li className={styles.link}>
-          <NavLink activeClassName={styles.active} to="/login/usuario/perfil">
-            Meu Perfil
-          </NavLink>
-        </li>
+      <div className={styles.links}>
+        <NavLink activeClassName={styles.active} to="/login/usuario">
+          {username ? username : ""}
+        </NavLink>
 
-        <li className={styles.link}>
-          {username && (
-            <div className={styles.bnt_out} onClick={userLogout}>
-              Sair
-            </div>
-          )}
-        </li>
-      </ul>
+        <NavLink activeClassName={styles.active} to="/login/usuario/perfil">
+          Meu Perfil
+        </NavLink>
+
+        {username && (
+          <div className={styles.link} onClick={userLogout}>
+            Sair
+          </div>
+        )}
+      </div>
     </div>
   );
 };
