@@ -1,25 +1,22 @@
 import React from "react";
 import styles from "./UserForm.module.css";
 import { UserContext } from "../../UserStorage";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const UserForm = () => {
-  const { username, brand, setBrand } = React.useContext(UserContext);
+  const { userFirstName } = React.useContext(UserContext);
 
   return (
     <div className={styles.user_form}>
-      <p className={styles.brand}>
-        {brand && <NavLink to="/login/usuario">Usuario</NavLink>}
-      </p>
-      <h1 className={styles.tittle}>Usuario(a): {username}</h1>
       <div className={styles.container}>
+        <h3 className={styles.tittle}>Usuario(a): {userFirstName}</h3>
+
         <Link className={styles.icon} to="/login/aluno/lista">
           <img
             className={styles.img_icon}
             src="https://i.ibb.co/h72v2p3/contactlist-theuser-802.png"
             alt="contactlist-theuser-802"
             border="0"
-            onClick={() => setBrand("Lista de alunos")}
           />
           <p className={styles.icon_name}>Lista de alunos</p>
         </Link>
@@ -81,7 +78,7 @@ const UserForm = () => {
             alt="education-the-Board-876"
             border="0"
           />
-          <p className={styles.icon_name}>Planejamento Semanal Aluno</p>
+          <p className={styles.icon_name}>Planejamento Semanal </p>
         </Link>
 
         <Link className={styles.icon} to="/login/aluno/lista">

@@ -4,13 +4,13 @@ import styles from "./Header.module.css";
 import { UserContext } from "../UserStorage";
 
 const Header = () => {
-  const { login, username } = useContext(UserContext);
+  const { login, userFirstName } = useContext(UserContext);
   return (
     <div>
       <header className={styles.header}>
         <NavLink className={styles.logo_img} to="/" arial-label="Educar - Home">
           <img
-            src="https://i.ibb.co/TtVP093/logo2.png"
+            src="https://i.ibb.co/njgZBPX/logo-320px.png"
             alt="logo2"
             border="0"
           />
@@ -19,7 +19,7 @@ const Header = () => {
           {login === true ? (
             <li className={styles.link}>
               <NavLink activeClassName={styles.active} to="/login/usuario">
-                {username}
+                {userFirstName}
               </NavLink>
             </li>
           ) : (

@@ -1,0 +1,70 @@
+.carrosel {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
+  margin: auto;
+}
+
+.carrosel_container {
+  /*background: #95b023;*/
+  margin: 2rem;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+.carrosel_principal {
+  grid-column: 1/1;
+  /*background: #541bc1;*/
+  margin: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  height: calc(100% - 4rem);
+  overflow: hidden;
+}
+.carrosel_principal_div {
+  display: flex;
+  width: 400%;
+  height: 100%;
+}
+
+.carrosel_principal_img {
+  width: 1031px;
+  height: 100%;
+  border-radius: 8px;
+  background: #ffbb11;
+  margin-right: 4rem;
+}
+
+.carrosel_slides {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  grid-column: 2/2;
+  /*background: #834d21;*/
+  border-radius: 8px;
+  margin-top: 2rem;
+  height: calc(100% - 4rem);
+  width: 100%;
+}
+
+.carrosel_slide {
+  /*background: #ffbb11;*/
+  height: calc(100% - 4rem);
+}
+.carrosel_slide_img {
+  display: block;
+  width: 300px;
+  height: 186px;
+  /*background: #ffbb11;*/
+  border-radius: 8px;
+}
+
+.carrosel_slide_img:hover {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: .7;
+}

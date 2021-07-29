@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { UserContext } from "../UserStorage";
 
 const Dashboard = () => {
-  const { src, username, userLogout } = useContext(UserContext);
+  const { src, userFirstName, userLogout } = useContext(UserContext);
   return (
     <div className={styles.dash}>
       <div>
@@ -13,14 +13,14 @@ const Dashboard = () => {
       <h3>Bem vindo usuário(a): </h3>
       <div className={styles.links}>
         <NavLink activeClassName={styles.active} to="/login/usuario">
-          {username ? username : ""}
+          {userFirstName ? userFirstName : ""}
         </NavLink>
 
         <NavLink activeClassName={styles.active} to="/login/usuario/perfil">
           Meu Perfil
         </NavLink>
 
-        {username && (
+        {userFirstName && (
           <div className={styles.link} onClick={userLogout}>
             Sair
           </div>

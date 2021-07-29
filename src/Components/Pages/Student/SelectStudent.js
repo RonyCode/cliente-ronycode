@@ -2,33 +2,34 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { SELECT_STD } from "../../../api/api";
 import axios from "axios";
+import styles from "./SelectStudent.module.css";
 
 const SelectStudent = () => {
   const [data, setData] = React.useState([]);
   const { id } = useParams();
+  const [name, setName] = React.useState("");
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    try {
-      const { url, options } = SELECT_STD(id);
-      const response = await axios(url, options);
-      response && setData(response.data.data);
-      console.log(response);
-    } catch (response) {
-      console.log(response);
-    }
-  }
+  React.useEffect(() => {
+    const selectStudent = async () => {
+      try {
+        const { url, options } = SELECT_STD(id);
+        const response = await axios(url, options);
+        response && setData(response.data.data);
+
+        console.log(response);
+      } catch (response) {
+        console.log(response);
+      }
+    };
+    selectStudent();
+  }, []);
 
   return (
     <div className="App">
-      <h1> metodo Select Student</h1>
-      <form onSubmit={handleSubmit}>
-        <button>Enviar</button>
-      </form>
-      {<p></p>}
       {data &&
         data.map((item) => (
           <div key={item.id}>
+            <h1 className={styles.tittle}> Aluno: {item.name}</h1>
             <li>Email: {item.email}</li>
             <li>Telefone: {item.phone}</li>
             <li>Endereço: {item.address}</li>
@@ -38,10 +39,8 @@ const SelectStudent = () => {
             <li>Data da matrícula: {item.registrationDate}</li>
             <li>Data término curso: {item.expirationDate}</li>
             <li>Resultado: {item.result}</li>
-            <p></p>
           </div>
         ))}
-      {<p></p>}
     </div>
   );
 };

@@ -1,0 +1,8 @@
+.list_student{
+}
+
+.list_input{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

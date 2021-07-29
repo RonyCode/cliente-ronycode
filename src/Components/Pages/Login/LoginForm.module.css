@@ -1,254 +1,238 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
-@import 'https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap';
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 .loginForm {
-    width: 50rem;
-    height: 100%;
-    margin: auto;
-    padding: 1rem;
+  width: 50rem;
+  min-height: calc(100% - 5rem);
+  margin: 5rem auto;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 5px;
-    width: 100%;
-    height: 450px;
-    gap: 2rem;
-    box-shadow: 5px 5px 15px -8px;
-    /*align-items: center;*/
-    /*justify-items: center;*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 5px;
+  width: 100%;
+  height: 450px;
+  gap: 2rem;
+  box-shadow: 5px 5px 15px -8px;
 }
 
 .tittle {
-    font-size: 3rem;
-    text-align: center;
-    font-family: "Cookie", sans-serif;
-    text-shadow: 5px 5px 15px -8px;
-    font-weight: 400;
-    margin: auto;
-    padding-bottom: 1.5rem;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Cookie", sans-serif;
+  text-shadow: 5px 5px 15px -8px;
+  font-weight: 400;
+  margin: auto;
+  padding: 1rem 0 1rem 0;
 }
 
 .columnLeft {
-    display:block;
-    grid-row: 1/5;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px -8px;
-    background: url("../../../Assets/login-3938432-cut (1).jpg") center / cover no-repeat;
+  display: block;
+  grid-row: 1/5;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -8px;
+  background: url("../../../Assets/login-3938432-cut (1).jpg") center / cover
+    no-repeat;
 }
 
 .columnRight {
-    display: flex;
-    grid-column: 2/3;
-    grid-row: 1/5;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
+  display: flex;
+  grid-column: 2/3;
+  grid-row: 1/5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
 }
 
 .div_input {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: .3rem .3rem;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    box-shadow: 3px 3px 10px -3px;
-    margin-bottom: 1rem;
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.3rem 0.3rem;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  box-shadow: 3px 3px 10px -3px;
+  margin-bottom: 1rem;
 }
 
 .div_input_pass {
-    display: flex;
+  display: flex;
 }
 
 .input {
-    outline: none;
-    border: none;
-    width: 95%;
-    padding: .3rem;
+  outline: none;
+  border: none;
+  width: 95%;
+  padding: 0.3rem;
 }
 
 .img_icon_reveal {
-    width: 16px;
-    align-self: center;
-    cursor: pointer;
-    margin-right: .5rem;
+  width: 16px;
+  align-self: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
 }
 
 .img_icon_reveal:hover {
-    opacity: .5;
+  opacity: 0.5;
 }
 
 .input::-webkit-input-placeholder {
-    font-family: FontAwesome;
-    font-weight: normal;
-    overflow: visible;
-    vertical-align: top;
-    display: inline-block !important;
-    padding-left: 17.5rem;
-    padding-top: 2px;
-    color: #333333;
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 17.5rem;
+  padding-top: 2px;
+  color: #333333;
 }
 
 .input::-moz-placeholder {
-    font-family: FontAwesome;
-    font-weight: normal;
-    overflow: visible;
-    vertical-align: top;
-    display: inline-block !important;
-    padding-left: 5px;
-    padding-top: 2px;
-    color: coral;
-
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: coral;
 }
 
 .input:-ms-input-placeholder {
-    font-family: FontAwesome;
-    font-weight: normal;
-    overflow: visible;
-    vertical-align: top;
-    display: inline-block !important;
-    padding-left: 5px;
-    padding-top: 2px;
-    color: coral;
-
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: coral;
 }
 
-
 .label {
-    margin: .3rem 0;
-    font-size: .9rem;
-    font-family: "Quicksand", sans-serif;
-    text-shadow: 5px 5px 15px -8px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  font-family: "Quicksand", sans-serif;
+  text-shadow: 5px 5px 15px -8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .button {
-
-    font-family: 'Quicksand', sans-serif;
-    cursor: pointer;
-    border: none;
-    border-radius: .4rem;
-    background: #fb1;
-    color: #764701;
-    padding: .7rem;
-    box-sizing: border-box;
-    min-width: 10rem;
-    transition: .1s;
-    box-shadow: 5px 5px 15px -8px;
-    font-weight: bolder;
-    width: 80%;
-    margin-bottom: 1rem;
-
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  background: #fb1;
+  color: #764701;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  min-width: 10rem;
+  transition: 0.1s;
+  box-shadow: 5px 5px 15px -8px;
+  font-weight: bolder;
+  width: 80%;
+  margin-bottom: 1rem;
 }
 
 .button:hover {
-    outline: none;
-    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+  outline: none;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
 }
 
 .button:disabled {
-    opacity: 0.5;
-    cursor: wait;
+  opacity: 0.5;
+  cursor: wait;
 }
 
 .linkRecover {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 0.8rem;
-    font-style: italic;
-    text-shadow: 5px 5px 15px -8px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-shadow: 5px 5px 15px -8px;
 }
 
 .linkRecover:hover {
-    transition: .3s ease-in-out;
-    color: coral;
+  transition: 0.3s ease-in-out;
+  color: coral;
 }
 
 .divCheckbox {
-    display: flex;
+  display: flex;
 }
 
 .checkbox {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 }
 
 .labelCheckbox {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 0.8rem;
-    font-style: italic;
-    text-shadow: 5px 5px 15px -8px;
-    position: relative;
-    cursor: pointer;
-    padding-left: 20px;
-    opacity: 1;
-
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-shadow: 5px 5px 15px -8px;
+  position: relative;
+  cursor: pointer;
+  padding-left: 20px;
+  opacity: 1;
 }
 
 .checkbox + .labelCheckbox::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    left: 0;
-    bottom: 0;
-    border: solid 2px;
-    vertical-align: bottom;
-
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 0;
+  bottom: 0;
+  border: solid 2px;
+  vertical-align: bottom;
 }
 
 .checkbox:checked + .labelCheckbox::after {
-    content: "";
-    position: absolute;
-    left: 4px;
-    bottom: 4px;
-    width: 4px;
-    height: 8px;
-    border-right: solid 2px coral;
-    border-bottom: solid 2px coral;
-    transform: rotate(45deg);
-
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 4px;
+  height: 8px;
+  border-right: solid 2px coral;
+  border-bottom: solid 2px coral;
+  transform: rotate(45deg);
 }
 
 .loginFolder {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-bottom: 1rem;
-
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 1rem;
 }
 
 .linkSign {
-    text-shadow: 5px 5px 15px -8px;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
+  text-shadow: 5px 5px 15px -8px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
 }
 
 .linkSign:hover {
-    transition: .3s ease-in-out;
-    color: coral;
-    font-family: 'Quicksand', sans-serif;
-    cursor: pointer;
-
+  transition: 0.3s ease-in-out;
+  color: coral;
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
 }
-
-
-

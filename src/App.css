@@ -6,8 +6,8 @@ body {
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: "Spectral", georgia;
   font-family: var(--type-first);
-}
 
+  }
 h1,
 h2,
 h3,
@@ -34,14 +34,13 @@ a {
   grid-template-rows: 5rem auto auto;
   height: 100%;
   width: 100%;
-  background: #ffeeaa;
+
 }
 
 .header {
   grid-area: header;
-  background: #ffbb11;
   grid-row: 1/1;
-  top:0;
+  top: 0;
   position: fixed;
   height: 5rem;
   width: 100%;
@@ -49,14 +48,15 @@ a {
 
 .content {
   grid-row: 2/3;
-  min-height: 100vh;
+  margin-top: 5rem;
+  min-height: calc(100vh - 5rem);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  background: #f9f9f9;
+  /*background: #ffeeaa;*/
+
 }
 
 .footer {
   grid-row: 3/3;
-  background: #3f271a;
   position: absolute;
   width: 100%;
 }

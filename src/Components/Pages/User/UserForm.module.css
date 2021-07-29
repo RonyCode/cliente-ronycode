@@ -1,29 +1,29 @@
-
 .user_form {
   display: flex;
-  min-height: 100vh;
-  min-width: 100vw ;
+  min-height: calc(100vh - 5rem);
   flex-direction: column;
-  justify-content: center;
-  margin-left: 15rem;
-  align-items: center;
-  vertical-align: center;
+  margin-left:15rem;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 64px 1fr 1fr;
   grid-gap: 1rem;
   border-radius: 8px;
   width: 50%;
   height: 300px;
   padding: 2rem;
   background: #f8f8f8;
+  margin: auto;
+  box-shadow: 3px 3px 15px -5px;
+
 }
 
 .tittle {
-  /*align-self: baseline;*/
+  grid-column: 1/5;
+  grid-row: 1/1;
+  text-align: center;
 }
 
 .img_icon {
@@ -32,7 +32,6 @@
   text-align: center;
   border-radius: 8px;
   background: #f9f9f9;
-
 }
 
 .icon {
@@ -45,11 +44,12 @@
   justify-content: space-evenly;
   padding: 1rem;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .icon:hover {
   box-shadow: 3px 3px 15px -5px;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .icon_name {

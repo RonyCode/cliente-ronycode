@@ -30,37 +30,39 @@ const UserProfile = () => {
   };
 
   return (
-    <div className={styles.userProfile}>
-      <h1> PERFIL</h1>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <img className={styles.imgForm} src={src} alt={photo_name} />
-        <label className={styles.label} htmlFor="photo">
-          Selecione sua foto
-        </label>
-        <input
-          id="photo"
-          type="file"
-          name="photo"
-          className={styles.input}
-          onChange={(e) => handleFile(e)}
-        />
-        <Button className={styles.button}>Enviar</Button>
-      </form>
-      <div className={styles.forms}>
-        <Input
-          className={styles.input}
-          label="Nome:"
-          name="name"
-          value={username}
-          type="text"
-        />
-        <Input
-          className={styles.input}
-          label="Email:"
-          name="email"
-          value={email}
-          type="text"
-        />
+    <div className={styles.user_profile}>
+      <div className={styles.container}>
+        <h1> PERFIL</h1>
+        <form onSubmit={handleSubmit} className={styles.input_photo}>
+          <img className={styles.img_form} src={src} alt={photo_name} />
+          <label className={styles.label} htmlFor="photo">
+            Selecione sua foto
+          </label>
+          <input
+            id="photo"
+            type="file"
+            name="photo"
+            className={styles.input}
+            onChange={(e) => handleFile(e)}
+          />
+          <button className={styles.button}>Enviar</button>
+        </form>
+        <div className={styles.forms}>
+          <Input
+            className={styles.input}
+            label="Nome:"
+            name="name"
+            value={username}
+            type="text"
+          />
+          <Input
+            className={styles.input}
+            label="Email:"
+            name="email"
+            value={email}
+            type="text"
+          />
+        </div>
       </div>
     </div>
   );

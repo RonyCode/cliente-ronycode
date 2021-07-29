@@ -10,6 +10,7 @@ export const UserStorage = ({ children }) => {
   const [email, setEmail] = React.useState(null);
   const [token, setToken] = React.useState(null);
   const [username, setUsername] = React.useState(null);
+  const [userFirstName, setUserFirstName] = React.useState(null);
   const [photo_name, setPhotoName] = React.useState(null);
   const [size, setSize] = React.useState(null);
   const [src, setSrc] = React.useState(null);
@@ -25,6 +26,7 @@ export const UserStorage = ({ children }) => {
       setId(null);
       setEmail(null);
       setUsername(null);
+      setUserFirstName(null);
       setPhotoName(null);
       setSize(null);
       setSrc(null);
@@ -58,7 +60,8 @@ export const UserStorage = ({ children }) => {
         setId(id);
         setEmail(email);
         setToken(token);
-        setUsername(username.split(" ", 1));
+        setUsername(username);
+        setUserFirstName(username.split(" ", 1));
         if (photo_name) {
           const name_photo_trated = photo_name.split("_");
           name_photo_trated.shift();
@@ -118,7 +121,8 @@ export const UserStorage = ({ children }) => {
             setId(id);
             setEmail(email);
             setToken(tokenLocal);
-            setUsername(username.split(" ", 1));
+            setUsername(username);
+            setUserFirstName(username.split(" ", 1));
             if (photo_name) {
               const name_photo_trated = photo_name.split("_");
               name_photo_trated.shift();
@@ -148,6 +152,7 @@ export const UserStorage = ({ children }) => {
           id,
           email,
           username,
+          userFirstName,
           token,
           photo_name,
           size,

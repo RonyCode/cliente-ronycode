@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { GET_ALL_STD } from "../../../api/api";
-import { UserContext } from "../../UserStorage";
-import { NavLink } from "react-router-dom";
+import styles from "./ListStudents.module.css";
+import Input from "../../Input/Input";
+import { Link, useParams } from "react-router-dom";
 
 function ListStudents() {
   const [stdData, setStdData] = React.useState("");
-  const { brand } = React.useContext(UserContext);
 
   React.useEffect(() => {
     const getStds = async () => {
@@ -22,27 +22,18 @@ function ListStudents() {
     getStds();
   }, []);
 
+  const { id } = useParams();
+
   return (
-    <div className="App">
+    <div className={styles.list_student}>
       <h1> metodo GETAll</h1>
       <div></div>
-
       {stdData &&
         stdData.map((item) => (
-          <ul key={item.id}>
-            <li></li>
-            <li>Id User: {item.id}</li>
-            <li>Name: {item.name}</li>
-            <li>Email: {item.email}</li>
-            <li>Telefone: {item.phone}</li>
-            <li>Endereço: {item.address}</li>
-            <li>Data Nascimento: {item.birthday}</li>
-            <li>Boletim Escolar: {item.report}</li>
-            <li>Grau Escolar: {item.grade}</li>
-            <li>Data da matrícula: {item.registrationDate}</li>
-            <li>Data término curso: {item.expirationDate}</li>
-            <li>Resultado: {item.result}</li>
-          </ul>
+          <div className={styles.list_input} key={item.id}>
+            <Input value={item.name} />
+            <Link to={"/login/aluno/id/" + item.id}>Selecionar</Link>
+          </div>
         ))}
     </div>
   );
