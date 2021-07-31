@@ -7,7 +7,6 @@
 .container {
   width: 80%;
   min-height: 100%;
-  /*background: #f1f1f1;*/
   margin: auto;
   display: grid;
   gap: 2rem;
@@ -37,7 +36,6 @@
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
   padding: 0 2rem;
-
 }
 
 .container_main {
@@ -55,38 +53,43 @@
   grid-column: 1/3;
   font-size: 2rem;
   font-family: Quicksand, sans-serif;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .img_text_main {
   grid-column: 1/3;
   display: flex;
   padding-left: 2rem;
-  margin: auto;
+  align-items: center;
 }
 
 .img_main {
   grid-column: 1/1;
-  width: 450px;
+  width: 600px;
   border-radius: 5px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
 }
 
 .content {
   grid-column: 2/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .text {
   line-height: 1.5;
   font-family: "Quicksand", sans-serif;
-  padding: 2rem;
+  padding: 0 2rem;
   text-shadow: 10px 10px 10px -2px;
   text-align: justify;
 }
 
 .link_content {
-  margin: 2rem;
   font-style: italic;
+  margin-right: 2rem;
+  font-family: Quicksand, sans-serif;
 }
 
 .link_content:hover {
@@ -97,52 +100,54 @@
 .report {
   grid-area: report;
   height: calc(100vh - 5rem);
-  width: 100%;
   background: #f1f1f1;
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
   display: flex;
   align-content: space-around;
-  padding-left: 2rem;
+  padding: 0 2rem;
 }
 
 .div_report {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 2rem;
+  width: 100%;
 }
 
 .titulo_report {
   font-family: Quicksand, sans-serif;
-  margin-bottom: 1rem;
 }
 
 .div_img_text {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
   text-align: justify;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+.div_img_text:nth-last-child(1) {
+  border: none;
 }
 
 .text_report {
-  padding: 0 2rem;
+  padding-left: 2rem;
+  text-align: justify;
+  line-height: 2;
+  display: block;
 }
 
 .text_report_link {
   font-weight: 500;
-  width: 100%;
   font-family: Quicksand, sans-serif;
   font-size: 0.8rem;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
-  text-align: end;
-  padding: 1rem 0;
-  margin: -3rem 4rem 0 0;
-}
-
-.text_report_link:nth-last-child(1) {
-  border: none;
+  font-style: italic;
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
 }
 
 .text_report_link:hover {
@@ -168,35 +173,32 @@
 .calendar {
   grid-area: calendar;
   height: calc(100vh - 5rem);
-  width: calc(100% - 2rem);
   background: #f1f1f1;
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
-  padding-right: 2rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .calendar_tittle {
-  margin-bottom: 2rem;
   font-family: Quicksand, sans-serif;
   text-align: center;
-
 }
 
 .container_calendar {
   display: grid;
   grid-template-columns: 1fr;
-  margin: 2.5rem;
-
+  min-height: calc(100% - 5rem);
 }
 
 .div_calendar {
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 2rem 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .div_calendar:nth-last-child(1) {
@@ -204,20 +206,24 @@
 }
 
 .calendar_img {
-  width: 64px;
+  width: 72px;
+  height: 72px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
 }
 
-.calendar_text {
+.calendar_list {
   font-size: 0.8rem;
   font-family: Quicksand, sans-serif;
   margin: auto auto auto 2rem;
 }
 
+.calendar_list_item {
+  line-height: 1.7;
+}
+
 .deployment {
   grid-area: post;
   height: calc(100vh - 14rem);
-  /*background: #ffdc4d;*/
   background: #f1f1f1;
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);

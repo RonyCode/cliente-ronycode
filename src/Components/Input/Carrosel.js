@@ -8,13 +8,13 @@ const Carrosel = () => {
         <div className={styles.carrosel_principal}>
           <div className={styles.carrosel_principal_div}>
             <a href="#">
-              <img
-                className={styles.carrosel_principal_img}
-                src="https://i.ibb.co/p3MP6Hm/logotipo-papagaiado-terminado.jpg"
-                alt="logotipo-papagaiado-terminado"
-                border="0"
-              />
+              <div className={styles.carrosel_principal_img}>
+                <div className={styles.carrosel_principal_hover}>
+                  clique aqui
+                </div>
+              </div>
             </a>
+
             <a href="#">
               <img
                 className={styles.carrosel_principal_img}
@@ -23,6 +23,7 @@ const Carrosel = () => {
                 border="0"
               />
             </a>
+
             <a href="">
               <img
                 className={styles.carrosel_principal_img}
@@ -65,6 +66,7 @@ const Carrosel = () => {
             </a>
           </div>
           <div className={styles.carrosel_slide}>
+            <div className={styles.carrosel_div_hover}>Clique Aqui</div>
             <a href="">
               <img
                 className={styles.carrosel_slide_img}

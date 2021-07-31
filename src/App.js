@@ -7,6 +7,8 @@ import Header from "./Components/Layout/Header";
 import Footer from "./Components/Layout/Footer";
 // import {ReactComponent as Error404} from './Components/Pages/Error/Error404.html'
 import { UserStorage } from "./Components/UserStorage";
+import Error404 from "./Components/Pages/Error/Error404";
+import Contact from "./Components/Pages/Contact/Contact";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="login/*" element={<Login />} />
+              <Route path="contato" element={<Contact />} />
               {/*<Route path="*" element={<Error404 />} />*/}
             </Routes>
           </section>

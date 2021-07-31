@@ -65,42 +65,45 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className={styles.footer_container_socials}>
-            <h3>Nos siga nas redes sociais!</h3>
-            <div className={styles.footer_socials}>
-              <div className={styles.footer_social_item}>
-                <a
-                  href="https://web.whatsapp.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img className={styles.footer_img} src={fotoZap} alt="" />
-                </a>
-              </div>
-              <div className={styles.footer_social_item}>
-                <a
-                  href="https://web.whatsapp.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img className={styles.footer_img} src={fotoFace} alt="" />{" "}
-                </a>
-              </div>
-              <div className={styles.footer_social_item}>
-                <a
-                  href="https://web.whatsapp.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img className={styles.footer_img} src={fotoInsta} alt="" />{" "}
-                </a>
+            <div className={styles.footer_container_socials}>
+              <h3>Nos siga nas redes sociais!</h3>
+              <div className={styles.footer_socials}>
+                <div className={styles.footer_social_item}>
+                  <a
+                    href="https://web.whatsapp.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img className={styles.footer_img} src={fotoZap} alt="" />
+                  </a>
+                </div>
+                <div className={styles.footer_social_item}>
+                  <a
+                    href="https://web.whatsapp.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img className={styles.footer_img} src={fotoFace} alt="" />{" "}
+                  </a>
+                </div>
+                <div className={styles.footer_social_item}>
+                  <a
+                    href="https://www.instagram.com/prof.gi341/?utm_medium=copy_link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img className={styles.footer_img} src={fotoInsta} alt="" />{" "}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <p align="center">Ronycode &copy; 2021 todos os direitos reservados </p>
+
+        <p className={styles.footer_copry} align="center">
+          Ronycode &copy; 2021 todos os direitos reservados{" "}
+        </p>
       </div>
     </footer>
   );

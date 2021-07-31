@@ -2,12 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Carrosel from "../../Input/Carrosel";
+import { WeekDay } from "../../WeekDay/WeekDay";
 
 const Home = () => {
+  const { seg, ter, qua, qui, sex } = WeekDay();
+
   return (
     <div className={styles.home}>
       <div className={styles.container}>
         <div className={styles.banner}>
+          {/*////////######################//////////#*/}
+          {/*Carrosel da home page*/}
           <Carrosel />
         </div>
         <div className={styles.main}>
@@ -36,7 +41,7 @@ const Home = () => {
                   em contato através do link abaixo.
                 </p>
                 <Link className={styles.link_content} to="/contato">
-                  Para saber mais clique aqui
+                  saber mais...
                 </Link>
               </div>
             </div>
@@ -58,14 +63,15 @@ const Home = () => {
                 reabertura, especialmente no Brasil, é um debate que começou
                 quando se mandaram as primeiras crianças para casa em março de
                 2020 e ainda não tem data para terminar.
+                <a
+                  className={styles.text_report_link}
+                  href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
+                >
+                  saber mais
+                </a>
               </p>
             </div>
-            <a
-              className={styles.text_report_link}
-              href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
-            >
-              saber mais
-            </a>
+
             <div className={styles.div_img_text}>
               <img
                 className={styles.img_report}
@@ -80,14 +86,15 @@ const Home = () => {
                 reabertura, especialmente no Brasil, é um debate que começou
                 quando se mandaram as primeiras crianças para casa em março de
                 2020 e ainda não tem data para terminar.
+                <a
+                  className={styles.text_report_link}
+                  href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
+                >
+                  saber mais
+                </a>
               </p>
             </div>
-            <a
-              className={styles.text_report_link}
-              href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
-            >
-              saber mais
-            </a>
+
             <div className={styles.div_img_text}>
               <img
                 className={styles.img_report}
@@ -101,14 +108,14 @@ const Home = () => {
                 reabertura, especialmente no Brasil, é um debate que começou
                 quando se mandaram as primeiras crianças para casa em março de
                 2020 e ainda não tem data para terminar.
+                <a
+                  className={styles.text_report_link}
+                  href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
+                >
+                  saber mais
+                </a>
               </p>
             </div>
-            <a
-              className={styles.text_report_link}
-              href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
-            >
-              saber mais
-            </a>
           </div>
         </div>
         <div className={styles.calendar}>
@@ -121,13 +128,13 @@ const Home = () => {
                 alt="seg"
                 border="0"
               />
-              <div className={styles.calendar_text}>
+              <div className={styles.calendar_list}>
                 <ul>
-                  <li>Data: 26/07/2021</li>
-                  <li>
+                  <li className={styles.calendar_list_item}>Data: {seg}</li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
                   </li>
-                  <li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 13:30 às 17:30
                     vespertino{" "}
                   </li>
@@ -142,13 +149,13 @@ const Home = () => {
                 alt="seg"
                 border="0"
               />
-              <div className={styles.calendar_text}>
+              <div className={styles.calendar_list}>
                 <ul>
-                  <li>Data: 27/07/2021</li>
-                  <li>
+                  <li className={styles.calendar_list_item}>Data: {ter}</li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
                   </li>
-                  <li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 13:30 às 17:30
                     vespertino{" "}
                   </li>
@@ -163,13 +170,13 @@ const Home = () => {
                 alt="seg"
                 border="0"
               />
-              <div className={styles.calendar_text}>
+              <div className={styles.calendar_list}>
                 <ul>
-                  <li>Data: 28/07/2021</li>
-                  <li>
+                  <li className={styles.calendar_list_item}>Data: {qua}</li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
                   </li>
-                  <li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 13:30 às 17:30
                     vespertino{" "}
                   </li>
@@ -184,13 +191,13 @@ const Home = () => {
                 alt="seg"
                 border="0"
               />
-              <div className={styles.calendar_text}>
+              <div className={styles.calendar_list}>
                 <ul>
-                  <li>Data: 29/07/2021</li>
-                  <li>
+                  <li className={styles.calendar_list_item}>Data: {qui}</li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
                   </li>
-                  <li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 13:30 às 17:30
                     vespertino{" "}
                   </li>
@@ -205,13 +212,13 @@ const Home = () => {
                 alt="seg"
                 border="0"
               />
-              <div className={styles.calendar_text}>
+              <div className={styles.calendar_list}>
                 <ul>
-                  <li>Data: 30/07/2021</li>
-                  <li>
+                  <li className={styles.calendar_list_item}>Data: {sex}</li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
                   </li>
-                  <li>
+                  <li className={styles.calendar_list_item}>
                     Horário de funcionamento normal das 13:30 às 17:30
                     vespertino{" "}
                   </li>
