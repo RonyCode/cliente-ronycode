@@ -18,6 +18,7 @@ export const WeekDay = () => {
       if (dateNow.getDay() === 5) dateNow.setDate(dateNow.getDate() - 4);
 
       dateNow.setMonth(dateNow.getMonth() + 1);
+      dateNow.setDate(dateNow.getDate() + 2);
 
       const dateSeg =
         dateNow.getDate() +

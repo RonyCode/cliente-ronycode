@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import { UserContext } from "../UserStorage";
+import logoHeader from "../../Assets/logo1.png";
 
 const Header = () => {
   const { login, userFirstName } = useContext(UserContext);
@@ -9,11 +10,7 @@ const Header = () => {
     <div>
       <header className={styles.header}>
         <NavLink className={styles.logo_img} to="/" arial-label="Educar - Home">
-          <img
-            src="https://i.ibb.co/njgZBPX/logo-320px.png"
-            alt="logo2"
-            border="0"
-          />
+          <img src={logoHeader} alt="logo2" border="0" />
         </NavLink>
         <ul className={styles.navlink}>
           {login === true ? (

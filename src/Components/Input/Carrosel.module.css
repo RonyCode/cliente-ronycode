@@ -22,42 +22,31 @@
   /*background: #541bc1;*/
   margin: 2rem;
   border-radius: 8px;
-  width: 100%;
+  width: 1031px;
   height: calc(100% - 4rem);
   overflow: hidden;
+  border:  3px solid #333333;
+
+}
+
+.carrosel_principal_img{
+  width: 1031px;
+  height: 680px;
+
 }
 
 .carrosel_principal_div {
   display: flex;
   width: 400%;
-  height: 100%;
+  /*height: 100%;*/
 }
 .carrosel_principal_hover {
   width: 1031px;
-  height: 100%;
+  /*height: 100%;*/
   border-radius: 8px;
   /*background: #ffbb11;*/
   margin-right: 4rem;
   opacity: 0;
-}
-
-.carrosel_principal_div:hover  .carrosel_principal_hover{
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 1;
-  width: 1031px;
-}
-
-.carrosel_principal_img {
-  width: 1031px;
-  height: 100%;
-  border-radius: 8px;
-  background: url("../../Assets/logo1.png")center / cover no-repeat ;
-  margin-right: 4rem;
-}
-
-.carrosel_principal_img:hover .carrosel_principal_div {
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 7;
 }
 
 .carrosel_slides {
