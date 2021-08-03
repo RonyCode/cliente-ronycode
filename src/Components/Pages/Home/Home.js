@@ -118,6 +118,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         <div className={styles.calendar}>
           <h2 className={styles.calendar_tittle}>Eventos da Semana</h2>
           <div className={styles.container_calendar}>

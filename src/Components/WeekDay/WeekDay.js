@@ -11,14 +11,15 @@ export const WeekDay = () => {
     const getWeekDay = () => {
       const dateNow = new Date();
 
+      if (dateNow.getDay() === 0) dateNow.setDate(dateNow.getDate() + 1);
       if (dateNow.getDay() === 1) dateNow.setDate(dateNow.getDate());
       if (dateNow.getDay() === 2) dateNow.setDate(dateNow.getDate() - 1);
       if (dateNow.getDay() === 3) dateNow.setDate(dateNow.getDate() - 2);
       if (dateNow.getDay() === 4) dateNow.setDate(dateNow.getDate() - 3);
       if (dateNow.getDay() === 5) dateNow.setDate(dateNow.getDate() - 4);
+      if (dateNow.getDay() === 6) dateNow.setDate(dateNow.getDate() + 2);
 
       dateNow.setMonth(dateNow.getMonth() + 1);
-      dateNow.setDate(dateNow.getDate() + 2);
 
       const dateSeg =
         dateNow.getDate() +
