@@ -15,6 +15,7 @@
   position: fixed;
   font-family: "Quicksand", sans-serif;
   justify-content: flex-start;
+  z-index: 999;
 
 }
 

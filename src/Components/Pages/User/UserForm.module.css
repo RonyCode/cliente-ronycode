@@ -1,23 +1,23 @@
 .user_form {
   display: flex;
+  margin: 5rem 0 0 15rem;
+  min-width: calc(100vw - 15rem);
   min-height: calc(100vh - 5rem);
   flex-direction: column;
-  margin-left:15rem;
+  /*background: #4e8025;*/
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 64px 1fr 1fr;
   grid-gap: 1rem;
   border-radius: 8px;
   width: 50%;
-  height: 300px;
+  height: 500px;
   padding: 2rem;
-  background: #f8f8f8;
+  background: #f1ecec;
   margin: auto;
   box-shadow: 3px 3px 15px -5px;
-
 }
 
 .tittle {
@@ -27,11 +27,11 @@
 }
 
 .img_icon {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   text-align: center;
   border-radius: 8px;
-  background: #f9f9f9;
+  background: #e1e1e1;
 }
 
 .icon {
@@ -39,10 +39,9 @@
   flex-direction: column;
   border: 1px solid transparent;
   border-radius: 8px;
-  background: #f7f7f7;
+  /*background: #e1e1e1;*/
   align-items: center;
   justify-content: space-evenly;
-  padding: 1rem;
   cursor: pointer;
   overflow: hidden;
 }

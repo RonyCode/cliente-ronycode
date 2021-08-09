@@ -7,23 +7,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background: red;*/
 }
 
 .carrosel_container {
   /*background: #95b023;*/
-  display: grid;
-  column-gap: 0.2rem;
-  grid-template-columns: 80% auto;
-}
-
-.carrosel_principal {
-  grid-column: 1/1;
-  /*background: #541bc1;*/
   display: flex;
+  align-items: center;
+  align-content: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 1300px;
+  height: 680px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
+
 }
 
 .carrosel_principal_img {
@@ -31,7 +26,6 @@
   width: 100%;
   height: 100%;
   transition: 0.4s;
-
 }
 
 .carrosel_principal_div {
@@ -39,6 +33,7 @@
   height: 680px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
   position: relative;
+  margin: auto;
 }
 
 .carrosel_principal_hover {
@@ -71,19 +66,14 @@
   opacity: 1;
 }
 
-
 /*########################################*/
 /*FIM  parte do slide maior o principal */
 
 .carrosel_slides {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  grid-column: 2/2;
+  width: 250px;
+  height: 680px;
   border-radius: 8px;
   transition: 0.4s;
-  /*background: #4e8025;*/
-  /*box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);*/
 }
 
 .carrosel_slide_img {
@@ -96,10 +86,10 @@
 
 .carrosel_slide {
   display: block;
-  width: 250px;
-  height: 168px;
+  width: 244px;
+  height: 166px;
   transition: 0.4s;
-  margin: 0.2rem 0;
+  margin: 0.2rem;
   position: relative;
 }
 
@@ -127,7 +117,7 @@
 .carrosel_radio:checked ~ .carrosel_slide_hover {
   opacity: 0;
   background: #4e8025;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .carrosel_radio {
