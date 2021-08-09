@@ -1,115 +1,144 @@
 import React from "react";
 import styles from "./Carrosel.module.css";
 import imgSlide1 from "../../Assets/logo1.png";
-import imgSlide2 from "../../Assets/login-3938432-cut (1).jpg";
-import imgSlide3 from "../../Assets/login.webp";
-import imgSlide4 from "../../Assets/facebook_macos_bigsur_icon_190191.png";
+import imgSlide2 from "../../Assets/banner 1.png";
+import imgSlide3 from "../../Assets/foguete.png";
+import imgSlide4 from "../../Assets/logotipo papagaiado terminado.jpg";
 
 const Carrosel = () => {
+  const [src, setSrc] = React.useState(imgSlide1);
+  const slides = [imgSlide1, imgSlide2, imgSlide3, imgSlide4];
+
+  let currentImgIndex = 0,
+    time = 5000,
+    maxImgIndex = slides.length - 1;
+
+  const handleChange = ({ target }) => {
+    setSrc(target.value);
+  };
+
+  const nextImg = () => {
+    currentImgIndex++;
+    if (currentImgIndex > maxImgIndex) currentImgIndex = 0;
+    setSrc(slides[currentImgIndex]);
+  };
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      nextImg();
+    }, time);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className={styles.carrosel}>
       <div className={styles.carrosel_container}>
         <div className={styles.carrosel_principal}>
           <div className={styles.carrosel_principal_div}>
-            {/*<input*/}
-            {/*  className={styles.principal_input}*/}
-            {/*  type="radio"*/}
-            {/*  name="slide__radio"*/}
-            {/*  id="slide1"*/}
-            {/*  checked*/}
-            {/*/>*/}
-
-            {/*<div className={styles.carrosel_principal_img}>*/}
-            {/*  <div className={styles.carrosel_principal_hover}>clique aqui</div>*/}
-            {/*</div>*/}
-
             <img
               className={styles.carrosel_principal_img}
-              src={imgSlide1}
-              alt=""
+              src={src}
+              alt="imagem slide principal"
             />
-            <img
-              className={styles.carrosel_principal_img}
-              src={imgSlide2}
-              alt=""
-            />
-            <img
-              className={styles.carrosel_principal_img}
-              src={imgSlide3}
-              alt=""
-            />
-            <img
-              className={styles.carrosel_principal_img}
-              src={imgSlide4}
-              alt=""
-            />
+            <div className={styles.carrosel_principal_hover}>
+              <div className={styles.principal_hover_content}>
+                <a href="#">Conheça nossos planos!</a>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.carrosel_slides}>
-          <div className={styles.carrosel_slide}>
-            <input type="radio" id="foto1" name={styles.grupo} checked />
-            <label htmlFor="foto1">
-              <img
-                className={styles.carrosel_slide_img}
-                src="https://i.ibb.co/WKwJjrL/rd-21.jpg"
-                alt="rd-21"
-                border="0"
-              />
-            </label>
-          </div>
+          <form>
+            <div className={styles.carrosel_slide}>
+              <label className={styles.carrosel_label}>
+                <input
+                  className={styles.carrosel_radio}
+                  type="radio"
+                  id="foto1"
+                  name="grupo"
+                  value={slides[0]}
+                  checked={src === slides[0]}
+                  onChange={handleChange}
+                />
+                <img
+                  className={styles.carrosel_slide_img}
+                  src={imgSlide1}
+                  alt="rd-21"
+                />
+                <div className={styles.carrosel_slide_hover}>
+                  <div className={styles.slide_hover_content}></div>
+                </div>
+              </label>
+            </div>
 
-          <div className={styles.carrosel_slide}>
-            <input type="radio" id="foto2" name={styles.grupo} />
-            <label htmlFor="foto2">
-              <img
-                className={styles.carrosel_slide_img}
-                src="https://i.ibb.co/6NNqHyv/rd-2.jpg"
-                alt="rd-21"
-                border="0"
-              />
+            <div className={styles.carrosel_slide}>
+              <label className={styles.carrosel_label}>
+                <input
+                  className={styles.carrosel_radio}
+                  type="radio"
+                  id="foto2"
+                  name="grupo"
+                  value={slides[1]}
+                  checked={src === slides[1]}
+                  onChange={handleChange}
+                />
+                <img
+                  className={styles.carrosel_slide_img}
+                  src={imgSlide2}
+                  alt="rd-21"
+                />
+                <div className={styles.carrosel_slide_hover}>
+                  <div className={styles.slide_hover_content}></div>
+                </div>
+              </label>
+            </div>
 
-              {/*<a href="">*/}
-              {/*  <img*/}
-              {/*    className={styles.carrosel_slide_img}*/}
-              {/*    src="https://i.ibb.co/6NNqHyv/rd-2.jpg"*/}
-              {/*    alt="rd-2"*/}
-              {/*    border="0"*/}
-              {/*  />*/}
-              {/*</a>*/}
-            </label>
-          </div>
-          <div className={styles.carrosel_slide}>
-            <input type="radio" id="foto3" name={styles.grupo} />
-            <label htmlFor="foto3">
-              <img
-                className={styles.carrosel_slide_img}
-                src="https://i.ibb.co/GxVmyr1/rd-18.jpg"
-                alt="rd-21"
-                border="0"
-              />
-            </label>
-          </div>
-          <div className={styles.carrosel_slide}>
-            <div className={styles.carrosel_div_hover}>Clique Aqui</div>
+            <div className={styles.carrosel_slide}>
+              <label className={styles.carrosel_label}>
+                <input
+                  className={styles.carrosel_radio}
+                  type="radio"
+                  id="foto3"
+                  name="grupo"
+                  value={slides[2]}
+                  checked={src === slides[2]}
+                  onChange={handleChange}
+                />
+                <img
+                  className={styles.carrosel_slide_img}
+                  src={imgSlide3}
+                  alt="rd-21"
+                />
+                <div className={styles.carrosel_slide_hover}>
+                  <div className={styles.slide_hover_content}></div>
+                </div>
+              </label>
+            </div>
 
-            <input type="radio" id="foto4" name={styles.grupo} />
-            <label htmlFor="foto4">
-              <img
-                className={styles.carrosel_slide_img}
-                src="https://i.ibb.co/GxVmyr1/rd-18.jpg"
-                alt="rd-21"
-                border="0"
-              />
-            </label>
-
-            {/*<a href="">*/}
-            {/*  <img*/}
-            {/*    className={styles.carrosel_slide_img}*/}
-            {/*    src="https://i.ibb.co/p3MP6Hm/logotipo-papagaiado-terminado.jpg"*/}
-            {/*    alt="logotipo-papagaiado-terminado"*/}
-            {/*    border="0"*/}
-            {/*  />*/}
-            {/*</a>*/}
+            <div className={styles.carrosel_slide}>
+              <label className={styles.carrosel_label}>
+                <input
+                  className={styles.carrosel_radio}
+                  type="radio"
+                  id="foto4"
+                  name="grupo"
+                  value={slides[3]}
+                  checked={src === slides[3]}
+                  onChange={handleChange}
+                />
+                <img
+                  className={styles.carrosel_slide_img}
+                  src={imgSlide4}
+                  alt="rd-21"
+                />
+                <div className={styles.carrosel_slide_hover}>
+                  <div className={styles.slide_hover_content}></div>
+                </div>
+              </label>
+            </div>
+          </form>
+          <div className={styles.carrosel_slide}>
+            <div className={styles.carrosel_div_hover}></div>
           </div>
         </div>
       </div>

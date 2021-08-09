@@ -1,100 +1,148 @@
 .carrosel {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
-  margin: auto;
-  background: #f1f1f1;
+  /*background: red;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background: red;*/
 }
 
 .carrosel_container {
   /*background: #95b023;*/
-  margin: 2rem;
-  width: calc(100% - 4rem);
-  height: calc(100% - 4rem);
-  border-radius: 8px;
   display: grid;
-  grid-template-columns: 75% 25%;
+  column-gap: 0.2rem;
+  grid-template-columns: 80% auto;
 }
 
 .carrosel_principal {
   grid-column: 1/1;
   /*background: #541bc1;*/
-  margin: 2rem;
-  border-radius: 8px;
-  width: 1031px;
-  height: calc(100% - 4rem);
-  overflow: hidden;
-  border:  3px solid #333333;
-
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-.carrosel_principal_img{
-  width: 1031px;
-  height: 680px;
+.carrosel_principal_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
 
 }
 
 .carrosel_principal_div {
-  display: flex;
-  width: 400%;
-  /*height: 100%;*/
+  width: 1050px;
+  height: 680px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
+  position: relative;
 }
+
 .carrosel_principal_hover {
-  width: 1031px;
-  /*height: 100%;*/
-  border-radius: 8px;
-  /*background: #ffbb11;*/
-  margin-right: 4rem;
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 5;
 }
+
+.principal_hover_content a {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  color: #fdfdfd;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.carrosel_principal_div:hover .carrosel_principal_hover {
+  opacity: 1;
+}
+
+
+/*########################################*/
+/*FIM  parte do slide maior o principal */
 
 .carrosel_slides {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   grid-column: 2/2;
   border-radius: 8px;
-  margin-top: 2rem;
-  height: calc(100% - 4rem);
-  width: 100%;
-}
-
-.carrosel_slide {
-  background: #ff1111;
-  height: calc(100% - 4rem);
-  border-radius: 8px;
-}
-
-.carrosel_div_hover {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  bottom: 173px;
-  width: 100%;
-  line-height: 45px;
-  height: 45px;
-  display: block;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  left: 0;
-  top: 0;
-  margin: auto;
-  transition: all 0.4s ease;
-}
-
-.carrosel_slide:hover {
-  opacity: 1;
-  visibility: visible;
+  transition: 0.4s;
+  /*background: #4e8025;*/
+  /*box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);*/
 }
 
 .carrosel_slide_img {
   display: block;
-  width: 300px;
-  height: 173px;
-  background: #ffbb11;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  position: absolute;
+}
+
+.carrosel_slide {
+  display: block;
+  width: 250px;
+  height: 168px;
+  transition: 0.4s;
+  margin: 0.2rem 0;
+  position: relative;
+}
+
+.carrosel_slide_hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   opacity: 1;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.carrosel_slide:hover .carrosel_slide_hover {
+  opacity: 0;
+  visibility: visible;
+}
+
+.carrosel_slide_img:hover {
+  cursor: pointer;
+  transition: 0.4s;
+}
+.carrosel_radio:checked ~ .carrosel_slide_hover {
+  opacity: 0;
+  background: #4e8025;
+  transition: .3s;
+}
+
+.carrosel_radio {
+  display: none;
+}
+
+.animeFade {
+  opacity: 0;
+  transform: revert;
+  animation: animeFade 0.8s ease-in-out;
+}
+
+@keyframes animeFade {
+  to {
+    opacity: 1;
+    fill-opacity: 1;
+  }
 }
