@@ -39,10 +39,10 @@ const Home = () => {
                   existe maior dificuldade, horários flexíveis, e acompanhamento
                   educacional diferenciado. Agende uma visita conosco ou entre
                   em contato através do link abaixo.
+                  <Link className={styles.link_content} to="/contato">
+                    saber mais...
+                  </Link>
                 </p>
-                <Link className={styles.link_content} to="/contato">
-                  saber mais...
-                </Link>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ const Home = () => {
                   className={styles.text_report_link}
                   href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
                 >
-                  saber mais
+                  saber mais...
                 </a>
               </p>
             </div>
@@ -90,7 +90,7 @@ const Home = () => {
                   className={styles.text_report_link}
                   href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
                 >
-                  saber mais
+                  saber mais...
                 </a>
               </p>
             </div>
@@ -112,7 +112,7 @@ const Home = () => {
                   className={styles.text_report_link}
                   href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
                 >
-                  saber mais
+                  saber mais...
                 </a>
               </p>
             </div>
@@ -133,11 +133,8 @@ const Home = () => {
                 <ul>
                   <li className={styles.calendar_list_item}>Data: {seg}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
-                  </li>
-                  <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 13:30 às 17:30
-                    vespertino{" "}
+                    Horário de funcionamento normal das 07:30 às 11:30 matutino
+                    e das 13:30 às 17:30 vespertino.
                   </li>
                 </ul>
               </div>
@@ -154,11 +151,8 @@ const Home = () => {
                 <ul>
                   <li className={styles.calendar_list_item}>Data: {ter}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
-                  </li>
-                  <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 13:30 às 17:30
-                    vespertino{" "}
+                    Horário de funcionamento normal das 07:30 às 11:30 matutino
+                    e das 13:30 às 17:30 vespertino.
                   </li>
                 </ul>
               </div>
@@ -175,11 +169,8 @@ const Home = () => {
                 <ul>
                   <li className={styles.calendar_list_item}>Data: {qua}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
-                  </li>
-                  <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 13:30 às 17:30
-                    vespertino{" "}
+                    Horário de funcionamento normal das 07:30 às 11:30 matutino
+                    e das 13:30 às 17:30 vespertino.
                   </li>
                 </ul>
               </div>
@@ -196,11 +187,8 @@ const Home = () => {
                 <ul>
                   <li className={styles.calendar_list_item}>Data: {qui}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
-                  </li>
-                  <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 13:30 às 17:30
-                    vespertino{" "}
+                    Horário de funcionamento normal das 07:30 às 11:30 matutino
+                    e das 13:30 às 17:30 vespertino.
                   </li>
                 </ul>
               </div>
@@ -217,11 +205,8 @@ const Home = () => {
                 <ul>
                   <li className={styles.calendar_list_item}>Data: {sex}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino{" "}
-                  </li>
-                  <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 13:30 às 17:30
-                    vespertino{" "}
+                    Horário de funcionamento normal das 07:30 às 11:30 matutino
+                    e das 13:30 às 17:30 vespertino.
                   </li>
                 </ul>
               </div>
@@ -229,7 +214,9 @@ const Home = () => {
           </div>
         </div>
         <div className={styles.deployment}>
-          <h3>Depoimentos</h3>
+          <div className={styles.deployment_cards}>
+            <div className={styles.deployment_card}></div>
+          </div>
         </div>
       </div>
     </div>

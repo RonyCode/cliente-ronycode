@@ -11,14 +11,11 @@
 
 .carrosel_container {
   /*background: #95b023;*/
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  width: 1300px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  width: calc(100% - 8rem);
   height: 680px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
-
 }
 
 .carrosel_principal_img {
@@ -29,9 +26,8 @@
 }
 
 .carrosel_principal_div {
-  width: 1050px;
+  width: 100%;
   height: 680px;
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
   position: relative;
   margin: auto;
 }
@@ -70,7 +66,7 @@
 /*FIM  parte do slide maior o principal */
 
 .carrosel_slides {
-  width: 250px;
+  width: 100%;
   height: 680px;
   border-radius: 8px;
   transition: 0.4s;
@@ -78,7 +74,7 @@
 
 .carrosel_slide_img {
   display: block;
-  width: 100%;
+  width: 268px;
   height: 100%;
   transition: 0.4s;
   position: absolute;
@@ -86,7 +82,7 @@
 
 .carrosel_slide {
   display: block;
-  width: 244px;
+  width: 268px;
   height: 166px;
   transition: 0.4s;
   margin: 0.2rem;
@@ -103,6 +99,7 @@
   transition: 0.5s ease;
   background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  width: 268px;
 }
 
 .carrosel_slide:hover .carrosel_slide_hover {
