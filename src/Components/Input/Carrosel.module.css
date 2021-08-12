@@ -15,14 +15,20 @@
   grid-template-columns: 80% 20%;
   width: calc(100% - 8rem);
   height: 680px;
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
+  box-shadow: -1px 1px 8px -1px rgba(0, 0, 0, 1);
 }
 
 .carrosel_principal_img {
   display: block;
   width: 100%;
   height: 100%;
-  transition: 0.4s;
+  /*transition: 0.4s;*/
+  opacity: 0;
+  /*transition: inherit 700ms;*/
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: animeFade;
+
 }
 
 .carrosel_principal_div {
@@ -30,6 +36,7 @@
   height: 680px;
   position: relative;
   margin: auto;
+
 }
 
 .carrosel_principal_hover {
@@ -78,12 +85,13 @@
   height: 100%;
   transition: 0.4s;
   position: absolute;
+
 }
 
 .carrosel_slide {
   display: block;
   width: 268px;
-  height: 166px;
+  height: 165px;
   transition: 0.4s;
   margin: 0.2rem;
   position: relative;
@@ -115,21 +123,17 @@
   opacity: 0;
   background: #4e8025;
   transition: 0.3s;
+
 }
 
 .carrosel_radio {
   display: none;
 }
 
-.animeFade {
-  opacity: 0;
-  transform: revert;
-  animation: animeFade 0.8s ease-in-out;
-}
-
 @keyframes animeFade {
-  to {
-    opacity: 1;
-    fill-opacity: 1;
+
+  80%{
+    opacity: initial;
   }
+
 }

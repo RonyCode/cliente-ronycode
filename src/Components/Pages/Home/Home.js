@@ -51,11 +51,13 @@ const Home = () => {
           <div className={styles.div_report}>
             <h2 className={styles.titulo_report}>Fique atento!</h2>
             <div className={styles.div_img_text}>
-              <img
-                className={styles.img_report}
-                src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
-                alt=""
-              />
+              <a href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm">
+                <img
+                  className={styles.img_report}
+                  src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
+                  alt=""
+                />
+              </a>
               <p className={styles.text_report}>
                 pouco mais de 10% dos estudantes voltaram ao ensino presencial
                 este semestre. Alguns sumiram outros acreditam que o ensino está
@@ -73,12 +75,15 @@ const Home = () => {
             </div>
 
             <div className={styles.div_img_text}>
-              <img
-                className={styles.img_report}
-                src="https://i.ibb.co/dfJHFJR/novo-logo-composto.png"
-                alt="novo-logo-composto"
-                border="0"
-              />
+              <a href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm">
+                <img
+                  className={styles.img_report}
+                  src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
+                  alt="novo-logo-composto"
+                  border="0"
+                />
+              </a>
+
               <p className={styles.text_report}>
                 pouco mais de 10% dos estudantes voltaram ao ensino presencial
                 este semestre. Alguns sumiram outros acreditam que o ensino está
@@ -96,11 +101,13 @@ const Home = () => {
             </div>
 
             <div className={styles.div_img_text}>
-              <img
-                className={styles.img_report}
-                src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
-                alt=""
-              />
+              <a href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm">
+                <img
+                  className={styles.img_report}
+                  src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
+                  alt=""
+                />
+              </a>
               <p className={styles.text_report}>
                 pouco mais de 10% dos estudantes voltaram ao ensino presencial
                 este semestre. Alguns sumiram outros acreditam que o ensino está
