@@ -64,11 +64,12 @@ export const UserStorage = ({ children }) => {
         setUserFirstName(username.split(" ", 1));
         if (photo_name) {
           const name_photo_trated = photo_name.split("_");
-          name_photo_trated.shift();
+          await name_photo_trated.shift();
           setPhotoName(name_photo_trated);
         }
         setSize(size);
         setSrc(src);
+        navigate("/login/usuario");
       }
       if (!tokenRes) throw new Error("Erro: falha ao se logar");
     } catch (err) {
@@ -125,7 +126,7 @@ export const UserStorage = ({ children }) => {
             setUserFirstName(username.split(" ", 1));
             if (photo_name) {
               const name_photo_trated = photo_name.split("_");
-              name_photo_trated.shift();
+              await name_photo_trated.shift();
               setPhotoName(name_photo_trated);
             }
             setSrc(src);

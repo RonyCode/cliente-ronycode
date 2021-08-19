@@ -1,0 +1,26 @@
+.user_event_week {
+  margin-left: 15rem;
+  background: #541bc1;
+  width: calc(100vw - 16rem);
+  min-height: calc(100vh - 5rem);
+}
+
+.event_container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "edit-report edit-weekday";
+}
+
+.edit_report {
+  grid-area: edit-report;
+  background: #4e8025;
+  margin: 2rem;
+}
+
+.edit_weekday {
+  grid-area: edit-weekday;
+  background: #d28b3a;
+  margin: 2rem;
+
+}

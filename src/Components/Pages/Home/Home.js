@@ -2,10 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Carrosel from "../../Input/Carrosel";
-import { WeekDay } from "../../WeekDay/WeekDay";
+import { WeekDay } from "../../../Helper/Weekday/WeekDay";
+import imgCard2 from "../../../Assets/logotipo papagaiado terminado.jpg";
+import imgCard3 from "../../../Assets/seguranca-escola.jpg";
+import imgCard4 from "../../../Assets/foguete.png";
+import imgCard5 from "../../../Assets/03_geha_blog_formacao_das_turmas.jpg";
+import iconStar from "../../../Assets/star_77949.png";
+import iconStarVoid from "../../../Assets/star_favorite_5754.png";
+import iconHour from "../../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
+import iconData from "../../../Assets/3586371-calendar-date-event-schedule_107943.svg";
+import imgDeploy1 from "../../../Assets/flaviane.png";
 
 const Home = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
+
+  const [contentWeek, setContentWeek] = React.useState("");
 
   return (
     <div className={styles.home}>
@@ -51,31 +62,52 @@ const Home = () => {
           <div className={styles.div_report}>
             <h2 className={styles.titulo_report}>Fique atento!</h2>
             <div className={styles.div_img_text}>
-              <a href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm">
+              <a
+                href="https://www.bbc.com/portuguese/geral-56642352"
+                target={"_blank"}
+              >
                 <img
                   className={styles.img_report}
-                  src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
+                  src="https://ichef.bbci.co.uk/news/800/cpsprodpb/4898/production/_117848581_gettyimages-1281093588.jpg"
                   alt=""
                 />
               </a>
-              <p className={styles.text_report}>
-                pouco mais de 10% dos estudantes voltaram ao ensino presencial
-                este semestre. Alguns sumiram outros acreditam que o ensino está
-                contemplado ao fazer lições online, ou se veem sem opção. A
-                reabertura, especialmente no Brasil, é um debate que começou
-                quando se mandaram as primeiras crianças para casa em março de
-                2020 e ainda não tem data para terminar.
-                <a
-                  className={styles.text_report_link}
-                  href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
-                >
-                  saber mais...
-                </a>
-              </p>
+              <div className={styles.text_report_div}>
+                <h3 className={styles.text_report_subtittle}>
+                  O enorme impacto da demora do poder público e da baixa
+                  conectividade
+                </h3>
+                <p className={styles.text_report}>
+                  O Departamento de Ciência Política da Universidade de São
+                  Paulo (USP) e o Centro de Aprendizagem em Avaliação e
+                  Resultados da Fundação Getúlio Vargas (FGV) avaliaram a
+                  eficiência dos planos de educação remota de Estados e
+                  capitais. Foram analisados os meios usados para as aulas (como
+                  TV ou internet), seu alcance e qualidade entre as diversas
+                  etapas de ensino e os materiais e tecnologias oferecidos aos
+                  alunos. Os resultados, mensurados entre março e outubro de
+                  2020, mostram um cenário bem ruim: a nota média dos planos
+                  estaduais no Índice de Educação à Distância foi de 2,38 (de 0
+                  a 10) e de 1,6 para os das capitais. Chamou a atenção dos
+                  pesquisadores a demora na apresentação de um plano depois do
+                  fechamento das escolas. Em média, as capitais levaram 43 dias,
+                  e os Estados, 34. Fonte: BBC
+                  <a
+                    target={"_blank"}
+                    className={styles.text_report_link}
+                    href="https://www.bbc.com/portuguese/geral-56642352"
+                  >
+                    saber mais...
+                  </a>
+                </p>
+              </div>
             </div>
 
             <div className={styles.div_img_text}>
-              <a href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm">
+              <a
+                href="https://www12.senado.leg.br/noticias/infomaterias/2021/07/pandemia-acentua-deficit-educacional-e-exige-acoes-do-poder-publico"
+                target={"_blank"}
+              >
                 <img
                   className={styles.img_report}
                   src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
@@ -83,52 +115,81 @@ const Home = () => {
                   border="0"
                 />
               </a>
-
-              <p className={styles.text_report}>
-                pouco mais de 10% dos estudantes voltaram ao ensino presencial
-                este semestre. Alguns sumiram outros acreditam que o ensino está
-                contemplado ao fazer lições online, ou se veem sem opção. A
-                reabertura, especialmente no Brasil, é um debate que começou
-                quando se mandaram as primeiras crianças para casa em março de
-                2020 e ainda não tem data para terminar.
-                <a
-                  className={styles.text_report_link}
-                  href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
-                >
-                  saber mais...
-                </a>
-              </p>
+              <div className={styles.text_report_div}>
+                <h3 className={styles.text_report_subtittle}>
+                  Pandemia acentua deficit educacional e exige ações do poder
+                  público
+                </h3>
+                <p className={styles.text_report}>
+                  Quase um ano e meio após a autorização original, o Instituto
+                  Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira
+                  (Inep) divulgou o primeiro levantamento com os impactos
+                  causados pelo vírus. A pesquisa Resposta Educacional à
+                  Pandemia de Covid-19 no Brasil, que contempla toda a educação
+                  básica, aponta que 9 em cada 10 escolas (90,1%) não retornaram
+                  às atividades presenciais no ano letivo de 2020. No entanto, é
+                  na comparação entre as escolas públicas e particulares que as
+                  desigualdades começam a aparecer. No ensino privado, 70,9% das
+                  escolas ficaram fechadas no ano passado. O número é
+                  consideravelmente menor que o da rede pública: 98,4% das
+                  escolas federais, 97,5% das municipais e 85,9% das estaduais.
+                  Fonte: Agência Senado
+                  <a
+                    target={"_blank"}
+                    className={styles.text_report_link}
+                    href="https://www12.senado.leg.br/noticias/infomaterias/2021/07/pandemia-acentua-deficit-educacional-e-exige-acoes-do-poder-publico"
+                  >
+                    saber mais...
+                  </a>
+                </p>
+              </div>
             </div>
 
             <div className={styles.div_img_text}>
-              <a href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm">
+              <a
+                href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/meio-ambiente/audio/2021-07/portaria-suspende-autorizacoes-para-queimadas-controladas-no-tocantins"
+                target={"_blank"}
+              >
                 <img
                   className={styles.img_report}
-                  src="https://s2.glbimg.com/alVJTMnLNTPbK42da6jdKg6qxBs=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/6/K/5UvfQKRASlBHpbe0Q6lg/foto-1-getty-images.jpg"
+                  src="http://www.lorena.sp.gov.br/wordpress/wp-content/uploads/2018/06/queimadas-1.jpg"
                   alt=""
                 />
               </a>
-              <p className={styles.text_report}>
-                pouco mais de 10% dos estudantes voltaram ao ensino presencial
-                este semestre. Alguns sumiram outros acreditam que o ensino está
-                contemplado ao fazer lições online, ou se veem sem opção. A
-                reabertura, especialmente no Brasil, é um debate que começou
-                quando se mandaram as primeiras crianças para casa em março de
-                2020 e ainda não tem data para terminar.
-                <a
-                  className={styles.text_report_link}
-                  href="https://educacao.uol.com.br/noticias/agencia-estado/2021/07/04/volta-as-aulas-profissionais-e-alunos-enfrentam-desafios-na-pandemia.htm"
-                >
-                  saber mais...
-                </a>
-              </p>
+              <div className={styles.text_report_div}>
+                <h3 className={styles.text_report_subtittle}>
+                  Portaria suspende autorizações para queimadas controladas no
+                  Tocantins
+                </h3>
+                <p className={styles.text_report}>
+                  Estão suspensas até 20 de novembro deste ano as autorizações
+                  para queimadas controladas no Tocantins. A medida foi tomada
+                  para controlar os focos de incêndios florestais no estado,
+                  devido à baixa umidade do ar e o tempo seco. A portaria foi
+                  emitida pelo Naturatins, Instituto Natureza do Tocantins, e se
+                  aplica também ao prazo das autorizações emitidas
+                  anteriormente. O diretor de proteção e qualidade ambiental do
+                  Naturatins, major Eliandro Gualberto, destaca as penalidades
+                  para quem for pego fazendo queimadas. De acordo com dados do
+                  Inpe, Instituto Nacional de Pesquisas Espaciais, somente na
+                  Região Norte foram registrados, de janeiro a junho deste ano,
+                  mais de 13.450 focos de queimadas. Fonte: EBC
+                  <a
+                    target={"_blank"}
+                    className={styles.text_report_link}
+                    href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/meio-ambiente/audio/2021-07/portaria-suspende-autorizacoes-para-queimadas-controladas-no-tocantins"
+                  >
+                    saber mais...
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <div className={styles.calendar}>
-          <h2 className={styles.calendar_tittle}>Eventos da Semana</h2>
           <div className={styles.container_calendar}>
+            <h2 className={styles.calendar_tittle}>Eventos da Semana</h2>
             <div className={styles.div_calendar}>
               <img
                 className={styles.calendar_img}
@@ -138,11 +199,31 @@ const Home = () => {
               />
               <div className={styles.calendar_list}>
                 <ul>
-                  <li className={styles.calendar_list_item}>Data: {seg}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino
-                    e das 13:30 às 17:30 vespertino.
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconData}
+                      alt="icone data"
+                    />{" "}
+                    Data: {seg}
                   </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 07:30 às 11:30 matutino
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 13:30 às 17:30 vespertino
+                  </li>
+                  <li className={styles.calendar_list_item}>{contentWeek}</li>
                 </ul>
               </div>
             </div>
@@ -156,10 +237,29 @@ const Home = () => {
               />
               <div className={styles.calendar_list}>
                 <ul>
-                  <li className={styles.calendar_list_item}>Data: {ter}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino
-                    e das 13:30 às 17:30 vespertino.
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconData}
+                      alt="icone data"
+                    />{" "}
+                    Data: {ter}
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 07:30 às 11:30 matutino
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 13:30 às 17:30 vespertino
                   </li>
                 </ul>
               </div>
@@ -174,10 +274,29 @@ const Home = () => {
               />
               <div className={styles.calendar_list}>
                 <ul>
-                  <li className={styles.calendar_list_item}>Data: {qua}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino
-                    e das 13:30 às 17:30 vespertino.
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconData}
+                      alt="icone data"
+                    />{" "}
+                    Data: {qua}
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 07:30 às 11:30 matutino
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 13:30 às 17:30 vespertino
                   </li>
                 </ul>
               </div>
@@ -192,10 +311,29 @@ const Home = () => {
               />
               <div className={styles.calendar_list}>
                 <ul>
-                  <li className={styles.calendar_list_item}>Data: {qui}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino
-                    e das 13:30 às 17:30 vespertino.
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconData}
+                      alt="icone data"
+                    />{" "}
+                    Data: {qui}
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 07:30 às 11:30 matutino
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 13:30 às 17:30 vespertino
                   </li>
                 </ul>
               </div>
@@ -210,21 +348,167 @@ const Home = () => {
               />
               <div className={styles.calendar_list}>
                 <ul>
-                  <li className={styles.calendar_list_item}>Data: {sex}</li>
                   <li className={styles.calendar_list_item}>
-                    Horário de funcionamento normal das 07:30 às 11:30 matutino
-                    e das 13:30 às 17:30 vespertino.
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconData}
+                      alt="icone data"
+                    />{" "}
+                    Data: {sex}
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 07:30 às 11:30 matutino
+                  </li>
+                  <li className={styles.calendar_list_item}>
+                    <img
+                      className={styles.calendar_icons}
+                      src={iconHour}
+                      alt="icone horario"
+                    />
+                    Horário 13:30 às 17:30 vespertino
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div className={styles.deployment}>
+        <v className={styles.deployment}>
           <div className={styles.deployment_cards}>
-            <div className={styles.deployment_card}></div>
+            <h1 className={styles.deployment_cards_tittle}>
+              Depoimentos de quem já é nosso cliente
+            </h1>
+
+            <div className={styles.deployment_card}>
+              <div className={styles.deployment_card_header}>
+                <img
+                  className={styles.deployment_card_img}
+                  src={imgDeploy1}
+                  alt="imagem card depoimento"
+                />
+              </div>
+
+              <div className={styles.deployment_card_rating}>
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStarVoid} alt="estrela rating" />
+              </div>
+              <h3 className={styles.deployment_card_tittle}>Flaviane</h3>
+
+              <p className={styles.deployment_card_text}>
+                " Desde que entreguei meus filhos ao espaço Educar só tenho
+                notado melhoras, está sendo fundamental esse auxílio, a
+                Professora Gisele é muito atenciosa, e carinhosa. Estamos amando
+                essa experiência! "
+              </p>
+            </div>
+
+            <div className={styles.deployment_card}>
+              <div className={styles.deployment_card_header}>
+                <img
+                  className={styles.deployment_card_img}
+                  src={imgCard2}
+                  alt="imagem card depoimento"
+                />
+              </div>
+
+              <div className={styles.deployment_card_rating}>
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+              </div>
+              <h3 className={styles.deployment_card_tittle}>Flaviane</h3>
+
+              <p className={styles.deployment_card_text}>
+                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus, fugit."
+              </p>
+            </div>
+
+            <div className={styles.deployment_card}>
+              <div className={styles.deployment_card_header}>
+                <img
+                  className={styles.deployment_card_img}
+                  src={imgCard3}
+                  alt="imagem card depoimento"
+                />
+              </div>
+
+              <div className={styles.deployment_card_rating}>
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+              </div>
+              <h3 className={styles.deployment_card_tittle}>Thame</h3>
+
+              <p className={styles.deployment_card_text}>
+                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus, fugit."
+              </p>
+            </div>
+
+            <div className={styles.deployment_card}>
+              <div className={styles.deployment_card_header}>
+                <img
+                  className={styles.deployment_card_img}
+                  src={imgCard4}
+                  alt="imagem card depoimento"
+                />
+              </div>
+
+              <div className={styles.deployment_card_rating}>
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStarVoid} alt="estrela rating" />
+              </div>
+              <h3 className={styles.deployment_card_tittle}>Vanilda</h3>
+
+              <p className={styles.deployment_card_text}>
+                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus, fugit."
+              </p>
+            </div>
+
+            <div className={styles.deployment_card}>
+              <div className={styles.deployment_card_header}>
+                <img
+                  className={styles.deployment_card_img}
+                  src={imgCard5}
+                  alt="imagem card depoimento"
+                />
+              </div>
+              <div className={styles.deployment_card_rating}>
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
+                <img src={iconStarVoid} alt="estrela rating" />
+              </div>
+              <h3 className={styles.deployment_card_tittle}>Amanda</h3>
+              <p className={styles.deployment_card_text}>
+                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus, fugit."
+              </p>
+            </div>
+            <div className={styles.deployment_result}>
+              <h1 className={styles.deployment_result_tittle}>
+                Satisfação 4.4 de 5 estrelas por nossos clientes!!!
+              </h1>
+            </div>
           </div>
-        </div>
+        </v>
       </div>
     </div>
   );

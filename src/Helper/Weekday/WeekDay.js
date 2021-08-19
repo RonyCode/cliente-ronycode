@@ -19,55 +19,23 @@ export const WeekDay = () => {
       if (dateNow.getDay() === 5) dateNow.setDate(dateNow.getDate() - 4);
       if (dateNow.getDay() === 6) dateNow.setDate(dateNow.getDate() + 2);
 
-      dateNow.setMonth(dateNow.getMonth() + 1);
-
-      const dateSeg =
-        dateNow.getDate() +
-        "/" +
-        dateNow.getMonth() +
-        "/" +
-        dateNow.getFullYear();
-
+      const dateSeg = dateNow.toLocaleDateString();
       setSeg(dateSeg);
-
       dateNow.setDate(dateNow.getDate() + 1);
 
-      const dateTer =
-        dateNow.getDate() +
-        "/" +
-        dateNow.getMonth() +
-        "/" +
-        dateNow.getFullYear();
+      const dateTer = dateNow.toLocaleDateString();
       setTer(dateTer);
-
       dateNow.setDate(dateNow.getDate() + 1);
 
-      const dateQua =
-        dateNow.getDate() +
-        "/" +
-        dateNow.getMonth() +
-        "/" +
-        dateNow.getFullYear();
+      const dateQua = dateNow.toLocaleDateString();
       setQua(dateQua);
-
       dateNow.setDate(dateNow.getDate() + 1);
 
-      const dateQui =
-        dateNow.getDate() +
-        "/" +
-        dateNow.getMonth() +
-        "/" +
-        dateNow.getFullYear();
+      const dateQui = dateNow.toLocaleDateString();
       setQui(dateQui);
-
       dateNow.setDate(dateNow.getDate() + 1);
 
-      const dateSex =
-        dateNow.getDate() +
-        "/" +
-        dateNow.getMonth() +
-        "/" +
-        dateNow.getFullYear();
+      const dateSex = dateNow.toLocaleDateString();
       setSex(dateSex);
     };
     getWeekDay();

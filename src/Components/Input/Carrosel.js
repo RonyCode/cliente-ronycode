@@ -1,12 +1,16 @@
 import React from "react";
 import styles from "./Carrosel.module.css";
-import imgSlide1 from "../../Assets/logo1.png";
+import imgSlide1 from "../../Assets/seguranca-escola.jpg";
 import imgSlide2 from "../../Assets/banner 1.png";
 import imgSlide3 from "../../Assets/foguete.png";
 import imgSlide4 from "../../Assets/logotipo papagaiado terminado.jpg";
 
 const Carrosel = () => {
   const [src, setSrc] = React.useState(imgSlide1);
+  const [nextImgTime, setNextImgTime] = React.useState(true);
+  const [opacityAnimation, setOpacityAnimation] = React.useState({
+    opacity: "0",
+  });
   const slides = [imgSlide1, imgSlide2, imgSlide3, imgSlide4];
 
   let currentImgIndex = 0,
@@ -25,25 +29,23 @@ const Carrosel = () => {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      nextImg();
+      if (nextImgTime === true) nextImg();
     }, time);
     return () => clearInterval(interval);
-  }, []);
-
+  }, [opacityAnimation]);
   return (
     <div className={styles.carrosel}>
       <div className={styles.carrosel_container}>
-        <div className={styles.carrosel_principal}>
-          <div className={styles.carrosel_principal_div}>
-            <img
-              className={styles.carrosel_principal_img}
-              src={src}
-              alt="imagem slide principal"
-            />
-            <div className={styles.carrosel_principal_hover}>
-              <div className={styles.principal_hover_content}>
-                <a href="#">Conheça nossos planos!</a>
-              </div>
+        <div className={styles.carrosel_principal_div}>
+          <img
+            style={opacityAnimation}
+            className={styles.carrosel_principal_img_animation}
+            src={src}
+            alt="imagem slide principal"
+          />
+          <div className={styles.carrosel_principal_hover}>
+            <div className={styles.principal_hover_content}>
+              <a href="http://localhost:3000/contato">Conheça nossos planos!</a>
             </div>
           </div>
         </div>
@@ -65,7 +67,18 @@ const Carrosel = () => {
                   src={imgSlide1}
                   alt="rd-21"
                 />
-                <div className={styles.carrosel_slide_hover}>
+                <div
+                  className={styles.carrosel_slide_hover}
+                  onMouseOver={() =>
+                    setOpacityAnimation(
+                      { animation: "none", opacity: "1" },
+                      setNextImgTime(false)
+                    )
+                  }
+                  onMouseLeave={() =>
+                    setOpacityAnimation({ opacity: "0" }, setNextImgTime(true))
+                  }
+                >
                   <div className={styles.slide_hover_content}></div>
                 </div>
               </label>
@@ -87,7 +100,18 @@ const Carrosel = () => {
                   src={imgSlide2}
                   alt="rd-21"
                 />
-                <div className={styles.carrosel_slide_hover}>
+                <div
+                  className={styles.carrosel_slide_hover}
+                  onMouseOver={() =>
+                    setOpacityAnimation(
+                      { animation: "none", opacity: "1" },
+                      setNextImgTime(false)
+                    )
+                  }
+                  onMouseLeave={() =>
+                    setOpacityAnimation({ opacity: "0" }, setNextImgTime(true))
+                  }
+                >
                   <div className={styles.slide_hover_content}></div>
                 </div>
               </label>
@@ -109,7 +133,18 @@ const Carrosel = () => {
                   src={imgSlide3}
                   alt="rd-21"
                 />
-                <div className={styles.carrosel_slide_hover}>
+                <div
+                  className={styles.carrosel_slide_hover}
+                  onMouseOver={() =>
+                    setOpacityAnimation(
+                      { animation: "none", opacity: "1" },
+                      setNextImgTime(false)
+                    )
+                  }
+                  onMouseLeave={() =>
+                    setOpacityAnimation({ opacity: "0" }, setNextImgTime(true))
+                  }
+                >
                   <div className={styles.slide_hover_content}></div>
                 </div>
               </label>
@@ -131,7 +166,18 @@ const Carrosel = () => {
                   src={imgSlide4}
                   alt="rd-21"
                 />
-                <div className={styles.carrosel_slide_hover}>
+                <div
+                  className={styles.carrosel_slide_hover}
+                  onMouseOver={() =>
+                    setOpacityAnimation(
+                      { animation: "none", opacity: "1" },
+                      setNextImgTime(false)
+                    )
+                  }
+                  onMouseLeave={() =>
+                    setOpacityAnimation({ opacity: "0" }, setNextImgTime(true))
+                  }
+                >
                   <div className={styles.slide_hover_content}></div>
                 </div>
               </label>

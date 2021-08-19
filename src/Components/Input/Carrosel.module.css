@@ -3,14 +3,12 @@
   min-height: 100%;
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
-  /*background: red;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .carrosel_container {
-  /*background: #95b023;*/
   display: grid;
   grid-template-columns: 80% 20%;
   width: calc(100% - 8rem);
@@ -18,16 +16,16 @@
   box-shadow: -1px 1px 8px -1px rgba(0, 0, 0, 1);
 }
 
-.carrosel_principal_img {
+.carrosel_principal_img_animation {
   display: block;
   width: 100%;
   height: 100%;
-  /*transition: 0.4s;*/
-  opacity: 0;
-  /*transition: inherit 700ms;*/
+  opacity: 1;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-name: animeFade;
+  transition: 0.3s ease;
+
 
 }
 
@@ -36,7 +34,6 @@
   height: 680px;
   position: relative;
   margin: auto;
-
 }
 
 .carrosel_principal_hover {
@@ -47,8 +44,8 @@
   left: 0;
   right: 0;
   opacity: 0;
-  transition: 0.5s ease;
-  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: flex-end;
   line-height: 5;
@@ -59,7 +56,7 @@
   font-family: "Quicksand", sans-serif;
   color: #fdfdfd;
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   padding: 0.5rem;
   border-radius: 8px;
   font-weight: bold;
@@ -76,22 +73,24 @@
   width: 100%;
   height: 680px;
   border-radius: 8px;
-  transition: 0.4s;
+  /*transition: 0.4s;*/
 }
 
+.carrosel_slide_list {
+  display: flex;
+}
 .carrosel_slide_img {
   display: block;
-  width: 268px;
+  width: 100%;
   height: 100%;
   transition: 0.4s;
   position: absolute;
-
 }
 
 .carrosel_slide {
   display: block;
-  width: 268px;
-  height: 165px;
+  width: calc(100% - 0.4rem);
+  height: 166px;
   transition: 0.4s;
   margin: 0.2rem;
   position: relative;
@@ -105,9 +104,9 @@
   right: 0;
   opacity: 1;
   transition: 0.5s ease;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
-  width: 268px;
+  width: 100%;
 }
 
 .carrosel_slide:hover .carrosel_slide_hover {
@@ -115,7 +114,8 @@
   visibility: visible;
 }
 
-.carrosel_slide_img:hover {
+.carrosel_slide_img:hover ~ .carrosel_principal_img,
+.carrosel_slide_img:hover ~ .carrosel_principal_img_animation {
   cursor: pointer;
   transition: 0.4s;
 }
@@ -123,17 +123,17 @@
   opacity: 0;
   background: #4e8025;
   transition: 0.3s;
-
 }
-
+.carrosel_radio:checked .carrosel_principal_img,
+.carrosel_radio:checked .carrosel_principal_img_animation {
+  opacity: 1;
+}
 .carrosel_radio {
   display: none;
 }
 
 @keyframes animeFade {
-
-  80%{
+  80% {
     opacity: initial;
   }
-
 }
