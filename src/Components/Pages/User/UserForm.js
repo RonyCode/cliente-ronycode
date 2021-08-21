@@ -4,12 +4,12 @@ import { UserContext } from "../../UserStorage";
 import { Link } from "react-router-dom";
 
 const UserForm = () => {
-  const { userFirstName } = React.useContext(UserContext);
+  const { username } = React.useContext(UserContext);
 
   return (
     <div className={styles.user_form}>
       <div className={styles.container}>
-        <h3 className={styles.tittle}>Usuario(a): {userFirstName}</h3>
+        <h3 className={styles.tittle}>Usuario(a): {username}</h3>
 
         <Link className={styles.icon} to="/login/aluno/lista">
           <img

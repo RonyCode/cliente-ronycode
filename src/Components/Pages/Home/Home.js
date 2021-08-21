@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Carrosel from "../../Input/Carrosel";
 import { WeekDay } from "../../../Helper/Weekday/WeekDay";
-import imgCard2 from "../../../Assets/logotipo papagaiado terminado.jpg";
-import imgCard3 from "../../../Assets/seguranca-escola.jpg";
-import imgCard4 from "../../../Assets/foguete.png";
 import imgCard5 from "../../../Assets/03_geha_blog_formacao_das_turmas.jpg";
 import iconStar from "../../../Assets/star_77949.png";
 import iconStarVoid from "../../../Assets/star_favorite_5754.png";
 import iconHour from "../../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
 import iconData from "../../../Assets/3586371-calendar-date-event-schedule_107943.svg";
 import imgDeploy1 from "../../../Assets/flaviane.png";
+import imgDeploy2 from "../../../Assets/amanda.jpeg";
+import imgDeploy3 from "../../../Assets/Andreia.jpeg";
+import imgDeploy4 from "../../../Assets/carla.jpeg";
 
 const Home = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
@@ -65,6 +65,7 @@ const Home = () => {
               <a
                 href="https://www.bbc.com/portuguese/geral-56642352"
                 target={"_blank"}
+                rel="noreferrer"
               >
                 <img
                   className={styles.img_report}
@@ -85,14 +86,9 @@ const Home = () => {
                   capitais. Foram analisados os meios usados para as aulas (como
                   TV ou internet), seu alcance e qualidade entre as diversas
                   etapas de ensino e os materiais e tecnologias oferecidos aos
-                  alunos. Os resultados, mensurados entre março e outubro de
-                  2020, mostram um cenário bem ruim: a nota média dos planos
-                  estaduais no Índice de Educação à Distância foi de 2,38 (de 0
-                  a 10) e de 1,6 para os das capitais. Chamou a atenção dos
-                  pesquisadores a demora na apresentação de um plano depois do
-                  fechamento das escolas. Em média, as capitais levaram 43 dias,
-                  e os Estados, 34. Fonte: BBC
+                  alunos. Fonte: BBC
                   <a
+                    rel="noreferrer"
                     target={"_blank"}
                     className={styles.text_report_link}
                     href="https://www.bbc.com/portuguese/geral-56642352"
@@ -105,6 +101,7 @@ const Home = () => {
 
             <div className={styles.div_img_text}>
               <a
+                rel="noreferrer"
                 href="https://www12.senado.leg.br/noticias/infomaterias/2021/07/pandemia-acentua-deficit-educacional-e-exige-acoes-do-poder-publico"
                 target={"_blank"}
               >
@@ -127,14 +124,10 @@ const Home = () => {
                   causados pelo vírus. A pesquisa Resposta Educacional à
                   Pandemia de Covid-19 no Brasil, que contempla toda a educação
                   básica, aponta que 9 em cada 10 escolas (90,1%) não retornaram
-                  às atividades presenciais no ano letivo de 2020. No entanto, é
-                  na comparação entre as escolas públicas e particulares que as
-                  desigualdades começam a aparecer. No ensino privado, 70,9% das
-                  escolas ficaram fechadas no ano passado. O número é
-                  consideravelmente menor que o da rede pública: 98,4% das
-                  escolas federais, 97,5% das municipais e 85,9% das estaduais.
-                  Fonte: Agência Senado
+                  às atividades presenciais no ano letivo de 2020. Fonte:
+                  Agência Senado
                   <a
+                    rel="noreferrer"
                     target={"_blank"}
                     className={styles.text_report_link}
                     href="https://www12.senado.leg.br/noticias/infomaterias/2021/07/pandemia-acentua-deficit-educacional-e-exige-acoes-do-poder-publico"
@@ -147,6 +140,7 @@ const Home = () => {
 
             <div className={styles.div_img_text}>
               <a
+                rel="noreferrer"
                 href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/meio-ambiente/audio/2021-07/portaria-suspende-autorizacoes-para-queimadas-controladas-no-tocantins"
                 target={"_blank"}
               >
@@ -168,13 +162,9 @@ const Home = () => {
                   devido à baixa umidade do ar e o tempo seco. A portaria foi
                   emitida pelo Naturatins, Instituto Natureza do Tocantins, e se
                   aplica também ao prazo das autorizações emitidas
-                  anteriormente. O diretor de proteção e qualidade ambiental do
-                  Naturatins, major Eliandro Gualberto, destaca as penalidades
-                  para quem for pego fazendo queimadas. De acordo com dados do
-                  Inpe, Instituto Nacional de Pesquisas Espaciais, somente na
-                  Região Norte foram registrados, de janeiro a junho deste ano,
-                  mais de 13.450 focos de queimadas. Fonte: EBC
+                  anteriormente. Fonte: EBC
                   <a
+                    rel="noreferrer"
                     target={"_blank"}
                     className={styles.text_report_link}
                     href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/meio-ambiente/audio/2021-07/portaria-suspende-autorizacoes-para-queimadas-controladas-no-tocantins"
@@ -377,13 +367,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <v className={styles.deployment}>
+        <div className={styles.deployment}>
           <div className={styles.deployment_cards}>
             <h1 className={styles.deployment_cards_tittle}>
               Depoimentos de quem já é nosso cliente
             </h1>
 
-            <div className={styles.deployment_card}>
+            <div className={styles.deployment_card1}>
               <div className={styles.deployment_card_header}>
                 <img
                   className={styles.deployment_card_img}
@@ -409,11 +399,11 @@ const Home = () => {
               </p>
             </div>
 
-            <div className={styles.deployment_card}>
+            <div className={styles.deployment_card2}>
               <div className={styles.deployment_card_header}>
                 <img
                   className={styles.deployment_card_img}
-                  src={imgCard2}
+                  src={imgDeploy2}
                   alt="imagem card depoimento"
                 />
               </div>
@@ -425,19 +415,22 @@ const Home = () => {
                 <img src={iconStar} alt="estrela rating" />
                 <img src={iconStar} alt="estrela rating" />
               </div>
-              <h3 className={styles.deployment_card_tittle}>Flaviane</h3>
+              <h3 className={styles.deployment_card_tittle}>Amanda</h3>
 
               <p className={styles.deployment_card_text}>
-                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus, fugit."
+                " Oi! Gostaria de agradecer o carinho que você tem pelo Heitor
+                esses meses que ele está passando com a Espaço Educar está
+                gostando muito, quando ele não vai ele fica zangado, ele já
+                desenvolveu bastante nesse pouco tempo que está na Espaço Educar
+                "
               </p>
             </div>
 
-            <div className={styles.deployment_card}>
+            <div className={styles.deployment_card3}>
               <div className={styles.deployment_card_header}>
                 <img
                   className={styles.deployment_card_img}
-                  src={imgCard3}
+                  src={imgDeploy3}
                   alt="imagem card depoimento"
                 />
               </div>
@@ -449,19 +442,20 @@ const Home = () => {
                 <img src={iconStar} alt="estrela rating" />
                 <img src={iconStar} alt="estrela rating" />
               </div>
-              <h3 className={styles.deployment_card_tittle}>Thame</h3>
+              <h3 className={styles.deployment_card_tittle}>Andreia</h3>
 
               <p className={styles.deployment_card_text}>
-                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus, fugit."
+                " To amando! A melhor coisa que fiz foi colocar meu filho na
+                Espaço Educar! Ele já desenvolveu muito! Parabéns pelo cuidado e
+                carinho que tem com ele! "
               </p>
             </div>
 
-            <div className={styles.deployment_card}>
+            <div className={styles.deployment_card4}>
               <div className={styles.deployment_card_header}>
                 <img
                   className={styles.deployment_card_img}
-                  src={imgCard4}
+                  src={imgDeploy4}
                   alt="imagem card depoimento"
                 />
               </div>
@@ -471,17 +465,20 @@ const Home = () => {
                 <img src={iconStar} alt="estrela rating" />
                 <img src={iconStar} alt="estrela rating" />
                 <img src={iconStar} alt="estrela rating" />
-                <img src={iconStarVoid} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
               </div>
-              <h3 className={styles.deployment_card_tittle}>Vanilda</h3>
+              <h3 className={styles.deployment_card_tittle}>Carla</h3>
 
               <p className={styles.deployment_card_text}>
-                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus, fugit."
+                " Estou muito feliz em ver o interesse do Luiz Otávio, ele está
+                evoluindo bem, a atenção dada ao desenvolvimento dele foi
+                primordial, quero agradecer a Educadora Gisele pelo cuidado e a
+                dedicação nos mínimos detalhes desde a recepção até os mimos de
+                um cartãozinho, você é nota 1.000 "
               </p>
             </div>
 
-            <div className={styles.deployment_card}>
+            <div className={styles.deployment_card5}>
               <div className={styles.deployment_card_header}>
                 <img
                   className={styles.deployment_card_img}
@@ -494,7 +491,7 @@ const Home = () => {
                 <img src={iconStar} alt="estrela rating" />
                 <img src={iconStar} alt="estrela rating" />
                 <img src={iconStar} alt="estrela rating" />
-                <img src={iconStarVoid} alt="estrela rating" />
+                <img src={iconStar} alt="estrela rating" />
               </div>
               <h3 className={styles.deployment_card_tittle}>Amanda</h3>
               <p className={styles.deployment_card_text}>
@@ -508,7 +505,7 @@ const Home = () => {
               </h1>
             </div>
           </div>
-        </v>
+        </div>
       </div>
     </div>
   );

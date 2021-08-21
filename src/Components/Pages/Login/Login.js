@@ -17,7 +17,7 @@ const Login = () => {
         <Route path="cadastrar" element={<LoginRegister />} />
         <Route path="recuperar" element={<LoginRecover />} />
         <Route path="resetar" element={<LoginReset />} />
-        <Route path="aluno/*" element={<Student />} />
+        <ProtectedRoute path="aluno/*" element={<Student />} />
         <ProtectedRoute path="usuario/*" element={<User />} />
         <Route path="dashboard" element={<Dashboard />} />
       </Routes>

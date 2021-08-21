@@ -80,7 +80,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.footer_social_item}>
                   <a
-                    href="http://api.whatsapp.com/send?phone=+556399929537"
+                    href="https://www.facebook.com/Espa%C3%A7o-Educar-172208981596500"
                     target="_blank"
                     rel="noreferrer"
                   >
