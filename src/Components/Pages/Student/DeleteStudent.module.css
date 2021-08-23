@@ -1,0 +1,18 @@
+.delete_student {
+  width: 100vw;
+  height: calc(100vh - 5rem);
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete_student_container {
+  width: 500px;
+  height: 400px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 2rem;
+  list-style: none;
+  border: 2px solid red;
+}

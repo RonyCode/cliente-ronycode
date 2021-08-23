@@ -1,31 +1,99 @@
-.list_student{
+.list_student {
   /*background: red;*/
-  /*width: 100%;*/
-  /*height: 100%;*/
+  width: calc(100vw - 16rem);
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-
-.list_student_container{
-  width: 100%;
-  height: 100%;
-
+.list_student h1 {
+  padding-top: 2rem;
+}
+.list_student_container {
   /*background: #541bc1;*/
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  margin: 2rem 0;
 }
 
-.list_student_items{
+.list_student_items {
   /*display: flex;*/
   /*justify-content: space-evenly;*/
   /*align-items: flex-start;*/
 }
-.list_student_img{
+.list_student_img {
   width: 96px;
 }
-.list_student_item{
+.list_student_item {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.names,
+.phones,
+.email,
+.birthday,
+.address,
+.registration_date,
+.expiration_date,
+.report,
+.grade,
+.result {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
   font-size: 0.8rem;
+  justify-content: center;
+}
+
+.button_edit {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-left: 0.5rem;
+  width: 3%;
+  justify-content: center;
+}
+.button_remove {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-left: 0.5rem;
+  width: 3%;
+
+  justify-content: center;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.item {
+  padding: 1rem;
+  background: #f1f1f1;
+  text-align: center;
+  box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 1);
+}
+.item:nth-last-child(1) {
+  border: none;
+}
+.button {
+  padding: 0.5rem;
+  background: #f1f1f1;
+  box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 1);
+}
+.button:hover {
+  background: #c9c3c3;
+  cursor: pointer;
+}
+
+.icons {
+  width: 31px;
 }

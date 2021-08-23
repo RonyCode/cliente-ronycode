@@ -117,3 +117,16 @@ export function SELECT_STD(id) {
     },
   };
 }
+export function DELETE_STD(body) {
+  return {
+    url: API_URL + `/aluno/deletar`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      data: body,
+    },
+  };
+}
