@@ -1,5 +1,5 @@
 .delete_student {
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 5rem);
   background: rgba(0,0,0,0.8);
   display: flex;

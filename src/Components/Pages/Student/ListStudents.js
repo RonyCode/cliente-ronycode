@@ -23,9 +23,14 @@ function ListStudents() {
     getStds();
   }, []);
 
+  const handleScroll = () => {
+    window.scrollX = 500;
+  };
+
   return (
     <div className={styles.list_student}>
-      <h1> ALUNOS CADASTRADOS</h1>
+      <h1>Meus Alunos</h1>
+
       <div className={styles.list_student_container}>
         <div className={styles.names}>
           <h3>Nome:</h3>
@@ -90,34 +95,39 @@ function ListStudents() {
               <p className={styles.item}>{item.expirationDate}</p>
             ))}
         </div>{" "}
-        <div className={styles.button_edit}>
-          <h3>Editar</h3>
-          {stdData &&
-            stdData.map((item) => (
-              <Link className={styles.button} to={"/login/aluno/id/" + item.id}>
-                <img
-                  className={styles.icons}
-                  src={iconEdit}
-                  alt="icone editar"
-                />
-              </Link>
-            ))}
-        </div>
-        <div className={styles.button_remove}>
-          <h3>Remover</h3>
-          {stdData &&
-            stdData.map((item) => (
-              <Link
-                className={styles.button}
-                to={"/login/aluno/deletar/" + item.id}
-              >
-                <img
-                  className={styles.icons}
-                  src={iconDelete}
-                  alt="icone delete"
-                />
-              </Link>
-            ))}
+        <div className={styles.buttons}>
+          <div className={styles.button_edit}>
+            <h3>Editar</h3>
+            {stdData &&
+              stdData.map((item) => (
+                <Link
+                  className={styles.button}
+                  to={"/login/aluno/id/" + item.id}
+                >
+                  <img
+                    className={styles.icons}
+                    src={iconEdit}
+                    alt="icone editar"
+                  />
+                </Link>
+              ))}
+          </div>
+          <div className={styles.button_remove}>
+            <h3>Deletar</h3>
+            {stdData &&
+              stdData.map((item) => (
+                <Link
+                  className={styles.button}
+                  to={"/login/aluno/deletar/id/" + item.id}
+                >
+                  <img
+                    className={styles.icons}
+                    src={iconDelete}
+                    alt="icone delete"
+                  />
+                </Link>
+              ))}
+          </div>
         </div>
       </div>
     </div>

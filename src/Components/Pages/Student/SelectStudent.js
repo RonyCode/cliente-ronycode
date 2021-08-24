@@ -25,7 +25,7 @@ const SelectStudent = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className={styles.selectStudent}>
       {data &&
         data.map((item) => (
           <div key={item.id}>

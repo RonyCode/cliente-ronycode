@@ -1,75 +1,155 @@
 .list_student {
+  /*margin-left: 15rem;*/
   /*background: red;*/
-  width: calc(100vw - 16rem);
+  width: 100%;
   min-height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+
 }
+
 .list_student h1 {
-  padding-top: 2rem;
+  top: 10rem;
+  left: 20rem;
+  position: absolute;
 }
+
 .list_student_container {
   /*background: #541bc1;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.2rem;
+  min-width: 100%;
+
 }
 
-.list_student_items {
-  /*display: flex;*/
-  /*justify-content: space-evenly;*/
-  /*align-items: flex-start;*/
-}
-.list_student_img {
-  width: 96px;
-}
-.list_student_item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.names,
-.phones,
-.email,
-.birthday,
-.address,
-.registration_date,
-.expiration_date,
-.report,
-.grade,
-.result {
+.names {
+  grid-column: 1/1;
+  grid-row: 1/1;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   font-size: 0.8rem;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.phones {
+  grid-column: 2/2;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.email {
+  grid-column: 3/3;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.birthday {
+  grid-column: 4/4;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.address {
+  grid-column: 5/5;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.registration_date {
+  grid-column: 6/6;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.expiration_date {
+  grid-column: 7/7;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.grade {
+  grid-column: 8/8;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
 }
 
 .button_edit {
+  grid-column: 9/9;
+  grid-row: 1/1;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   font-size: 0.8rem;
   text-align: center;
-  margin-left: 0.5rem;
-  width: 3%;
   justify-content: center;
+  align-items: center;
 }
+
 .button_remove {
+  grid-column: 10/10;
+  grid-row: 1/1;
   display: flex;
   flex-direction: column;
   font-size: 0.8rem;
   text-align: center;
-  margin-left: 0.5rem;
-  width: 3%;
-
   justify-content: center;
+  align-items: center;
+  width: 52%;
 }
+
 h3 {
   text-align: center;
   margin-bottom: 0.5rem;
@@ -80,20 +160,24 @@ h3 {
   background: #f1f1f1;
   text-align: center;
   box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 1);
+  min-width: 300px;
 }
+
 .item:nth-last-child(1) {
   border: none;
 }
+
 .button {
-  padding: 0.5rem;
+  padding: 0.7rem;
   background: #f1f1f1;
   box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 1);
 }
+
 .button:hover {
   background: #c9c3c3;
   cursor: pointer;
 }
 
 .icons {
-  width: 31px;
+  width: 30px;
 }

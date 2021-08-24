@@ -37,7 +37,7 @@ const Student = () => {
           <Route path="lista" element={<ListStudents />} />{" "}
           <Route path="id/:id" element={<SelectStudent />} />
           <Route path="adicionar" element={<AddStudent />} />
-          <Route path="deletar/:id" element={<DeleteStudent />} />
+          <Route path="deletar/id/:id" element={<DeleteStudent />} />
         </Routes>
       </div>
     </div>
