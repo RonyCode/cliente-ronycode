@@ -4,7 +4,7 @@
   min-width: calc(100vw - 16rem);
   min-height: calc(100vh - 5rem);
   flex-direction: column;
-  background: #4e8025;
+  /*background: #4e8025;*/
 }
 
 .container {

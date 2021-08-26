@@ -1,6 +1,6 @@
 .student {
-    width: calc(100vw - 15.8rem);
+    width: calc(100vw - 16rem);
     min-height: calc(100vh - 5rem);
-    /*background: #ffbb11;*/
+    /*background: #ffbb11*/
     margin-left: 15rem;
 }

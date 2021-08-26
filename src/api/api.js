@@ -130,3 +130,17 @@ export function DELETE_STD(body) {
     },
   };
 }
+
+export function UPDATE_STD(body) {
+  return {
+    url: API_URL + `/aluno/salvar`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      data: body,
+    },
+  };
+}

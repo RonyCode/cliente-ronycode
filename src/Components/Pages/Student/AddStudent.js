@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { POST_ADD_STD } from "../../../api/api";
+import styles from "./AddStudent.module.css";
 
 const AddStudent = () => {
   const [name, setName] = React.useState();
@@ -41,101 +42,93 @@ const AddStudent = () => {
 
   return (
     window.localStorage.getItem("token") && (
-      <div className="App">
-        <h1> Add Student</h1>
-        <form onSubmit={handleSubmit}>
-          <label>Nome:</label>
-          <input
-            placeholder="digite seu nome"
-            type="text"
-            name="name"
-            value={name || ""}
-            onChange={({ target }) => setName(target.value)}
-          />
-          <p></p>
-          <label>Telefone:</label>
-          <input
-            placeholder="digite seu nome"
-            type="text"
-            name="phone"
-            value={phone || ""}
-            onChange={({ target }) => setPhone(target.value)}
-          />
-          <p></p>
-          <label>Email:</label>
-          <input
-            placeholder="digite seu nome"
-            type="email"
-            name="email"
-            value={email || ""}
-            onChange={({ target }) => setEmail(target.value)}
-          />
-          <p></p>
-          <label>Endereço:</label>
-          <input
-            placeholder="digite seu nome"
-            type="text"
-            name="address"
-            value={address || ""}
-            onChange={({ target }) => setAddress(target.value)}
-          />
-          <p></p>
-          <label>Data Nascimento:</label>
-          <input
-            placeholder="digite seu nome"
-            type="text"
-            name="birthday"
-            value={birthday || ""}
-            onChange={({ target }) => setBirthday(target.value)}
-          />
-          <p></p>
-          <label>Boletim escolar:</label>
-          <input
-            placeholder="digite seu nome"
-            type="text"
-            name="report"
-            value={report || ""}
-            onChange={({ target }) => setReport(target.value)}
-          />
-          <p></p>
-          <label>Escolaridade:</label>
-          <input
-            placeholder="digite sua senha"
-            type="text"
-            name="grade"
-            value={grade || ""}
-            onChange={({ target }) => setGrade(target.value)}
-          />
-          <p></p>
-          <label>Data de Mátricula:</label>
-          <input
-            placeholder="digite sua senha"
-            type="text"
-            name="registrationDate"
-            value={registrationDate || ""}
-            onChange={({ target }) => setRegistrationDate(target.value)}
-          />
-          <p></p>
-          <label>Data de término do curso:</label>
-          <input
-            placeholder="digite sua senha"
-            type="text"
-            name="expirationDate"
-            value={expirationDate || ""}
-            onChange={({ target }) => setExpirationDate(target.value)}
-          />{" "}
-          <p></p>
-          <label>Resultado Final:</label>
-          <input
-            placeholder="digite sua senha"
-            type="text"
-            name="result"
-            value={result || ""}
-            onChange={({ target }) => setResult(target.value)}
-          />
-          <button>Enviar</button>
+      <div className={styles.add_student}>
+        <form className={styles.add_student_container} onSubmit={handleSubmit}>
+          <div className={styles.add_student_input_div}>
+            <label>Nome:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="digite seu nome"
+              type="text"
+              name="name"
+              value={name || ""}
+              onChange={({ target }) => setName(target.value)}
+            />
+          </div>
+          <div className={styles.add_student_input_div}>
+            <label>Email:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="digite seu email"
+              type="email"
+              name="email"
+              value={email || ""}
+              onChange={({ target }) => setEmail(target.value)}
+            />
+          </div>
+          <div className={styles.add_student_input_div}>
+            <label>Endereço:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="digite seu endereço"
+              type="text"
+              name="address"
+              value={address || ""}
+              onChange={({ target }) => setAddress(target.value)}
+            />
+          </div>
+          <div className={styles.add_student_input_date}>
+            <label>Data Nasc.:</label>
+            <input
+              align="center"
+              className={styles.add_student_input}
+              placeholder="xx/xx/xxxx"
+              type="text"
+              name="birthday"
+              value={birthday || ""}
+              onChange={({ target }) => setBirthday(target.value)}
+            />
+            <label>Data da Mat.:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="xx/xx/xxxx"
+              type="text"
+              name="registrationDate"
+              value={registrationDate || ""}
+              onChange={({ target }) => setRegistrationDate(target.value)}
+            />
+            <label>Vencimento:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="xx/xx/xxxx"
+              type="text"
+              name="expirationDate"
+              value={expirationDate || ""}
+              onChange={({ target }) => setExpirationDate(target.value)}
+            />
+            <label>Telefone:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="(99) 99999-9999"
+              type="text"
+              name="phone"
+              value={phone || ""}
+              onChange={({ target }) => setPhone(target.value)}
+            />
+          </div>
+          <div className={styles.add_student_input_div}>
+            <label>Escolaridade:</label>
+            <input
+              className={styles.add_student_input}
+              placeholder="digite sua escolaridade"
+              type="text"
+              name="grade"
+              value={grade || ""}
+              onChange={({ target }) => setGrade(target.value)}
+            />
+          </div>
+          <button className={styles.add_student_button}>Enviar</button>
         </form>
-        {<p></p>}
       </div>
     )
   );

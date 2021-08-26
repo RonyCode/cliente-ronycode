@@ -1,11 +1,12 @@
 import React from "react";
 import { DELETE_STD, SELECT_STD } from "../../../api/api";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "./DeleteStudent.module.css";
 
 const DeleteStudent = () => {
   const [data, setData] = React.useState([]);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -33,6 +34,8 @@ const DeleteStudent = () => {
 
     axios(url, options)
       .then(function (response) {
+        navigate("/login/aluno/lista");
+        alert("Aluno removido com sucesso!");
         console.log("Success: ", response.data);
       })
       .catch(function (error) {
@@ -53,7 +56,10 @@ const DeleteStudent = () => {
           ))}
         <form onSubmit={handleSubmit}>
           <input hidden={true} name="id" value={id || ""} />
-          <button>Remover</button>
+          <button className={styles.delete_button}>Remover</button>
+          <Link to="/login/aluno/lista" className={styles.delete_button}>
+            Cancelar
+          </Link>
         </form>
       </div>
     </div>

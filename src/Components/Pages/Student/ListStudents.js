@@ -23,15 +23,12 @@ function ListStudents() {
     getStds();
   }, []);
 
-  const handleScroll = () => {
-    window.scrollX = 500;
-  };
-
   return (
     <div className={styles.list_student}>
-      <h1>Meus Alunos</h1>
+      {/*<h1>Meus Alunos</h1>*/}
 
       <div className={styles.list_student_container}>
+        <h1>Alunos da Espaço Educar</h1>
         <div className={styles.names}>
           <h3>Nome:</h3>
           {stdData &&
