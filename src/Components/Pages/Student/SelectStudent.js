@@ -5,6 +5,10 @@ import axios from "axios";
 import styles from "./SelectStudent.module.css";
 import iconCalendar from "../../../Assets/3586371-calendar-date-event-schedule_107943.svg";
 import iconPhone from "../../../Assets/phone_icon-icons.com_48251.png";
+import iconAluno from "../../../Assets/user_icon-icons.com_48201.png";
+import iconEndereco from "../../../Assets/endereco.svg";
+import iconEstudo from "../../../Assets/book-with-bookmark-educational-tool-outlined-symbol_icon-icons.com_57884.svg";
+import iconEmail from "../../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
 
 const SelectStudent = () => {
   const { id } = useParams();
@@ -77,6 +81,11 @@ const SelectStudent = () => {
               value={name || ""}
               onChange={({ target }) => setName(target.value)}
             />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconAluno}
+              alt="icone Aluno"
+            />
           </div>
 
           <div className={styles.selectStudent_item}>
@@ -89,6 +98,11 @@ const SelectStudent = () => {
               value={address || ""}
               onChange={({ target }) => setAddress(target.value)}
             />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconEndereco}
+              alt="icone endereço"
+            />
           </div>
           <div className={styles.selectStudent_item}>
             <label>Email:</label>
@@ -100,6 +114,11 @@ const SelectStudent = () => {
               value={email || ""}
               onChange={({ target }) => setEmail(target.value)}
             />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconEmail}
+              alt="icone email"
+            />
           </div>
           <div className={styles.selectStudent_item}>
             <label>Escolaridade:</label>
@@ -110,6 +129,11 @@ const SelectStudent = () => {
               placeholder={stdData.grade}
               value={grade || ""}
               onChange={({ target }) => setGrade(target.value)}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconEstudo}
+              alt="icone escolaridade"
             />
           </div>
           <div className={styles.selectStudent_item_dates}>

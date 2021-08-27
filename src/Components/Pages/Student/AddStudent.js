@@ -2,6 +2,13 @@ import React from "react";
 import axios from "axios";
 import { POST_ADD_STD } from "../../../api/api";
 import styles from "./AddStudent.module.css";
+import { Link } from "react-router-dom";
+import iconAluno from "../../../Assets/user_icon-icons.com_48201.png";
+import iconCalendar from "../../../Assets/3586371-calendar-date-event-schedule_107943.svg";
+import iconPhone from "../../../Assets/phone_icon-icons.com_48251.png";
+import iconEndereco from "../../../Assets/endereco.svg";
+import iconEstudo from "../../../Assets/book-with-bookmark-educational-tool-outlined-symbol_icon-icons.com_57884.svg";
+import iconEmail from "../../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
 
 const AddStudent = () => {
   const [name, setName] = React.useState();
@@ -54,6 +61,11 @@ const AddStudent = () => {
               value={name || ""}
               onChange={({ target }) => setName(target.value)}
             />
+            <img
+              className={styles.add_student_icon}
+              src={iconAluno}
+              alt="icone aluno"
+            />
           </div>
           <div className={styles.add_student_input_div}>
             <label className={styles.add_student_input_label}>Email:</label>
@@ -65,6 +77,11 @@ const AddStudent = () => {
               value={email || ""}
               onChange={({ target }) => setEmail(target.value)}
             />
+            <img
+              className={styles.add_student_icon}
+              src={iconEmail}
+              alt="icone email"
+            />
           </div>
           <div className={styles.add_student_input_div}>
             <label className={styles.add_student_input_label}>Endereço:</label>
@@ -75,6 +92,11 @@ const AddStudent = () => {
               name="address"
               value={address || ""}
               onChange={({ target }) => setAddress(target.value)}
+            />
+            <img
+              className={styles.add_student_icon}
+              src={iconEndereco}
+              alt="icone endereço"
             />
           </div>
           <div className={styles.add_student_input_div}>
@@ -88,6 +110,11 @@ const AddStudent = () => {
               name="grade"
               value={grade || ""}
               onChange={({ target }) => setGrade(target.value)}
+            />
+            <img
+              className={styles.add_student_icon}
+              src={iconEstudo}
+              alt="icone escolaridade"
             />
           </div>
           <div className={styles.add_student_input_date}>
@@ -103,6 +130,11 @@ const AddStudent = () => {
                 value={phone || ""}
                 onChange={({ target }) => setPhone(target.value)}
               />
+              <img
+                className={styles.add_student_icon_date}
+                src={iconPhone}
+                alt="icone telefone"
+              />
             </div>
             <div>
               <label className={styles.add_student_input_label}>
@@ -117,6 +149,11 @@ const AddStudent = () => {
                 value={birthday || ""}
                 onChange={({ target }) => setBirthday(target.value)}
               />
+              <img
+                className={styles.add_student_icon_date}
+                src={iconCalendar}
+                alt="icone aniversario"
+              />
             </div>
             <div>
               <label className={styles.add_student_input_label}>
@@ -129,6 +166,11 @@ const AddStudent = () => {
                 name="registrationDate"
                 value={registrationDate || ""}
                 onChange={({ target }) => setRegistrationDate(target.value)}
+              />
+              <img
+                className={styles.add_student_icon_date}
+                src={iconCalendar}
+                alt="icone data matricula"
               />
             </div>
 
@@ -144,10 +186,22 @@ const AddStudent = () => {
                 value={expirationDate || ""}
                 onChange={({ target }) => setExpirationDate(target.value)}
               />
+              <img
+                className={styles.add_student_icon_date}
+                src={iconCalendar}
+                alt="icone data vencimento"
+              />
             </div>
           </div>
-
-          <button className={styles.add_student_button}>Enviar</button>
+          <div className={styles.add_student_buttons}>
+            <button className={styles.add_student_button}>Enviar</button>
+            <Link
+              to="/login/usuario"
+              className={styles.add_student_button_cancel}
+            >
+              Cancelar
+            </Link>
+          </div>
         </form>
       </div>
     )

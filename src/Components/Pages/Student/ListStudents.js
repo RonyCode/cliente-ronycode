@@ -5,6 +5,12 @@ import styles from "./ListStudents.module.css";
 import { Link, useParams } from "react-router-dom";
 import iconEdit from "../../../Assets/UserEdit_40958.png";
 import iconDelete from "../../../Assets/UserRemove_40959.png";
+import iconCalendar from "../../../Assets/3586371-calendar-date-event-schedule_107943.svg";
+import iconPhone from "../../../Assets/phone_icon-icons.com_48251.png";
+import iconEmail from "../../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
+import iconAluno from "../../../Assets/user_icon-icons.com_48201.png";
+import iconEndereco from "../../../Assets/endereco.svg";
+import iconEstudo from "../../../Assets/book-with-bookmark-educational-tool-outlined-symbol_icon-icons.com_57884.svg";
 
 function ListStudents() {
   const [stdData, setStdData] = React.useState("");
@@ -34,16 +40,28 @@ function ListStudents() {
           {stdData &&
             stdData.map((item) => (
               <span className={styles.item} key={item.id}>
+                <img
+                  className={styles.list_student_icons}
+                  src={iconAluno}
+                  alt="icone aluno"
+                />
                 {item.name}
               </span>
             ))}
         </div>
         <div className={styles.email}>
           <h3>Email:</h3>
-
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>{item.email}</span>
+              <span className={styles.item}>
+                {" "}
+                <img
+                  className={styles.list_student_icons}
+                  src={iconEmail}
+                  alt="icone email"
+                />
+                {item.email}
+              </span>
             ))}
         </div>
         <div className={styles.phones}>
@@ -51,15 +69,29 @@ function ListStudents() {
 
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>{item.phone}</span>
+              <span className={styles.item}>
+                {" "}
+                <img
+                  className={styles.list_student_icons}
+                  src={iconPhone}
+                  alt="icone telefone"
+                />
+                {item.phone}
+              </span>
             ))}
         </div>
         <div className={styles.address}>
           <h3>Endereço:</h3>
-
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>{item.address}</span>
+              <span className={styles.item}>
+                <img
+                  className={styles.list_student_icons}
+                  src={iconEndereco}
+                  alt="icone endereço"
+                />
+                {item.address}
+              </span>
             ))}
         </div>
         <div className={styles.birthday}>
@@ -67,15 +99,28 @@ function ListStudents() {
 
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>{item.birthday}</span>
+              <span className={styles.item}>
+                <img
+                  className={styles.list_student_icons}
+                  src={iconCalendar}
+                  alt="icone calendario"
+                />
+                {item.birthday}
+              </span>
             ))}
         </div>
         <div className={styles.grade}>
           <h3>Escolaridade:</h3>
-
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>{item.grade}</span>
+              <span className={styles.item}>
+                <img
+                  className={styles.list_student_icons}
+                  src={iconEstudo}
+                  alt="icone escolaridade"
+                />
+                {item.grade}
+              </span>
             ))}
         </div>
         <div className={styles.registration_date}>
@@ -83,7 +128,14 @@ function ListStudents() {
 
           {stdData &&
             stdData.map((item) => (
-              <p className={styles.item}>{item.registrationDate}</p>
+              <span className={styles.item}>
+                <img
+                  className={styles.list_student_icons}
+                  src={iconCalendar}
+                  alt="icone calendario"
+                />
+                {item.registrationDate}
+              </span>
             ))}
         </div>{" "}
         <div className={styles.expiration_date}>
@@ -91,7 +143,15 @@ function ListStudents() {
 
           {stdData &&
             stdData.map((item) => (
-              <p className={styles.item}>{item.expirationDate}</p>
+              <span className={styles.item}>
+                {" "}
+                <img
+                  className={styles.list_student_icons}
+                  src={iconCalendar}
+                  alt="icone calendario"
+                />
+                {item.expirationDate}
+              </span>
             ))}
         </div>{" "}
         <div className={styles.buttons}>

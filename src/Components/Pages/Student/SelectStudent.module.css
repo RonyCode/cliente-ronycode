@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .selectStudent {
   width: 100%;
   min-height: calc(100vh - 5rem);
@@ -49,13 +50,15 @@
   border: none;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
   outline: none;
-position: relative;
+  position: relative;
+  text-align: center;
+
 }
 
-.selectStudent_placeholder{
+.selectStudent_placeholder {
   position: absolute;
   width: 24px;
- margin: 2.1rem 0 0 .5rem;
+  margin: 2.1rem 0 0 1rem;
 }
 
 .selectStudent_item:nth-child(2) {
@@ -103,21 +106,23 @@ position: relative;
   grid-column: 3/3;
   grid-row: 1/1;
 }
+
 .selectStudent_item_date:nth-child(3) {
   grid-column: 2/2;
   grid-row: 1/1;
 }
+
 .selectStudent_item_date:nth-child(4) {
   grid-column: 4/4;
   grid-row: 1/1;
 }
 
 
-.selectStudent_buttons{
+.selectStudent_buttons {
   display: flex;
 }
 
-.selectStudent_button{
+.selectStudent_button {
   padding: 1rem;
   width: 45%;
   margin: 1.5rem 1rem;
@@ -128,7 +133,8 @@ position: relative;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
   font-size: .9rem;
 }
-.selectStudent_button_cancelar{
+
+.selectStudent_button_cancelar {
   padding: 1rem;
   width: 45%;
 
@@ -138,7 +144,8 @@ position: relative;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
   font-size: .9rem;
 }
-.selectStudent_button:hover,.selectStudent_button_cancelar:hover{
+
+.selectStudent_button:hover, .selectStudent_button_cancelar:hover {
   box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.5);
   background: #e1e1e1;
   cursor: pointer;
