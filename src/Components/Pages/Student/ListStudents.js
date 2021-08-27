@@ -33,7 +33,9 @@ function ListStudents() {
           <h3>Nome:</h3>
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>{item.name}</span>
+              <span className={styles.item} key={item.id}>
+                {item.name}
+              </span>
             ))}
         </div>
         <div className={styles.email}>

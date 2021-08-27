@@ -25,9 +25,6 @@ const SelectStudent = () => {
         const { url, options } = SELECT_STD(id);
         const response = await axios(url, options);
         response && setStdData(response.data.data[0]);
-        setName(stdData.name);
-        setPhone(stdData.phone);
-
         console.log(response.data.data[0]);
       } catch (response) {
         console.log(response);
@@ -36,6 +33,7 @@ const SelectStudent = () => {
     selectStudent();
   }, []);
 
+  console.log(id);
   const formData = new FormData();
   formData.append("id", id);
   formData.append("name", name);
@@ -53,15 +51,17 @@ const SelectStudent = () => {
 
     axios(url, options)
       .then(function (response) {
-        alert("Aluno editado com sucesso!");
+        alert("Aluno Atualizado com sucesso!");
         navigate("/login/aluno/lista");
         console.log("Success: ", response.data);
       })
       .catch(function (error) {
         console.log("Error: ", error.response.data);
+        alert(error.response.data.message);
       });
   }
 
+  console.log(id);
   return (
     <div className={styles.selectStudent}>
       <div className={styles.selectStudent_container}>

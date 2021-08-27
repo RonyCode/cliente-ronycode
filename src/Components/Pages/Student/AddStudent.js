@@ -45,7 +45,7 @@ const AddStudent = () => {
       <div className={styles.add_student}>
         <form className={styles.add_student_container} onSubmit={handleSubmit}>
           <div className={styles.add_student_input_div}>
-            <label>Nome:</label>
+            <label className={styles.add_student_input_label}>Nome:</label>
             <input
               className={styles.add_student_input}
               placeholder="digite seu nome"
@@ -56,7 +56,7 @@ const AddStudent = () => {
             />
           </div>
           <div className={styles.add_student_input_div}>
-            <label>Email:</label>
+            <label className={styles.add_student_input_label}>Email:</label>
             <input
               className={styles.add_student_input}
               placeholder="digite seu email"
@@ -67,7 +67,7 @@ const AddStudent = () => {
             />
           </div>
           <div className={styles.add_student_input_div}>
-            <label>Endereço:</label>
+            <label className={styles.add_student_input_label}>Endereço:</label>
             <input
               className={styles.add_student_input}
               placeholder="digite seu endereço"
@@ -77,47 +77,10 @@ const AddStudent = () => {
               onChange={({ target }) => setAddress(target.value)}
             />
           </div>
-          <div className={styles.add_student_input_date}>
-            <label>Data Nasc.:</label>
-            <input
-              align="center"
-              className={styles.add_student_input}
-              placeholder="xx/xx/xxxx"
-              type="text"
-              name="birthday"
-              value={birthday || ""}
-              onChange={({ target }) => setBirthday(target.value)}
-            />
-            <label>Data da Mat.:</label>
-            <input
-              className={styles.add_student_input}
-              placeholder="xx/xx/xxxx"
-              type="text"
-              name="registrationDate"
-              value={registrationDate || ""}
-              onChange={({ target }) => setRegistrationDate(target.value)}
-            />
-            <label>Vencimento:</label>
-            <input
-              className={styles.add_student_input}
-              placeholder="xx/xx/xxxx"
-              type="text"
-              name="expirationDate"
-              value={expirationDate || ""}
-              onChange={({ target }) => setExpirationDate(target.value)}
-            />
-            <label>Telefone:</label>
-            <input
-              className={styles.add_student_input}
-              placeholder="(99) 99999-9999"
-              type="text"
-              name="phone"
-              value={phone || ""}
-              onChange={({ target }) => setPhone(target.value)}
-            />
-          </div>
           <div className={styles.add_student_input_div}>
-            <label>Escolaridade:</label>
+            <label className={styles.add_student_input_label}>
+              Escolaridade:
+            </label>
             <input
               className={styles.add_student_input}
               placeholder="digite sua escolaridade"
@@ -127,6 +90,63 @@ const AddStudent = () => {
               onChange={({ target }) => setGrade(target.value)}
             />
           </div>
+          <div className={styles.add_student_input_date}>
+            <div>
+              <label className={styles.add_student_input_label}>
+                Telefone:
+              </label>
+              <input
+                className={styles.add_student_input}
+                placeholder="(99) 99999-9999"
+                type="text"
+                name="phone"
+                value={phone || ""}
+                onChange={({ target }) => setPhone(target.value)}
+              />
+            </div>
+            <div>
+              <label className={styles.add_student_input_label}>
+                Data Nasc.:
+              </label>
+              <input
+                align="center"
+                className={styles.add_student_input}
+                placeholder="xx/xx/xxxx"
+                type="text"
+                name="birthday"
+                value={birthday || ""}
+                onChange={({ target }) => setBirthday(target.value)}
+              />
+            </div>
+            <div>
+              <label className={styles.add_student_input_label}>
+                Data da Mat.:
+              </label>
+              <input
+                className={styles.add_student_input}
+                placeholder="xx/xx/xxxx"
+                type="text"
+                name="registrationDate"
+                value={registrationDate || ""}
+                onChange={({ target }) => setRegistrationDate(target.value)}
+              />
+            </div>
+
+            <div>
+              <label className={styles.add_student_input_label}>
+                Vencimento:
+              </label>
+              <input
+                className={styles.add_student_input}
+                placeholder="xx/xx/xxxx"
+                type="text"
+                name="expirationDate"
+                value={expirationDate || ""}
+                onChange={({ target }) => setExpirationDate(target.value)}
+              />
+            </div>
+          </div>
+
           <button className={styles.add_student_button}>Enviar</button>
         </form>
       </div>
