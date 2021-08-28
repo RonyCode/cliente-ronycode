@@ -62,6 +62,7 @@ const DeleteStudent = () => {
           </Link>
         </form>
       </div>
+      <div className={styles.delete_student_container_hover}></div>
     </div>
   );
 };

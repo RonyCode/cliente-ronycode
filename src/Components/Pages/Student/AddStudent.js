@@ -16,11 +16,9 @@ const AddStudent = () => {
   const [email, setEmail] = React.useState();
   const [address, setAddress] = React.useState();
   const [birthday, setBirthday] = React.useState();
-  const [report, setReport] = React.useState();
   const [grade, setGrade] = React.useState();
   const [registrationDate, setRegistrationDate] = React.useState();
   const [expirationDate, setExpirationDate] = React.useState();
-  const [result, setResult] = React.useState();
 
   const formData = new FormData();
   formData.append("name", name);
@@ -28,11 +26,11 @@ const AddStudent = () => {
   formData.append("email", email);
   formData.append("address", address);
   formData.append("birthday", birthday);
-  formData.append("report", report);
+  formData.append("report", null);
   formData.append("grade", grade);
   formData.append("registration_date", registrationDate);
   formData.append("expiration_date", expirationDate);
-  formData.append("result", result);
+  formData.append("result", null);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -40,10 +38,12 @@ const AddStudent = () => {
 
     axios(url, options)
       .then(function (response) {
-        console.log("Success: ", response.data);
+        alert(response.data.message);
+        console.log("Success: ", response.data.message);
       })
       .catch(function (error) {
         console.log("Error: ", error.response.data);
+        alert(error.response.data.message);
       });
   }
 
