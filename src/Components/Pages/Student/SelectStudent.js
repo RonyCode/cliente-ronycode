@@ -9,6 +9,8 @@ import iconAluno from "../../../Assets/user_icon-icons.com_48201.png";
 import iconEndereco from "../../../Assets/endereco.svg";
 import iconEstudo from "../../../Assets/book-with-bookmark-educational-tool-outlined-symbol_icon-icons.com_57884.svg";
 import iconEmail from "../../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
+import iconContrato from "../../../Assets/contract_icon-icons.com_64813.png";
+import iconSituacao from "../../../Assets/check.png";
 
 const SelectStudent = () => {
   const { id } = useParams();
@@ -22,12 +24,13 @@ const SelectStudent = () => {
         response && setStdData(response.data.data[0]);
         console.log(response.data.data[0]);
       } catch (response) {
-        console.log(response);
+        console.log(response.response.data);
       }
     };
     selectStudent();
   }, []);
 
+  console.log(stdData);
   return (
     <div className={styles.selectStudent}>
       <div className={styles.selectStudent_container}>
@@ -35,10 +38,9 @@ const SelectStudent = () => {
           <div className={styles.selectStudent_item}>
             <label htmlFor="name">Nome:</label>
             <input
-              className={styles.selectStudent_item}
+              readOnly={true}
               type="text"
               name="name"
-              required={true}
               value={stdData.name || ""}
             />
             <img
@@ -51,10 +53,10 @@ const SelectStudent = () => {
           <div className={styles.selectStudent_item}>
             <label>Endereço:</label>
             <input
+              readOnly={true}
               type="text"
               name="address"
-              required={true}
-              value={stdData.address}
+              value={stdData.address || ""}
             />
             <img
               className={styles.selectStudent_placeholder}
@@ -62,13 +64,14 @@ const SelectStudent = () => {
               alt="icone endereço"
             />
           </div>
+
           <div className={styles.selectStudent_item}>
             <label>Email:</label>
             <input
+              readOnly={true}
               type="email"
               name="email"
-              required={true}
-              value={stdData.email}
+              value={stdData.email || ""}
             />
             <img
               className={styles.selectStudent_placeholder}
@@ -76,13 +79,14 @@ const SelectStudent = () => {
               alt="icone email"
             />
           </div>
+
           <div className={styles.selectStudent_item}>
             <label>Escolaridade:</label>
             <input
+              readOnly={true}
               type="text"
               name="grade"
-              required={true}
-              value={stdData.grade}
+              value={stdData.grade || ""}
             />
             <img
               className={styles.selectStudent_placeholder}
@@ -90,68 +94,114 @@ const SelectStudent = () => {
               alt="icone escolaridade"
             />
           </div>
-          <div className={styles.selectStudent_item_dates}>
-            <div className={styles.selectStudent_item_date}>
-              <label>Data Nasc.:</label>
-              <input
-                type="text"
-                name="birthday"
-                required={true}
-                value={stdData.birthday}
-              />
-              <img
-                className={styles.selectStudent_placeholder}
-                src={iconCalendar}
-                alt=""
-              />
-            </div>
-            <div className={styles.selectStudent_item_date}>
-              <label>Data Mat.:</label>
-              <input
-                type="text"
-                name="registratioDate"
-                required={true}
-                value={stdData.registrationDate}
-              />
-              <img
-                className={styles.selectStudent_placeholder}
-                src={iconCalendar}
-                alt=""
-              />
-            </div>
-            <div className={styles.selectStudent_item_date}>
-              <label>Telefone:</label>
-              <input
-                type="text"
-                name="phone"
-                required={true}
-                value={stdData.phone}
-              />
-              <img
-                className={styles.selectStudent_placeholder}
-                src={iconPhone}
-                alt=""
-              />
-            </div>
-            <div className={styles.selectStudent_item_date}>
-              <label>Vencimento:</label>
-              <input
-                type="text"
-                name="expirationDate"
-                required={true}
-                value={stdData.expirationDate}
-              />
-              <img
-                className={styles.selectStudent_placeholder}
-                src={iconCalendar}
-                alt=""
-              />
-            </div>
+          <div className={styles.selectStudent_item}>
+            <label>Contrato:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="grade"
+              value={stdData.contractNumber || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconContrato}
+              alt="icone contrato"
+            />
           </div>
+
+          <div className={styles.selectStudent_item}>
+            <label>Situação:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="birthday"
+              value={stdData.situation || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconSituacao}
+              alt="icone situaçao"
+            />
+          </div>
+
+          <div className={styles.selectStudent_item}>
+            <label>Vencimento Cont.:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="birthday"
+              value={stdData.dateExpiresContract || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconCalendar}
+              alt=""
+            />
+          </div>
+
+          <div className={styles.selectStudent_item}>
+            <label>Data Nasc.:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="birthday"
+              value={stdData.birthday || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconCalendar}
+              alt=""
+            />
+          </div>
+
+          <div className={styles.selectStudent_item}>
+            <label>Data Mat.:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="registratioDate"
+              value={stdData.registrationDate || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconCalendar}
+              alt=""
+            />
+          </div>
+          <div className={styles.selectStudent_item}>
+            <label>Telefone:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="phone"
+              value={stdData.phone || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconPhone}
+              alt=""
+            />
+          </div>
+
+          <div className={styles.selectStudent_item}>
+            <label>Data Pgto:</label>
+            <input
+              readOnly={true}
+              type="text"
+              name="expirationDate"
+              value={stdData.datePayment || ""}
+            />
+            <img
+              className={styles.selectStudent_placeholder}
+              src={iconCalendar}
+              alt=""
+            />
+          </div>
+
           <div className={styles.selectStudent_buttons}>
             <Link
               to="/login/aluno/lista"
-              className={styles.selectStudent_button_cancelar}
+              className={styles.selectStudent_button}
             >
               Voltar
             </Link>

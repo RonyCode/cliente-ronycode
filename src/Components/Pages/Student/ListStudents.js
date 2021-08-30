@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { DELETE_STD, GET_ALL_STD } from "../../../api/api";
+import { GET_ALL_STD } from "../../../api/api";
 import styles from "./ListStudents.module.css";
 import { Link, useParams } from "react-router-dom";
 import iconEdit from "../../../Assets/UserEdit_40958.png";
