@@ -1,25 +1,15 @@
 .list_student {
   /*background: red;*/
-  min-width: 100vw;
-  min-height: calc(200vh - 15rem);
+  min-width: calc(100% - 15rem);
+  min-height: calc(100vh - 5rem);
   display: flex;
-  flex-direction: column;
-  transform: rotate(-90deg) translateX(-95vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  -ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-  /*display:none;*/
+  flex-direction:  column;
+  align-items: center;
+  justify-content: center;
 }
 
 .list_student h1 {
-  top: 5rem;
-  left: 3rem;
-  position: absolute;
+margin-bottom: 5rem;
 }
 
 .list_student_container {
@@ -27,14 +17,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100vh;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
   margin: 0 1rem;
 }
 
-.list_student_icons{
+.list_student_icons {
   width: 28px;
   position: absolute;
   left: 10px;
@@ -54,18 +40,15 @@
   font-size: 0.8rem;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0.15rem;
 }
 
-.button_edit {
+.list_student_button {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -73,17 +56,8 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-
-.button_remove {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.8rem;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  /*background: #541bc1;*/
+  margin: 0 .2rem;
 }
 
 h3 {
@@ -107,7 +81,7 @@ h3 {
   border: none;
 }
 
-.button {
+.list_student_link {
   background: #f1f1f1;
   box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 1);
   padding: 0.5rem;
@@ -116,7 +90,7 @@ h3 {
   justify-content: center;
 }
 
-.button:hover {
+.list_student_link:hover {
   background: #c9c3c3;
   cursor: pointer;
 }
@@ -125,11 +99,11 @@ h3 {
   width: 31px;
 }
 
-@media (max-width: 96rem) {
-  .button {
-    padding: 0.7rem;
-  }
-  .icons {
-    width: 30px;
-  }
-}
+/*@media (max-width: 1680px) {*/
+/*  .button {*/
+/*    padding: 0.5rem;*/
+/*  }*/
+/*  .icons {*/
+/*    width: 31px;*/
+/*  }*/
+/*}*/

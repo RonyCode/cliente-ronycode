@@ -8,6 +8,7 @@ import styles from "./Student.module.css";
 import Dashboard from "../../Layout/Dashboard";
 import { UserContext } from "../../UserStorage";
 import DeleteStudent from "./DeleteStudent";
+import EditStudent from "./EditStudent";
 
 const Student = () => {
   const { brand } = React.useContext(UserContext);
@@ -36,6 +37,7 @@ const Student = () => {
           <Route path="/" element={<HomeStudent />} />
           <Route path="lista" element={<ListStudents />} />{" "}
           <Route path="id/:id" element={<SelectStudent />} />
+          <Route path="editar/id/:id" element={<EditStudent />} />
           <Route path="adicionar" element={<AddStudent />} />
           <Route path="deletar/id/:id" element={<DeleteStudent />} />
         </Routes>
