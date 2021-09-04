@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Home.module.css";
 import Carrosel from "../../Input/Carrosel";
+import styles from "./Home.module.css";
 import { WeekDay } from "../../../Helper/Weekday/WeekDay";
 import imgCard5 from "../../../Assets/03_geha_blog_formacao_das_turmas.jpg";
 import iconStar from "../../../Assets/star_77949.png";

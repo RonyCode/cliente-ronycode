@@ -48,12 +48,10 @@
 .add_student_div:nth-child(7) {
   grid-column: 3/3;
   grid-row: 4/4;
-
 }
 .add_student_div:nth-child(8) {
   grid-column: 4/4;
   grid-row: 4/4;
-
 }
 .add_student_div:nth-child(9) {
   grid-column: 4/4;
@@ -71,7 +69,6 @@
   grid-column: 1/1;
   grid-row: 4/4;
   margin-top: 1rem;
-
 }
 .add_student_div:nth-child(13) {
   grid-column: 2/2;
@@ -81,17 +78,27 @@
 
 .add_student_icon {
   width: 24px;
-  top: 2.2rem;
-  left: 1rem;
+  top: 2.3rem;
+  left: .5rem;
   position: absolute;
 }
-.add_student_link{
+
+.add_student_link {
   display: flex;
   font-size: 0.8rem;
   justify-content: center;
 }
-.add_student_div select {
-  display: flex;
+.add_student_select option{
+  background: transparent;
+  width: 150px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 64px;
+
+}
+
+.add_student_select {
+
   padding: 1rem;
   width: 100%;
   -webkit-appearance: none;
@@ -99,16 +106,29 @@
   appearance: none;
   border: none;
   outline: none;
-  margin: 0.5rem auto auto auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   border-radius: 5px;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
-background: #f1f1f1;
+  background: #f1f1f1;
+  text-align: center;
+  text-align-all: center;
+}
+
+
+.add_student_select_style  {
+  text-align: center;
+  /*background: #541bc1;*/
+  margin-top: 0.5rem;
 
 }
-.add_student_div select::-ms-expand {
+
+.add_student_div_select {
+  grid-column: 3/3;
+  grid-row: 4/4;
+  position: relative;
+
+}
+
+.add_student_select::-ms-expand {
   display: none; /* remove default arrow on ie10 and ie11 */
 }
 

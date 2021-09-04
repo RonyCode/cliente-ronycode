@@ -279,7 +279,7 @@
   grid-area: post;
   width: 80vw;
   min-height: 100vh;
-  margin-bottom: 2rem ;
+  margin-bottom: 2rem;
   background: #f1f1f1;
   border-radius: 8px;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
@@ -388,7 +388,7 @@
   border-radius: 8px;
   width: 100%;
   height: 100%;
-  padding: 1rem ;
+  padding: 1rem;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 1);
 }
 

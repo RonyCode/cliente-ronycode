@@ -10,7 +10,13 @@ import iconEndereco from "../../../Assets/endereco.svg";
 import iconEstudo from "../../../Assets/book-with-bookmark-educational-tool-outlined-symbol_icon-icons.com_57884.svg";
 import iconEmail from "../../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
 import iconContrato from "../../../Assets/contract_icon-icons.com_64813.png";
-import iconSituacao from "../../../Assets/check.png";
+import iconSelect from "../../../Assets/check.png";
+
+// const options = [
+//   { value: "chocolate", label: "Chocolate" },
+//   { value: "strawberry", label: "Strawberry" },
+//   { value: "vanilla", label: "Vanilla" },
+// ];
 
 const AddStudent = () => {
   const [name, setName] = React.useState();
@@ -24,17 +30,6 @@ const AddStudent = () => {
   const [datePayment, setDatePayment] = React.useState();
   const [registrationDate, setRegistrationDate] = React.useState();
   const [dateExpiresContract, setDateExpiresContract] = React.useState();
-
-  const options = [
-    {
-      label: "Adimplente",
-      value: "adimplente",
-    },
-    {
-      label: "Inadimplente",
-      value: "inadimplente",
-    },
-  ];
 
   const formData = new FormData();
   formData.append("name", name);
@@ -115,22 +110,33 @@ const AddStudent = () => {
               alt="icone endereço"
             />
           </div>
-
           <div className={styles.add_student_div}>
-            <label className={styles.add_student_input_label}>
-              Escolaridade:
-            </label>
-            <input
-              placeholder="digite sua escolaridade"
-              type="text"
-              value={grade || ""}
-              onChange={({ target }) => setGrade(target.value)}
-            />
-            <img
-              className={styles.add_student_icon}
-              src={iconEstudo}
-              alt="icone escolaridade"
-            />
+            <div className={styles.add_student_div_select}>
+              <label className={styles.add_student_input_label}>
+                Escolaridade:
+              </label>{" "}
+              <div className={styles.add_student_select_style}>
+                <select
+                  className={styles.add_student_select}
+                  onChange={({ target }) => setGrade(target.value)}
+                >
+                  <option hidden={true} selected={true} disabled={true}>
+                    Selecione
+                  </option>
+                  <option value="alfabetização">Alfabetização</option>
+                  <option value="1º ano">1º Ano</option>
+                  <option value="2º ano">2º Ano</option>
+                  <option value="3º ano">3º Ano</option>
+                  <option value="4º ano">4º Ano</option>
+                  <option value="5º ano">5º Ano</option>
+                </select>
+                <img
+                  className={styles.add_student_icon}
+                  src={iconEstudo}
+                  alt="icone escolaridade"
+                />
+              </div>
+            </div>
           </div>
 
           <div className={styles.add_student_div}>
@@ -140,7 +146,15 @@ const AddStudent = () => {
               placeholder="(99) 99999-9999"
               type="text"
               value={phone || ""}
-              onChange={({ target }) => setPhone(target.value)}
+              onChange={({ target }) =>
+                setPhone(
+                  target.value
+                    .replace(/\D/g, "")
+                    .replace(/(\d{2})(\d)/, "($1) $2")
+                    .replace(/(\d{5})(\d)/, "$1-$2")
+                    .replace(/(-\d{4})\d+?$/, "$1")
+                )
+              }
             />
             <img
               className={styles.add_student_icon}
@@ -152,10 +166,15 @@ const AddStudent = () => {
           <div className={styles.add_student_div}>
             <label>Contrato Nº:</label>
             <input
+              placeholder="99999"
               className={styles.add_student_input}
               type="text"
               value={contractNumber || ""}
-              onChange={({ target }) => setContractNumber(target.value)}
+              onChange={({ target }) =>
+                setContractNumber(
+                  target.value.replace(/\D/g, "").replace(/(\d{5})\d+?$/, "$1")
+                )
+              }
             />
             <img
               className={styles.add_student_icon}
@@ -164,19 +183,25 @@ const AddStudent = () => {
             />
           </div>
 
-          <div className={styles.add_student_div}>
+          <div className={styles.add_student_div_select}>
             <label>Situação:</label>
-            <select onChange={({ target }) => setSituation(target.value)}>
-              {options.map((option) => (
-                <option value={option.value}>{option.label}</option>
-              ))}
-            </select>
-
-            <img
-              className={styles.add_student_icon}
-              src={iconSituacao}
-              alt="icone situaçao"
-            />
+            <div className={styles.add_student_select_style}>
+              <select
+                className={styles.add_student_select}
+                onChange={({ target }) => setSituation(target.value)}
+              >
+                <option hidden={true} selected={true} disabled={true}>
+                  Selecione
+                </option>
+                <option value="adimplente">Adimplente</option>
+                <option value="inadimplemte">Inadimplente</option>
+              </select>
+              <img
+                className={styles.add_student_icon}
+                src={iconSelect}
+                alt="icone selecionar"
+              />
+            </div>
           </div>
 
           <div className={styles.add_student_div}>
@@ -184,9 +209,17 @@ const AddStudent = () => {
             <input
               className={styles.add_student_input}
               type="text"
-              placeholder="xx/xx/xxxx"
+              placeholder="XX/XX/XXXX"
               value={dateExpiresContract || ""}
-              onChange={({ target }) => setDateExpiresContract(target.value)}
+              onChange={({ target }) =>
+                setDateExpiresContract(
+                  target.value
+                    .replace(/\D/g, "")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{4})\d+?$/, "$1")
+                )
+              }
             />
             <img
               className={styles.add_student_icon}
@@ -200,9 +233,17 @@ const AddStudent = () => {
             <input
               className={styles.add_student_input}
               type="text"
-              placeholder="xx/xx/xxxx"
+              placeholder="XX/XX/XXXX"
               value={datePayment || ""}
-              onChange={({ target }) => setDatePayment(target.value)}
+              onChange={({ target }) =>
+                setDatePayment(
+                  target.value
+                    .replace(/\D/g, "")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{4})\d+?$/, "$1")
+                )
+              }
             />
             <img
               className={styles.add_student_icon}
@@ -217,11 +258,19 @@ const AddStudent = () => {
             <input
               align="center"
               className={styles.add_student_input}
-              placeholder="xx/xx/xxxx"
+              placeholder="XX/XX/XXXX"
               type="text"
               name="birthday"
               value={birthday || ""}
-              onChange={({ target }) => setBirthday(target.value)}
+              onChange={({ target }) =>
+                setBirthday(
+                  target.value
+                    .replace(/\D/g, "")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{4})\d+?$/, "$1")
+                )
+              }
             />
             <img
               className={styles.add_student_icon}
@@ -235,10 +284,18 @@ const AddStudent = () => {
             </label>
             <input
               className={styles.add_student_input}
-              placeholder="xx/xx/xxxx"
+              placeholder="XX/XX/XXXX"
               type="text"
               value={registrationDate || ""}
-              onChange={({ target }) => setRegistrationDate(target.value)}
+              onChange={({ target }) =>
+                setRegistrationDate(
+                  target.value
+                    .replace(/\D/g, "")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{2})(\d)/, "$1/$2")
+                    .replace(/(\d{4})\d+?$/, "$1")
+                )
+              }
             />
             <img
               className={styles.add_student_icon}
