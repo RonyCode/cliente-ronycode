@@ -10,9 +10,9 @@
 }
 
 .img_form {
-  border-radius: 50%;
-  width: 96px;
-  height: 96px;
+  border-radius: 5px;
+  width: 128px;
+  height: 192px;
 }
 
 .label:hover {
