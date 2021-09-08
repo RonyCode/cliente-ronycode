@@ -1,0 +1,106 @@
+.planning {
+  width: 100%;
+  height: 100%;
+}
+
+.planning_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.planning_table {
+  width: 70%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 50px repeat(5, 150px);
+
+}
+
+.planning_table_title {
+  grid-column: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  text-align: center;
+}
+.planning_table_seg {
+  grid-column: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.planning_table_ter {
+  grid-column: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.planning_table_qua {
+  grid-column: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.planning_table_qui {
+  grid-column: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.planning_table_sex {
+  grid-column: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.table_description_tittle {
+  grid-column: 2/2;
+  grid-row: 1/1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  text-align: center;
+
+}
+.table_description_seg {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.table_description_ter {
+  grid-column: 2/2;
+  grid-row: 3/3;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.table_description_qua {
+  grid-column: 2/2;
+  grid-row: 4/4;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.table_description_qui {
+  grid-column: 2/2;
+  grid-row: 5/5;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}
+.table_description_sex {
+  grid-column: 2/2;
+  grid-row: 6/6;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+}

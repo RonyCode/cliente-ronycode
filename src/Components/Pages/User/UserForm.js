@@ -71,7 +71,7 @@ const UserForm = () => {
           <p className={styles.icon_name}>Buscar Aluno</p>
         </Link>
 
-        <Link className={styles.icon} to="/login/aluno/lista">
+        <Link className={styles.icon} to="/login/aluno/planejamento">
           <img
             className={styles.img_icon}
             src="https://i.ibb.co/sw579BW/education-the-Board-876.png"

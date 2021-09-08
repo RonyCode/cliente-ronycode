@@ -8,6 +8,7 @@ import iconSelect from "../../../Assets/User_40961.png";
 import iconDelete from "../../../Assets/UserRemove_40959.png";
 import iconEmail from "../../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
 import iconAluno from "../../../Assets/user_icon-icons.com_48201.png";
+import iconPlanejamento from "../../../Assets/planejamento.svg";
 
 function ListStudents() {
   const [stdData, setStdData] = React.useState("");
@@ -105,6 +106,22 @@ function ListStudents() {
                     className={styles.icons}
                     src={iconDelete}
                     alt="icone delete"
+                  />
+                </Link>
+              ))}
+          </div>
+          <div className={styles.list_student_button}>
+            <h3>Planejamento</h3>
+            {stdData &&
+              stdData.map((item) => (
+                <Link
+                  className={styles.list_student_link}
+                  to={"/login/aluno/planejamento/id/" + item.id}
+                >
+                  <img
+                    className={styles.icons}
+                    src={iconPlanejamento}
+                    alt="icone planejamento"
                   />
                 </Link>
               ))}
