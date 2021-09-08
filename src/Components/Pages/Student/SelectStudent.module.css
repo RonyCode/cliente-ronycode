@@ -13,7 +13,7 @@
 }
 
 .selectStudent_container {
-  width: 70%;
+  width: 100%;
   border-radius: 5px;
   box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.3);
   background: #f1f1f1;
@@ -34,7 +34,7 @@
   grid-template-rows: repeat(4, 1fr);
   /*background: #e1d47e;*/
   border-radius: 5px;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .selectStudent_item {
@@ -54,12 +54,13 @@
   outline: none;
   position: relative;
   text-align: center;
+  font-size: 1rem;
 }
 
 .selectStudent_placeholder {
   position: absolute;
   width: 24px;
-  margin: 2.1rem 0 0 1rem;
+  margin: 2.4rem 0 0 1rem;
 }
 
 .selectStudent_item:nth-child(2) {
@@ -86,7 +87,7 @@
 }
 .selectStudent_item:nth-child(7) {
   grid-column: 4/5;
-  grid-row: 4/4;
+  grid-row: 3/3;
 }
 
 .selectStudent_item:nth-child(8) {
@@ -94,7 +95,6 @@
   grid-row: 3/3;
   display: flex;
 }
-
 
 .selectStudent_item:nth-child(9) {
   grid-column: 3/3;
@@ -108,7 +108,7 @@
 
 .selectStudent_item:nth-child(11) {
   grid-column: 4/4;
-  grid-row: 3/3;
+  grid-row: 4/4;
 }
 
 .selectStudent_button {
@@ -117,19 +117,17 @@
   display: flex;
   padding: 1rem;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
-  margin: 1rem auto auto auto;
-  border-radius:5px ;
+  margin: 1.5rem auto auto auto;
+  border-radius: 5px;
   justify-content: center;
   outline: none;
   border: none;
-  font-size: .8rem;
-
+  background: #fdfdfd;
 }
 
-.selectStudent_button:hover{
+.selectStudent_button:hover {
   box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.5);
   background: #e1e1e1;
   cursor: pointer;
   transition: 0.3s ease;
-
 }

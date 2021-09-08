@@ -107,11 +107,13 @@
     outline: none;
     border-radius: 5px;
     box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
-    background: #f1f1f1;
+    background: white;
     text-align: center;
     text-align-all: center;
 }
-
+.add_student_select:disabled{
+    color: #0d130c;
+}
 
 .add_student_select_style  {
     text-align: center;
@@ -142,6 +144,8 @@
     box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
     margin-top: 0.5rem;
     text-align: center;
+    background: white;
+
 }
 
 .add_student_div button:hover,

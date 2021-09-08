@@ -82,7 +82,7 @@ h3 {
 .list_student_link {
   background: #f1f1f1;
   box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
-  padding: 0.5rem;
+  padding: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,14 +94,14 @@ h3 {
 }
 
 .icons {
-  width: 31px;
+  width: 30px;
 }
 
 /*@media (max-width: 1680px) {*/
 /*  .button {*/
-/*    padding: 0.5rem;*/
+/*    padding: 0.7rem;*/
 /*  }*/
 /*  .icons {*/
-/*    width: 31px;*/
+/*    width: 30px;*/
 /*  }*/
 /*}*/

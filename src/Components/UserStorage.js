@@ -3,7 +3,7 @@ import { GET_USER, POST_LOGIN } from "../api/api";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export const UserContext = React.createContext();
+export const UserContext = React.createContext("");
 
 export const UserStorage = ({ children }) => {
   const [id, setId] = React.useState(null);
@@ -133,7 +133,7 @@ export const UserStorage = ({ children }) => {
             setSize(size);
           }
         } catch (err) {
-          // await userLogout();
+          await userLogout();
         } finally {
           setLoading(false);
         }

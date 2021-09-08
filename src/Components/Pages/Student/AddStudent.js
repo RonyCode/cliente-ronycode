@@ -1,8 +1,7 @@
-import React from "react";
-import axios from "axios";
-import { POST_ADD_STD } from "../../../api/api";
+import React, { useContext } from "react";
+
 import FormStudent from "../../Input/FormStudent";
-import { useNavigate } from "react-router-dom";
+import { StudentContext } from "../../StudentStorage";
 
 const AddStudent = () => {
   const [name, setName] = React.useState();
@@ -16,7 +15,7 @@ const AddStudent = () => {
   const [datePayment, setDatePayment] = React.useState();
   const [registrationDate, setRegistrationDate] = React.useState();
   const [dateExpiresContract, setDateExpiresContract] = React.useState();
-  const navigate = useNavigate();
+  // const { addStudent } = useContext(StudentContext);
 
   const formData = new FormData();
   formData.append("name", name);
@@ -33,18 +32,7 @@ const AddStudent = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = POST_ADD_STD(formData);
-
-    axios(url, options)
-      .then(function (response) {
-        alert(response.data.message);
-        navigate("/login/aluno/lista");
-        console.log("Success: ", response.data.message);
-      })
-      .catch(function (error) {
-        console.log("Error: ", error.response.data);
-        alert(error.response.data.message);
-      });
+    // addStudent(formData);
   }
 
   return (

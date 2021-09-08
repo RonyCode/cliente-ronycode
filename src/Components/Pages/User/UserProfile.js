@@ -4,7 +4,6 @@ import axios from "axios";
 import { UserContext } from "../../UserStorage";
 import styles from "./UserProfile.module.css";
 import Input from "../../Input/Input";
-import Button from "../../Input/Button";
 
 const UserProfile = () => {
   const [img, setImg] = React.useState("");
@@ -21,10 +20,9 @@ const UserProfile = () => {
       console.log(response.data);
       if (response) window.location.reload();
     } catch (response) {
-      console.log(response);
+      console.log(response.error);
     }
   };
-
   const handleFile = (e) => {
     setImg(e.target.files[0]);
   };

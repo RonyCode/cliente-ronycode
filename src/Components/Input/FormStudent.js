@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./FormStudent.module.css";
 import iconAluno from "../../Assets/user_icon-icons.com_48201.png";
 import iconCalendar from "../../Assets/3586371-calendar-date-event-schedule_107943.svg";
@@ -11,7 +11,6 @@ import iconContrato from "../../Assets/contract_icon-icons.com_64813.png";
 import iconSelect from "../../Assets/check.png";
 
 const FormStudent = ({
-  id,
   onSubmit,
   valueName,
   valueEmail,
@@ -35,6 +34,7 @@ const FormStudent = ({
   setDatePayment,
   setDateExpiresContract,
   setContractNumber,
+  disabledSelect = false,
 }) => {
   return (
     <div className={styles.add_student}>
@@ -93,6 +93,7 @@ const FormStudent = ({
             </label>{" "}
             <div className={styles.add_student_select_style}>
               <select
+                disabled={disabledSelect}
                 className={styles.add_student_select}
                 value={valueGrade || ""}
                 onChange={({ target }) => setGrade(target.value)}
@@ -164,6 +165,7 @@ const FormStudent = ({
           <label>Situação:</label>
           <div className={styles.add_student_select_style}>
             <select
+              disabled={disabledSelect}
               className={styles.add_student_select}
               value={valueSituation || ""}
               onChange={({ target }) => setSituation(target.value)}
