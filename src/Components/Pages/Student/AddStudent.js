@@ -15,7 +15,7 @@ const AddStudent = () => {
   const [datePayment, setDatePayment] = React.useState();
   const [registrationDate, setRegistrationDate] = React.useState();
   const [dateExpiresContract, setDateExpiresContract] = React.useState();
-  // const { addStudent } = useContext(StudentContext);
+  const { addStudent } = useContext(StudentContext);
 
   const formData = new FormData();
   formData.append("name", name);
@@ -32,7 +32,7 @@ const AddStudent = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // addStudent(formData);
+    addStudent(formData);
   }
 
   return (

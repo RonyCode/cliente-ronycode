@@ -7,26 +7,29 @@ import Header from "./Components/Layout/Header";
 import Footer from "./Components/Layout/Footer";
 import { UserStorage } from "./Components/UserStorage";
 import Contact from "./Components/Pages/Contact/Contact";
+import { StudentStorage } from "./Components/StudentStorage";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserStorage>
-          <header className="header">
-            <Header />
-          </header>
-          <section className="content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="login/*" element={<Login />} />
-              <Route path="contato" element={<Contact />} />
-            </Routes>
-          </section>
-          <footer className="footer">
-            <Footer />
-          </footer>
-        </UserStorage>
+        <StudentStorage>
+          <UserStorage>
+            <header className="header">
+              <Header />
+            </header>
+            <section className="content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="login/*" element={<Login />} />
+                <Route path="contato" element={<Contact />} />
+              </Routes>
+            </section>
+            <footer className="footer">
+              <Footer />
+            </footer>
+          </UserStorage>
+        </StudentStorage>
       </BrowserRouter>
     </div>
   );

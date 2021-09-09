@@ -6,10 +6,10 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react": "^7.25.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "^4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -22,7 +22,8 @@
     "extends": [
       "react-app",
       "react-app/jest",
-
+      "eslint:recommended",
+      "plugin:react/recommended"
     ]
   },
   "browserslist": {
@@ -40,6 +41,5 @@
   "devDependencies": {
     "axios": "^0.21.1",
     "react-router-dom": "^6.0.0-beta.2"
-  },
-
+  }
 }

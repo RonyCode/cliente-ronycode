@@ -1,29 +1,67 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { SELECT_STD } from "../../../api/api";
-import axios from "axios";
 import styles from "./SelectStudent.module.css";
 import FormStudent from "../../Input/FormStudent";
 import { StudentContext } from "../../StudentStorage";
 
 const SelectStudent = () => {
   const { id } = useParams();
-  const [stdData, setStdData] = React.useState("");
-  const { stdName } = useContext(StudentContext);
-  console.log(stdName);
+  const [stdData, setStdData] = React.useState({
+    name: "",
+    address: "",
+    phone: "",
+    email: "",
+    birthday: "",
+    grade: "",
+    situation: "",
+    contract_number: "",
+    date_payment: "",
+    registration_date: "",
+    date_expires_contract: "",
+  });
+  const {
+    selectStudent,
+    stdName,
+    stdAddress,
+    stdPhone,
+    stdEmail,
+    stdGrade,
+    stdBirthday,
+    stdSituation,
+    stdContractNumber,
+    stdDatePayment,
+    stdRegistrationDate,
+    stdDateExpiresContract,
+  } = useContext(StudentContext);
+
   React.useEffect(() => {
-    const selectStudent = async () => {
-      try {
-        const { url, options } = SELECT_STD(id);
-        const response = await axios(url, options);
-        response && setStdData(response.data.data[0]);
-        console.log(response.data.data[0]);
-      } catch (response) {
-        console.log(response.response.data);
-      }
-    };
-    selectStudent();
-  }, []);
+    selectStudent(id);
+    setStdData({
+      name: stdName,
+      address: stdAddress,
+      phone: stdPhone,
+      email: stdEmail,
+      grade: stdGrade,
+      birthday: stdBirthday,
+      situation: stdSituation,
+      contract_number: stdContractNumber,
+      date_payment: stdDatePayment,
+      registration_date: stdRegistrationDate,
+      date_expires_contract: stdDateExpiresContract,
+    });
+  }, [
+    stdName,
+    stdAddress,
+    stdPhone,
+    stdEmail,
+    stdGrade,
+    stdBirthday,
+    stdSituation,
+    stdContractNumber,
+    stdDatePayment,
+    stdRegistrationDate,
+    stdDateExpiresContract,
+  ]);
 
   return (
     <div className={styles.selectStudent}>
@@ -35,12 +73,14 @@ const SelectStudent = () => {
           valueEmail={stdData.email}
           valuePhone={stdData.phone}
           valueGrade={stdData.grade}
-          valueContractNumber={stdData.contractNumber}
-          valueDateExpiresContract={stdData.dateExpiresContract}
-          valueDatePayment={stdData.datePayment}
-          valueRegistrationDate={stdData.registrationDate}
+          valueContractNumber={stdData.contract_number}
+          valueDateExpiresContract={stdData.date_expires_contract}
+          valueDatePayment={stdData.date_payment}
+          valueRegistrationDate={stdData.registration_date}
           valueSituation={stdData.situation}
           disabledSelect={true}
+          buttonApears={"none"}
+          readSelect={true}
         />
       }
     </div>

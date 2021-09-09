@@ -35,6 +35,8 @@ const FormStudent = ({
   setDateExpiresContract,
   setContractNumber,
   disabledSelect = false,
+  buttonApears = "",
+  readSelect = false,
 }) => {
   return (
     <div className={styles.add_student}>
@@ -42,6 +44,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Nome:</label>
           <input
+            readOnly={readSelect}
             placeholder="digite seu nome"
             type="text"
             name="name"
@@ -58,6 +61,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Email:</label>
           <input
+            readOnly={readSelect}
             placeholder="digite seu email"
             type="email"
             name="email"
@@ -74,6 +78,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Endereço:</label>
           <input
+            readOnly={readSelect}
             placeholder="digite seu endereço"
             type="text"
             name="address"
@@ -120,6 +125,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Telefone:</label>
           <input
+            readOnly={readSelect}
             placeholder="(__) _____-____"
             className={styles.add_student_input}
             type="text"
@@ -144,6 +150,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label>Contrato Nº:</label>
           <input
+            readOnly={readSelect}
             placeholder="_____"
             className={styles.add_student_input}
             type="text"
@@ -165,6 +172,7 @@ const FormStudent = ({
           <label>Situação:</label>
           <div className={styles.add_student_select_style}>
             <select
+              readOnly={readSelect}
               disabled={disabledSelect}
               className={styles.add_student_select}
               value={valueSituation || ""}
@@ -187,6 +195,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label>Vencimento Cont.:</label>
           <input
+            readOnly={readSelect}
             placeholder="__/__/____"
             className={styles.add_student_input}
             type="text"
@@ -207,6 +216,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label>Data Pgto.:</label>
           <input
+            readOnly={readSelect}
             placeholder="__/__/____"
             className={styles.add_student_input}
             type="text"
@@ -226,6 +236,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Data Nasc.:</label>
           <input
+            readOnly={readSelect}
             placeholder="__/__/____"
             align="center"
             className={styles.add_student_input}
@@ -253,6 +264,7 @@ const FormStudent = ({
             Data da Mat.:
           </label>
           <input
+            readOnly={readSelect}
             placeholder="__/__/____"
             className={styles.add_student_input}
             type="text"
@@ -274,12 +286,12 @@ const FormStudent = ({
           />
         </div>
         <div className={styles.add_student_div}>
-          <Link className={styles.add_student_link} to="/login/usuario">
+          <Link className={styles.add_student_link} to="/login/aluno/lista">
             Cancelar
           </Link>
         </div>
         <div className={styles.add_student_div}>
-          <button>Enviar</button>
+          <button style={{ display: buttonApears }}>Enviar</button>
         </div>
       </form>
     </div>

@@ -4,7 +4,7 @@ import { SELECT_STD, UPDATE_STD } from "../../../api/api";
 import axios from "axios";
 import FormStudent from "../../Input/FormStudent";
 
-const SelectStudent = () => {
+const EditStudent = () => {
   const { id } = useParams();
   const [stdData, setStdData] = React.useState("");
   const [name, setName] = React.useState("");
@@ -122,4 +122,4 @@ const SelectStudent = () => {
     </div>
   );
 };
-export default SelectStudent;
+export default EditStudent;
