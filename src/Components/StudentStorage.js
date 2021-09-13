@@ -54,7 +54,7 @@ export const StudentStorage = ({ children }) => {
         console.log("Success: ", response.data.message);
       })
       .catch(function (error) {
-        console.log("Error: ", error.response.data);
+        console.log("Error: ", error.data.message);
         alert(error.response.data.message);
       });
   };

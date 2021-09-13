@@ -103,7 +103,7 @@ const FormStudent = ({
                 value={valueGrade || ""}
                 onChange={({ target }) => setGrade(target.value)}
               >
-                <option hidden={true} disabled={true}>
+                <option selected={true} hidden={true} disabled={true}>
                   Selecione
                 </option>
                 <option value="alfabetização">Alfabetização</option>

@@ -47,6 +47,7 @@ const UserProfile = () => {
         </form>
         <div className={styles.forms}>
           <Input
+            readOnly={true}
             className={styles.input}
             label="Nome:"
             name="name"
@@ -54,10 +55,11 @@ const UserProfile = () => {
             type="text"
           />
           <Input
+            readOnly={true}
             className={styles.input}
             label="Email:"
             name="email"
-            value={email}
+            value={email || ""}
             type="text"
           />
         </div>

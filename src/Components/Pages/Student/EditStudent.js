@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { SELECT_STD, UPDATE_STD } from "../../../api/api";
 import axios from "axios";
 import FormStudent from "../../Input/FormStudent";
+import { StudentContext } from "../../StudentStorage";
 
 const EditStudent = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ const EditStudent = () => {
   const [datePayment, setDatePayment] = React.useState();
   const [registrationDate, setRegistrationDate] = React.useState("");
   const [dateExpiresContract, setDateExpiresContract] = React.useState("");
+  const { updateStudent } = React.useContext(StudentContext);
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -77,18 +79,7 @@ const EditStudent = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = UPDATE_STD(formData);
-
-    axios(url, options)
-      .then(function (response) {
-        alert("Aluno Atualizado com sucesso!");
-        navigate("/login/aluno/lista");
-        console.log("Success: ", response.data);
-      })
-      .catch(function (error) {
-        console.log("Error: ", error.response.data);
-        alert(error.response.data.message);
-      });
+    updateStudent(formData);
   }
 
   return (
