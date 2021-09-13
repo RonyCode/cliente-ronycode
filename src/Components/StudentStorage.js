@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { POST_ADD_STD, SELECT_STD } from "../api/api";
+import { POST_ADD_STD, SELECT_STD, UPDATE_STD } from "../api/api";
 import axios from "axios";
 
 export const StudentContext = createContext();
@@ -54,10 +54,25 @@ export const StudentStorage = ({ children }) => {
         console.log("Success: ", response.data.message);
       })
       .catch(function (error) {
+        console.log("Error: ", error.data.message);
+        alert(error.response.data.message);
+      });
+  };
+  const updateStudent = (formData) => {
+    const { url, options } = UPDATE_STD(formData);
+
+    axios(url, options)
+      .then(function (response) {
+        alert("Aluno Atualizado com sucesso!");
+        navigate("/login/aluno/lista");
+        console.log("Success: ", response.data);
+      })
+      .catch(function (error) {
         console.log("Error: ", error.response.data);
         alert(error.response.data.message);
       });
   };
+
   return (
     <div>
       <StudentContext.Provider
@@ -75,6 +90,7 @@ export const StudentStorage = ({ children }) => {
           stdRegistrationDate,
           selectStudent,
           addStudent,
+          updateStudent,
         }}
       >
         {children}

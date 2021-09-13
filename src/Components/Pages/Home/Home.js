@@ -392,10 +392,10 @@ const Home = () => {
               <h3 className={styles.deployment_card_tittle}>Flaviane</h3>
 
               <p className={styles.deployment_card_text}>
-                " Desde que entreguei meus filhos ao espaço Educar só tenho
-                notado melhoras, está sendo fundamental esse auxílio, a
+                &apos; Desde que entreguei meus filhos ao espaço Educar só tenho
+                notado meliorates, está sendo fundamental esse auxílio, a
                 Professora Gisele é muito atenciosa, e carinhosa. Estamos amando
-                essa experiência! "
+                essa experiência! &apos;
               </p>
             </div>
 
@@ -418,11 +418,11 @@ const Home = () => {
               <h3 className={styles.deployment_card_tittle}>Amanda</h3>
 
               <p className={styles.deployment_card_text}>
-                " Oi! Gostaria de agradecer o carinho que você tem pelo Heitor
-                esses meses que ele está passando com a Espaço Educar está
-                gostando muito, quando ele não vai ele fica zangado, ele já
+                &apos; Oi! Gostaria de agradecer o carinho que você tem pelo
+                Heitor esses meses que ele está passando com a Espaço Educar
+                está gostando muito, quando ele não vai ele fica zangado, ele já
                 desenvolveu bastante nesse pouco tempo que está na Espaço Educar
-                "
+                &apos;
               </p>
             </div>
 
@@ -445,9 +445,9 @@ const Home = () => {
               <h3 className={styles.deployment_card_tittle}>Andreia</h3>
 
               <p className={styles.deployment_card_text}>
-                " To amando! A melhor coisa que fiz foi colocar meu filho na
-                Espaço Educar! Ele já desenvolveu muito! Parabéns pelo cuidado e
-                carinho que tem com ele! "
+                &apos; To amando! A melhor coisa que fiz foi colocar meu filho
+                na Espaço Educar! Ele já desenvolveu muito! Parabéns pelo
+                cuidado e carinho que tem com ele! &apos;
               </p>
             </div>
 
@@ -470,11 +470,11 @@ const Home = () => {
               <h3 className={styles.deployment_card_tittle}>Carla</h3>
 
               <p className={styles.deployment_card_text}>
-                " Estou muito feliz em ver o interesse do Luiz Otávio, ele está
-                evoluindo bem, a atenção dada ao desenvolvimento dele foi
+                &apos; Estou muito feliz em ver o interesse do Luiz Otávio, ele
+                está evoluindo bem, a atenção dada ao desenvolvimento dele foi
                 primordial, quero agradecer a Educadora Gisele pelo cuidado e a
                 dedicação nos mínimos detalhes desde a recepção até os mimos de
-                um cartãozinho, você é nota 1.000 "
+                um cartãozinho, você é nota 1.000 &apos;
               </p>
             </div>
 
@@ -495,8 +495,8 @@ const Home = () => {
               </div>
               <h3 className={styles.deployment_card_tittle}>Amanda</h3>
               <p className={styles.deployment_card_text}>
-                " Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus, fugit."
+                &apos; Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus, fugit.&apos;
               </p>
             </div>
             <div className={styles.deployment_result}>

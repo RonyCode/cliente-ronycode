@@ -49,7 +49,7 @@ function ListStudents() {
           <h3>Email:</h3>
           {stdData &&
             stdData.map((item) => (
-              <span className={styles.item}>
+              <span key={item.id} className={styles.item}>
                 {" "}
                 <img
                   className={styles.list_student_icons}
@@ -67,6 +67,7 @@ function ListStudents() {
             {stdData &&
               stdData.map((item) => (
                 <Link
+                  key={item.id}
                   className={styles.list_student_link}
                   to={"/login/aluno/id/" + item.id}
                 >
@@ -83,6 +84,7 @@ function ListStudents() {
             {stdData &&
               stdData.map((item) => (
                 <Link
+                  key={item.id}
                   className={styles.list_student_link}
                   to={"/login/aluno/editar/id/" + item.id}
                 >
@@ -99,6 +101,7 @@ function ListStudents() {
             {stdData &&
               stdData.map((item) => (
                 <Link
+                  key={item.id}
                   className={styles.list_student_link}
                   to={"/login/aluno/deletar/id/" + item.id}
                 >
@@ -115,6 +118,7 @@ function ListStudents() {
             {stdData &&
               stdData.map((item) => (
                 <Link
+                  key={item.id}
                   className={styles.list_student_link}
                   to={"/login/aluno/planejamento/id/" + item.id}
                 >

@@ -50,6 +50,9 @@ const SelectStudent = () => {
       date_expires_contract: stdDateExpiresContract,
     });
   }, [
+    id,
+    selectStudent,
+    setStdData,
     stdName,
     stdAddress,
     stdPhone,
