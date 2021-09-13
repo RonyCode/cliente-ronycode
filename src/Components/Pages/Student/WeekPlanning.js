@@ -6,15 +6,27 @@ import iconTer from "../../../Assets/ter.png";
 import iconQua from "../../../Assets/qua.png";
 import iconQui from "../../../Assets/qui.png";
 import iconSex from "../../../Assets/sex.png";
+import { StudentContext } from "../../StudentStorage";
+import { useParams } from "react-router-dom";
 
 const WeekPlanning = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
-  // const {}
+  const { stdName, stdGrade, selectStudent } = React.useContext(StudentContext);
+  const [nomeAluno, setNomeAluno] = React.useState("");
+  const [serieAluno, setSerieAluno] = React.useState("");
+  const { id } = useParams();
+  React.useEffect(() => {
+    selectStudent(id);
+    setNomeAluno(stdName);
+    setSerieAluno(stdGrade);
+  }, [stdName, stdGrade, id, selectStudent]);
 
   return (
     <div className={styles.planning}>
       <div className={styles.planning_container}>
-        <h1>Planejamento Semanal Aluno: {}</h1>
+        <h1>
+          Planejamento Semanal Aluno: {nomeAluno} Escolaridade: {serieAluno}
+        </h1>
         <div className={styles.planning_table}>
           <div className={styles.planning_table_title}>Calendário</div>
           <div className={styles.planning_table_item}>
@@ -26,7 +38,6 @@ const WeekPlanning = () => {
             <ul>
               {" "}
               <li> Data: {seg}</li>
-              <li> horário:</li>
             </ul>
           </div>
           <div className={styles.planning_table_item}>
@@ -38,7 +49,6 @@ const WeekPlanning = () => {
             />
             <ul>
               <li> Data: {ter}</li>
-              <li> horário:</li>
             </ul>
           </div>
           <div className={styles.planning_table_item}>
@@ -50,7 +60,6 @@ const WeekPlanning = () => {
             />
             <ul>
               <li> Data: {qua}</li>
-              <li> horário:</li>
             </ul>
           </div>
           <div className={styles.planning_table_item}>
@@ -62,7 +71,6 @@ const WeekPlanning = () => {
             />
             <ul>
               <li> Data: {qui}</li>
-              <li> horário:</li>
             </ul>
           </div>
           <div className={styles.planning_table_item}>
@@ -74,7 +82,6 @@ const WeekPlanning = () => {
             />
             <ul>
               <li> Data: {sex}</li>
-              <li> horário:</li>
             </ul>
           </div>
           <div className={styles.table_description_tittle}>Descrição</div>

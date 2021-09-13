@@ -26,7 +26,7 @@ const DeleteStudent = () => {
       }
     };
     selectStudent();
-  }, []);
+  }, [id]);
 
   function handleSubmit(event) {
     event.preventDefault();

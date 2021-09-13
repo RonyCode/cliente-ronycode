@@ -27,11 +27,12 @@
 }
 
 .imgProfile {
-  width: 96px;
-  height: 96px;
+  width: 128px;
+  height: 128px;
   border-radius: 100%;
   margin: 2rem auto 0 auto;
   background: #fdfdfd;
+object-fit: cover;
 }
 
 .links {
