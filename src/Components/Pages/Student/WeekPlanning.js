@@ -6,6 +6,7 @@ import iconTer from "../../../Assets/ter.png";
 import iconQua from "../../../Assets/qua.png";
 import iconQui from "../../../Assets/qui.png";
 import iconSex from "../../../Assets/sex.png";
+import iconStudent from "../../../Assets/student_4872.png";
 import { StudentContext } from "../../StudentStorage";
 import { useParams } from "react-router-dom";
 
@@ -46,202 +47,339 @@ const WeekPlanning = () => {
       <div className={styles.planning_container}>
         <h1>Planejamento Semanal</h1>
         <div className={styles.planning_table}>
-          <div className={styles.planning_table_historyGrade}>
-            <label htmlFor="">
-              <b>Mês</b>
-            </label>
+          <table className={styles.planning_container}>
+            <tbody>
+              <th>
+                <div className={styles.planning_table_historyGrade}>
+                  <label htmlFor="">
+                    <b>Mês</b>
+                  </label>
+                  <select
+                    className={styles.add_student_select}
+                    value={historyGrade}
+                    onChange={({ target }) => setHistoryGrade(target.value)}
+                  >
+                    {options.map((item) => (
+                      <option key={item} selected={selectedTeste} value={item}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </th>
+              <th colSpan={3}>
+                <div className={styles.table_description_tittle}>
+                  <ul>
+                    <li>
+                      Aluno: <b>{stdName}</b>
+                    </li>
+                    <li>
+                      Serie: <b>{stdGrade}</b>
+                    </li>
+                  </ul>
+                </div>
+              </th>
+              <th colSpan={2}>
+                <div className={styles.planning_table_week}>
+                  <ul>
+                    <li>
+                      Do dia: <b>{seg}</b> à <b>{sex}</b>
+                    </li>
+                    <li>
+                      {" "}
+                      Horário: <b>07h:30min </b> às <b>11h:30min</b>
+                    </li>
+                    Horário: <b>11h:30min </b> às <b>17h:30min</b>
+                  </ul>
+                </div>
+              </th>
+              <tr>
+                <th>Horário</th>
+                <td>
+                  <div className={styles.planning_table_item}>
+                    <label htmlFor="description-seg">
+                      <img
+                        className={styles.planning_table_img}
+                        src={iconSeg}
+                        alt="icone segunda"
+                      />
+                    </label>
 
-            <select
-              className={styles.add_student_select}
-              value={historyGrade}
-              onChange={({ target }) => setHistoryGrade(target.value)}
-            >
-              {options.map((item) => (
-                <option key={item} selected={selectedTeste} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className={styles.planning_table_item}>
-            <label htmlFor="description-seg">
-              <img
-                className={styles.planning_table_img}
-                src={iconSeg}
-                alt="icone segunda"
-              />
-            </label>
-
-            <ul>
-              {" "}
-              <li> Data: {seg}</li>
-            </ul>
-          </div>
-          <div className={styles.planning_table_item}>
-            {" "}
-            <label htmlFor="description-ter">
-              <img
-                className={styles.planning_table_img}
-                src={iconTer}
-                alt="icone terca"
-              />
-            </label>
-            <ul>
-              <li> Data: {ter}</li>
-            </ul>
-          </div>
-          <div className={styles.planning_table_item}>
-            {" "}
-            <label htmlFor="description-qua">
-              <img
-                className={styles.planning_table_img}
-                src={iconQua}
-                alt="icone quarta"
-              />
-            </label>
-            <ul>
-              <li> Data: {qua}</li>
-            </ul>
-          </div>
-          <div className={styles.planning_table_item}>
-            {" "}
-            <label htmlFor="description-qui">
-              <img
-                className={styles.planning_table_img}
-                src={iconQui}
-                alt="icone quinta"
-              />
-            </label>
-            <ul>
-              <li> Data: {qui}</li>
-            </ul>
-          </div>
-          <div className={styles.planning_table_item}>
-            {" "}
-            <label htmlFor="description-sex">
-              <img
-                className={styles.planning_table_img}
-                src={iconSex}
-                alt="icone sexta"
-              />
-            </label>
-            <ul>
-              <li> Data: {sex}</li>
-            </ul>
-          </div>
-
-          <div className={styles.table_description_tittle}>
-            <ul>
-              <li>
-                Aluno: <b>{stdName}</b>
-              </li>
-              <li>
-                Serie: <b>{stdGrade}</b>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.planning_table_week}>
-            <ul>
-              <li>
-                Do dia: <b>{seg}</b> à <b>{sex}</b>
-              </li>
-              <li>
-                {" "}
-                Horário: <b>07h:30min </b> às <b>11h:30min</b>
-              </li>
-              Horário: <b>11h:30min </b> às <b>17h:30min</b>
-            </ul>
-          </div>
-
-          <form
-            className={styles.table_description_item}
-            onSubmit={handleSubmit}
-          >
-            <textarea
-              className={styles.description_text_area}
-              name="description"
-              id="description-seg"
-              value={textArea || ""}
-              onChange={({ target }) => setTextArea(target.value)}
-            />
-
-            <div className={styles.text_area_buttons}>
-              <button className={styles.text_area_button}>salvar</button>
-              <button className={styles.text_area_button}>Editar</button>
-            </div>
-          </form>
-
-          <form
-            className={styles.table_description_item}
-            onSubmit={handleSubmit}
-          >
-            <textarea
-              className={styles.description_text_area}
-              name="description"
-              id="description-ter"
-            >
-              teste ter Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Consequuntur dolore facilis itaque numquam sunt voluptatum?
-            </textarea>
-            <div className={styles.text_area_buttons}>
-              <button className={styles.text_area_button}>salvar</button>
-              <button className={styles.text_area_button}>Editar</button>
-            </div>
-          </form>
-
-          <form
-            className={styles.table_description_item}
-            onSubmit={handleSubmit}
-          >
-            <textarea
-              className={styles.description_text_area}
-              name="description"
-              id="description-qua"
-            >
-              teste qua Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Consequuntur dolore facilis itaque numquam sunt voluptatum?
-            </textarea>
-            <div className={styles.text_area_buttons}>
-              <button className={styles.text_area_button}>salvar</button>
-              <button className={styles.text_area_button}>Editar</button>
-            </div>
-          </form>
-
-          <form
-            className={styles.table_description_item}
-            onSubmit={handleSubmit}
-          >
-            <textarea
-              className={styles.description_text_area}
-              name="description"
-              id="description-qui"
-            >
-              teste qui Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Consequuntur dolore facilis itaque numquam sunt voluptatum?
-            </textarea>
-            <div className={styles.text_area_buttons}>
-              <button className={styles.text_area_button}>salvar</button>
-              <button className={styles.text_area_button}>Editar</button>
-            </div>
-          </form>
-
-          <form
-            className={styles.table_description_item}
-            onSubmit={handleSubmit}
-          >
-            <textarea
-              className={styles.description_text_area}
-              name="description"
-              id="description-sex"
-            >
-              teste sex Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Consequuntur dolore facilis itaque numquam sunt voluptatum?
-            </textarea>
-            <div className={styles.text_area_buttons}>
-              <button className={styles.text_area_button}>salvar</button>
-              <button className={styles.text_area_button}>Editar</button>
-            </div>
-          </form>
+                    <ul>
+                      {" "}
+                      <li> Data: {seg}</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.planning_table_item}>
+                    {" "}
+                    <label htmlFor="description-ter">
+                      <img
+                        className={styles.planning_table_img}
+                        src={iconTer}
+                        alt="icone terca"
+                      />
+                    </label>
+                    <ul>
+                      <li> Data: {ter}</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.planning_table_item}>
+                    {" "}
+                    <label htmlFor="description-qua">
+                      <img
+                        className={styles.planning_table_img}
+                        src={iconQua}
+                        alt="icone quarta"
+                      />
+                    </label>
+                    <ul>
+                      <li> Data: {qua}</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.planning_table_item}>
+                    {" "}
+                    <label htmlFor="description-qui">
+                      <img
+                        className={styles.planning_table_img}
+                        src={iconQui}
+                        alt="icone quinta"
+                      />
+                    </label>
+                    <ul>
+                      <li> Data: {qui}</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.planning_table_item}>
+                    {" "}
+                    <label htmlFor="description-sex">
+                      <img
+                        className={styles.planning_table_img}
+                        src={iconSex}
+                        alt="icone sexta"
+                      />
+                    </label>
+                    <ul>
+                      <li> Data: {sex}</li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th rowSpan={2}>
+                  {" "}
+                  <ul className={styles.table_list_hours}>
+                    <li>Matutino</li>
+                    <li> 07h:30min</li>
+                    <li>11h:30min</li>
+                  </ul>
+                </th>
+                <td className={styles.table_column_seg} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <div className={styles.students_table_item}>
+                      <img
+                        className={styles.icon_table_student}
+                        src={iconStudent}
+                        alt="icone-estudante"
+                      />
+                      <div className={styles.table_student_item}>{stdName}</div>
+                      <div className={styles.table_student_item}>
+                        {stdGrade}
+                      </div>
+                      <div className={styles.table_student_item}>{"07:30"}</div>
+                    </div>
+                    <div className={styles.students_table_item}>
+                      <img
+                        className={styles.icon_table_student}
+                        src={iconStudent}
+                        alt="icone-estudante"
+                      />
+                      <div className={styles.table_student_item}>{stdName}</div>
+                      <div className={styles.table_student_item}>
+                        {stdGrade}
+                      </div>
+                      <div className={styles.table_student_item}>{"07:30"}</div>
+                    </div>
+                    <div className={styles.students_table_item}>
+                      <img
+                        className={styles.icon_table_student}
+                        src={iconStudent}
+                        alt="icone-estudante"
+                      />
+                      <div className={styles.table_student_item}>{stdName}</div>
+                      <div className={styles.table_student_item}>
+                        {stdGrade}
+                      </div>
+                      <div className={styles.table_student_item}>{"07:30"}</div>
+                    </div>
+                    <div className={styles.students_table_item}>
+                      <img
+                        className={styles.icon_table_student}
+                        src={iconStudent}
+                        alt="icone-estudante"
+                      />
+                      <div className={styles.table_student_item}>{stdName}</div>
+                      <div className={styles.table_student_item}>
+                        {stdGrade}
+                      </div>
+                      <div className={styles.table_student_item}>{"07:30"}</div>
+                    </div>
+                    <div className={styles.students_table_item}>
+                      <img
+                        className={styles.icon_table_student}
+                        src={iconStudent}
+                        alt="icone-estudante"
+                      />
+                      <div className={styles.table_student_item}>{stdName}</div>
+                      <div className={styles.table_student_item}>
+                        {stdGrade}
+                      </div>
+                      <div className={styles.table_student_item}>{"07:30"}</div>
+                    </div>
+                    <div className={styles.students_table_item}>
+                      <img
+                        className={styles.icon_table_student}
+                        src={iconStudent}
+                        alt="icone-estudante"
+                      />
+                      <div className={styles.table_student_item}>{stdName}</div>
+                      <div className={styles.table_student_item}>
+                        {stdGrade}
+                      </div>
+                      <div className={styles.table_student_item}>{"07:30"}</div>
+                    </div>
+                  </div>
+                </td>
+                <td className={styles.table_column_ter} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_column_qua} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_column_qui} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_column_sex} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+              </tr>{" "}
+              <tr></tr>
+              <tr>
+                <th rowSpan={2}>
+                  {" "}
+                  <ul className={styles.table_list_hours}>
+                    <li>Vespertino</li>
+                    <li> 13h:30min</li>
+                    <li>17h:30min</li>
+                  </ul>
+                </th>
+                <td className={styles.table_colum_seg} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_colum_ter} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_colum_qua} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_colum_qui} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+                <td className={styles.table_colum_sex} rowSpan={2}>
+                  <div className={styles.list_students_table}>
+                    <img
+                      className={styles.icon_table_student}
+                      src={iconStudent}
+                      alt="icone-estudante"
+                    />
+                    <div className={styles.table_student_item}>{stdName}</div>
+                    <div className={styles.table_student_item}>{stdGrade}</div>
+                    <div className={styles.table_student_item}>{"horario"}</div>
+                  </div>
+                </td>
+              </tr>{" "}
+              <tr></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
