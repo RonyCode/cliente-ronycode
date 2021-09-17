@@ -1,11 +1,12 @@
 import React, { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { POST_ADD_STD, SELECT_STD, UPDATE_STD } from "../api/api";
+import { GET_ALL_STD, POST_ADD_STD, SELECT_STD, UPDATE_STD } from "../api/api";
 import axios from "axios";
 
 export const StudentContext = createContext();
 
 export const StudentStorage = ({ children }) => {
+  const [dataAllStudent, setDataAllStudent] = useState("");
   const [stdName, setStdName] = useState("");
   const [stdAddress, setStdAddress] = useState(null);
   const [stdPhone, setStdPhone] = useState(null);
@@ -73,6 +74,18 @@ export const StudentStorage = ({ children }) => {
       });
   };
 
+  const getAllStudents = async () => {
+    try {
+      const { url, options } = GET_ALL_STD();
+      const response = await axios(url, options);
+      response && setDataAllStudent(response.data.data);
+      console.log(response.data);
+      return dataAllStudent;
+    } catch (response) {
+      console.log(response);
+    }
+  };
+
   return (
     <div>
       <StudentContext.Provider
@@ -91,6 +104,8 @@ export const StudentStorage = ({ children }) => {
           selectStudent,
           addStudent,
           updateStudent,
+          getAllStudents,
+          dataAllStudent,
         }}
       >
         {children}

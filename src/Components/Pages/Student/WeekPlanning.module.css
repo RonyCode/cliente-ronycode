@@ -3,149 +3,132 @@
   height: 100%;
   font-family: "Quicksand", sans-serif;
   font-size: 0.9rem;
+  position: relative;
 }
 
 .planning_container {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  /*transform: rotate(-90deg) translateX(-100vh);*/
+  /*transform-origin: top left;*/
+  /*overflow-y: scroll;*/
+  /*overflow-x: hidden;*/
+
 }
 
 .planning_table {
   width: 100%;
   height: 100%;
-}
-
-.planning_table tr {
-  height: 150px;
-}
-
-.planning_table th,
-td {
-  width: 260px;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 150px;
-  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
-  background: #f1f1f1;
-}
-
-.planning_table_historyGrade {
-  grid-column: 1/1;
-  grid-row: 1/1;
-  width: 100%;
-  height: 100%;
-  background: #f1f1f1;
-  border-radius: 5px;
-  /*box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);*/
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-
-.planning_table_week {
-  grid-column: 4/6;
-  grid-row: 1/1;
-  width: 100%;
-  height: 100%;
-  background: #f1f1f1;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.planning_table_week ul {
-  list-style: none;
-}
-
-.planning_table_item {
-  grid-column: 1/1;
-  grid-row: 3/3;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 1rem;
-  background: #f1f1f1;
-  border-radius: 5px;
-  font-size: 0.85rem;
-  font-family: "Quicksand", sans-serif;
-  font-style: italic;
-}
-
-.table_list_hours {
-  list-style: none;
-}
-
-.table_list_hours li {
-  margin-bottom: 1rem;
-}
-
-.planning_table_item ul {
-  list-style: none;
-}
-
-.planning_table_img {
-  width: 92px;
-  cursor: pointer;
-}
-
-.table_description_tittle ul {
-  list-style: none;
-}
-
-.add_student_select {
-  padding: 1rem;
-  width: 90%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
-  background: white;
-  text-align: center;
-  text-align-all: center;
-  cursor: pointer;
-}
-
-.table_column_seg,
-.table_column_ter,
-.table_column_qua,
-.table_column_qui,
-.table_column_sex {
-  width: 300px;
-}
-.list_students_table {
+  /*background: #541bc1;*/
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4,1fr);
-  padding: 1rem;
-  margin: auto;
-  width: 100%;
-  height: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  /*transform: rotate(90deg) translateY(-100vh);*/
+  /*transform-origin: top left;*/
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
-.students_table_item {
+.planning_table_seg,
+.planning_table_ter,
+.planning_table_qua,
+.planning_table_qui,
+.planning_table_sex {
+  display: grid;
+  min-width: 500px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  /*margin: auto;*/
+  /*background: #541bc1;*/
+
+
+
+}
+.table_item_header {
+  width: 100%;
+  grid-column: 1;
+  grid-row: 3/3;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  padding: 1rem;
+
 }
 
-.icon_table_student {
+.table_seg_content {
+  grid-column: 1/1;
+  grid-row: 2/2;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  padding: 1rem;
+
+}
+.table_ter_content {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.table_qua_content {
+  grid-column: 3/3;
+  grid-row: 2/2;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.table_qui_content {
+  grid-column: 4/4;
+  grid-row: 2/2;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.table_sex_content {
+  grid-column: 5/5;
+  grid-row: 2/2;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.planning_table_img {
+  width: 128px;
+}
+.table_content_list {
+  width: 50%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+}
+
+.content_list_img,.icon_edit_student {
   width: 32px;
-  margin-right: 0.5rem;
+opacity: .5;
 }
-
-.table_student_item {
-  margin: 0 0.2rem;
-  font-size: 0.8rem;
+.icon_edit_student:hover{
+  opacity: 1;
 }
