@@ -10,11 +10,13 @@ import iconEditStudent from "../../../Assets/edit.svg";
 import iconStudent from "../../../Assets/student_4872.png";
 import { StudentContext } from "../../StudentStorage";
 import { Link, useParams } from "react-router-dom";
+import { getCreateClassFromContext } from "eslint-plugin-react/lib/util/pragma";
 
 const WeekPlanning = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
   const { stdName, selectStudent, stdGrade } = React.useContext(StudentContext);
   const { id } = useParams();
+
   React.useEffect(() => {
     selectStudent(id);
   }, [stdName, stdName]);
@@ -23,17 +25,29 @@ const WeekPlanning = () => {
     event.preventDefault();
   };
   let selectedTeste = false;
-  const options = ["janeiro", "fevereiro", "marco", "abril", "maio"];
+  const options = [
+    "Rony A.A Silva",
+    "Gerada Gizelia P.",
+    "Matheus H. P. Silva",
+    "Daniel Victor. P. Silva",
+    "Rony A.A Silva",
+    "Gerada Gizelia P.",
+    "Matheus H. P. Silva",
+    "Daniel Victor. P. Silva",
+  ];
   const optionsTer = [
-    "abril",
-    "maio",
-    "junho",
-    "julho",
-    "agosto",
-    "setembro",
-    "outubro",
-    "novembro",
-    "dezembro",
+    "Rony A.A Silva",
+    "Gerada Gizelia P.",
+    "Matheus H. P. Silva",
+    "Daniel Victor. P. Silva",
+    "Rony A.A Silva",
+    "Gerada Gizelia P.",
+    "Matheus H. P. Silva",
+    "Daniel Victor. P. Silva",
+    "Rony A.A Silva",
+    "Gerada Gizelia P.",
+    "Matheus H. P. Silva",
+    "Daniel Victor. P. Silva",
   ];
   for (let i = 0; i < options.length; i++) {
     if (i === new Date().getMonth()) selectedTeste = options[i];
@@ -41,13 +55,20 @@ const WeekPlanning = () => {
 
   const handleMouseScroll = (event) => {
     event.preventDefault();
-    event.scrollLeft = 90;
+    event.stopPropagation();
+
+    console.log(event.pageX);
+    console.log(event.pageY);
+    if (event.pageX < 1150) {
+      window.scrollTo((event.currentTarget.scrollLeft += 30), 60);
+    } else {
+      window.scrollTo((event.currentTarget.scrollLeft -= 30), 60);
+    }
   };
-  console.log(selectedTeste);
+
   return (
     <div className={styles.planning}>
       <div className={styles.planning_container}>
-        <h1>Planejamento Semanal</h1>
         <main className={styles.planning_table} onMouseOver={handleMouseScroll}>
           <div className={styles.planning_table_seg}>
             <div className={styles.table_item_header}>
@@ -69,6 +90,7 @@ const WeekPlanning = () => {
                     alt=""
                   />
                   <p>{item}</p>
+                  <p>{stdGrade}</p>
                   Horário: 11:30
                   <Link to={"/login/aluno/editar/id/"}>
                     <img
@@ -179,6 +201,18 @@ const WeekPlanning = () => {
               </div>
             ))}
           </div>
+          <button
+            className={styles.button_table_left}
+            onClick={handleMouseScroll}
+          >
+            Left
+          </button>
+          <button
+            className={styles.button_table_right}
+            onClick={handleMouseScroll}
+          >
+            Right
+          </button>
         </main>
       </div>
     </div>
