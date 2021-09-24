@@ -13,17 +13,16 @@ body {
   position: relative;
   overflow-y: auto;
   scroll-snap-align: start;
+  transition: .4s;
+
 }
 
 .planning_container {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*flex-direction: column;*/
-  padding: 2rem 6rem;
+  padding: 2rem ;
   box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
   overflow: hidden;
   scroll-snap-align: start;
+
 }
 
 .planning_table {
@@ -48,7 +47,7 @@ body {
   grid-template-rows: 1fr 1fr;
   /*margin: auto;*/
   /*background: #541bc1;*/
-  scroll-snap-align: start;
+
 }
 .table_item_header {
   width: 100%;
@@ -72,6 +71,8 @@ body {
   /*flex-direction: column;*/
   flex-wrap: wrap;
   padding: 1rem;
+  transition: 3s;
+
 }
 .table_ter_content {
   grid-column: 2/2;
@@ -118,7 +119,7 @@ body {
   padding: 1rem;
 }
 .planning_table_img {
-  width: 128px;
+  width: 92px;
 }
 .table_content_list {
   width: 50%;
@@ -139,8 +140,6 @@ body {
   font-weight: 600;
   font-style: italic;
 }
-
-
 .content_list_img,
 .icon_edit_student {
   width: 32px;
@@ -148,15 +147,4 @@ body {
 }
 .icon_edit_student:hover {
   opacity: 1;
-}
-.button_table_left{
-  position: absolute;
-  padding: 1rem;
-  top: 50%;
-}
-.button_table_right{
-  position: absolute;
-  padding: 1rem;
-  top: 50%;
-  left: 300px;
 }

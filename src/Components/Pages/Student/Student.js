@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 import HomeStudent from "./HomeStudent";
 import ListStudents from "./ListStudents";
 import SelectStudent from "./SelectStudent";
@@ -41,7 +41,7 @@ const Student = () => {
           <Route path="editar/id/:id" element={<EditStudent />} />
           <Route path="adicionar" element={<AddStudent />} />
           <Route path="deletar/id/:id" element={<DeleteStudent />} />
-          <Route path="planejamento/id/:id" element={<WeekPlanning />} />
+          <Route path="planejamento/" element={<WeekPlanning />} />
         </Routes>
       </div>
     </div>

@@ -7,7 +7,6 @@ import { StudentContext } from "../../StudentStorage";
 
 const EditStudent = () => {
   const { id } = useParams();
-  const [stdData, setStdData] = React.useState("");
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -19,47 +18,33 @@ const EditStudent = () => {
   const [datePayment, setDatePayment] = React.useState();
   const [registrationDate, setRegistrationDate] = React.useState("");
   const [dateExpiresContract, setDateExpiresContract] = React.useState("");
-  const { updateStudent } = React.useContext(StudentContext);
-  const navigate = useNavigate();
+  const { updateStudent, selectStudent, stdData } =
+    React.useContext(StudentContext);
 
   React.useEffect(() => {
-    const selectStudent = async () => {
-      try {
-        const { url, options } = SELECT_STD(id);
-        const response = await axios(url, options);
-        response && setStdData(response.data.data[0]);
-        setName(stdData.name);
-        setEmail(stdData.email);
-        setPhone(stdData.phone);
-        setAddress(stdData.address);
-        setAddress(stdData.address);
-        setPhone(stdData.phone);
-        setGrade(stdData.grade);
-        setEmail(stdData.email);
-        setRegistrationDate(stdData.registrationDate);
-        setDateExpiresContract(stdData.dateExpiresContract);
-        setSituation(stdData.situation);
-        setDatePayment(stdData.datePayment);
-        setBirthday(stdData.birthday);
-        setContractNumber(stdData.contractNumber);
-        console.log(response.data.data[0]);
-      } catch (response) {
-        console.log(response.error);
-      }
-    };
-    selectStudent();
+    selectStudent(id);
+    setName(stdData.name);
+    setEmail(stdData.email);
+    setPhone(stdData.phone);
+    setAddress(stdData.address);
+    setPhone(stdData.phone);
+    setGrade(stdData.grade);
+    setBirthday(stdData.birthday);
+    setRegistrationDate(stdData.registrationDate);
+    setDateExpiresContract(stdData.dateExpiresContract);
+    setSituation(stdData.situation);
+    setDatePayment(stdData.datePayment);
+    setContractNumber(stdData.contractNumber);
   }, [
     stdData.name,
-    stdData.address,
-    stdData.email,
     stdData.phone,
     stdData.email,
-    stdData.birthday,
-    stdData.situation,
+    stdData.address,
     stdData.grade,
-    stdData.dateExpiresContract,
-    stdData.datePayment,
+    stdData.birthday,
     stdData.registrationDate,
+    stdData.situation,
+    stdData.datePayment,
     stdData.contractNumber,
   ]);
 

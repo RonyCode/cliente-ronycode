@@ -30,7 +30,15 @@ const UserForm = () => {
           />
           <p className={styles.icon_name}>Adicionar aluno</p>
         </Link>
-
+        <Link className={styles.icon} to="/login/aluno/planejamento">
+          <img
+            className={styles.img_icon}
+            src="https://i.ibb.co/sw579BW/education-the-Board-876.png"
+            alt="education-the-Board-876"
+            border="0"
+          />
+          <p className={styles.icon_name}>Planejamento Semanal </p>
+        </Link>
         <Link className={styles.icon} to="/login/aluno/lista">
           <img
             className={styles.img_icon}
@@ -69,16 +77,6 @@ const UserForm = () => {
             border="0"
           />
           <p className={styles.icon_name}>Buscar Aluno</p>
-        </Link>
-
-        <Link className={styles.icon} to="/login/aluno/planejamento">
-          <img
-            className={styles.img_icon}
-            src="https://i.ibb.co/sw579BW/education-the-Board-876.png"
-            alt="education-the-Board-876"
-            border="0"
-          />
-          <p className={styles.icon_name}>Planejamento Semanal </p>
         </Link>
 
         <Link className={styles.icon} to="/login/aluno/lista">

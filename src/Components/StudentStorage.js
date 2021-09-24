@@ -7,19 +7,6 @@ export const StudentContext = createContext();
 
 export const StudentStorage = ({ children }) => {
   const [dataAllStudent, setDataAllStudent] = useState("");
-  const [stdName, setStdName] = useState("");
-  const [stdAddress, setStdAddress] = useState(null);
-  const [stdPhone, setStdPhone] = useState(null);
-  const [stdEmail, setStdEmail] = useState(null);
-  const [stdGrade, setStdGrade] = useState(null);
-  const [stdBirthday, setStdBirthday] = useState(null);
-  const [stdSituation, setStdSituation] = useState(null);
-  const [stdRegistrationDate, setStdRegistrationDate] = useState(null);
-  const [stdDatePayment, setStdDatePayment] = useState(null);
-  const [stdDateExpiresContract, setStdDateExpiresContract] = useState(null);
-  const [stdContractNumber, setStdContractNumber] = useState(null);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
   const [stdData, setStdData] = useState("");
   const navigate = useNavigate();
 
@@ -28,20 +15,9 @@ export const StudentStorage = ({ children }) => {
       const { url, options } = SELECT_STD(id);
       const response = await axios(url, options);
       response && setStdData(response.data.data[0]);
-      setStdName(stdData.name);
-      setStdAddress(stdData.address);
-      setStdPhone(stdData.phone);
-      setStdBirthday(stdData.birthday);
-      setStdSituation(stdData.situation);
-      setStdGrade(stdData.grade);
-      setStdEmail(stdData.email);
-      setStdRegistrationDate(stdData.registrationDate);
-      setStdDateExpiresContract(stdData.dateExpiresContract);
-      setStdContractNumber(stdData.contractNumber);
-      setStdDatePayment(stdData.datePayment);
-      console.log(response.data.data[0]);
+      console.log(response.data);
     } catch (response) {
-      console.log(response.response.data);
+      console.log(response.data);
     }
   };
 
@@ -55,7 +31,7 @@ export const StudentStorage = ({ children }) => {
         console.log("Success: ", response.data.message);
       })
       .catch(function (error) {
-        console.log("Error: ", error.data.message);
+        console.log("Error: ", error.data);
         alert(error.response.data.message);
       });
   };
@@ -69,7 +45,7 @@ export const StudentStorage = ({ children }) => {
         console.log("Success: ", response.data);
       })
       .catch(function (error) {
-        console.log("Error: ", error.response.data);
+        console.log("Error: ", error.data);
         alert(error.response.data.message);
       });
   };
@@ -79,10 +55,9 @@ export const StudentStorage = ({ children }) => {
       const { url, options } = GET_ALL_STD();
       const response = await axios(url, options);
       response && setDataAllStudent(response.data.data);
-      console.log(response.data);
-      return dataAllStudent;
-    } catch (response) {
-      console.log(response);
+      console.log(response.data.data);
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
@@ -90,17 +65,7 @@ export const StudentStorage = ({ children }) => {
     <div>
       <StudentContext.Provider
         value={{
-          stdName,
-          stdAddress,
-          stdEmail,
-          stdPhone,
-          stdGrade,
-          stdBirthday,
-          stdSituation,
-          stdContractNumber,
-          stdDatePayment,
-          stdDateExpiresContract,
-          stdRegistrationDate,
+          stdData,
           selectStudent,
           addStudent,
           updateStudent,

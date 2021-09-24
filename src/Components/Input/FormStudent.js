@@ -38,6 +38,8 @@ const FormStudent = ({
   buttonApears = "",
   readSelect = false,
 }) => {
+  const [peopleInfo, setPeopleInfo] = React.useState([]);
+
   return (
     <div className={styles.add_student}>
       <form className={styles.add_student_container} onSubmit={onSubmit}>
@@ -103,7 +105,7 @@ const FormStudent = ({
                 value={valueGrade || ""}
                 onChange={({ target }) => setGrade(target.value)}
               >
-                <option selected={true} hidden={true} disabled={true}>
+                <option defaultValue={true} hidden={true}>
                   Selecione
                 </option>
                 <option value="alfabetização">Alfabetização</option>
@@ -178,7 +180,7 @@ const FormStudent = ({
               value={valueSituation || ""}
               onChange={({ target }) => setSituation(target.value)}
             >
-              <option hidden={true} disabled={true}>
+              <option defaultValue={true} hidden={true}>
                 Selecione
               </option>
               <option value="adimplente">Adimplente</option>
@@ -193,24 +195,41 @@ const FormStudent = ({
         </div>
 
         <div className={styles.add_student_div}>
-          <label>Vencimento Cont.:</label>
-          <input
+          <label className={styles.add_student_label}>Horários:</label>
+          <select
             readOnly={readSelect}
-            placeholder="__/__/____"
-            className={styles.add_student_input}
-            type="text"
-            value={valueDateExpiresContract || ""}
-            onChange={({ target }) =>
-              setDateExpiresContract(
-                target.value
-                  .replace(/\D/g, "")
-                  .replace(/(\d{2})(\d)/, "$1/$2")
-                  .replace(/(\d{2})(\d)/, "$1/$2")
-                  .replace(/(\d{4})\d+?$/, "$1")
-              )
-            }
+            disabled={disabledSelect}
+            className={styles.add_student_select}
+            value={valueGrade || ""}
+            onChange={({ target }) => setGrade(target.value)}
+          >
+            <option defaultValue={true} hidden={true}>
+              Selecione
+            </option>
+            <option value="08h:00min as 09h:00min">
+              08h:00min as 09h:00min
+            </option>
+            <option value="09h:00min as 10h:00min">
+              09h:00min as 10h:00min
+            </option>
+            <option value="10h:00min as 11h:30min">
+              10h:00min as 11h:30min
+            </option>
+            <option value="13h:30min as 15h:00min">
+              13h:30min as 15h:00min
+            </option>
+            <option value="15h:00min as 16h:00min">
+              15h:30min as 16h:30min
+            </option>
+            <option value="16h:30min as 17h:30min">
+              16h:30min as 17h:30min
+            </option>
+          </select>
+          <img
+            className={styles.add_student_icon}
+            src={iconEstudo}
+            alt="icone escolaridade"
           />
-          <img className={styles.add_student_icon} src={iconCalendar} alt="" />
         </div>
 
         <div className={styles.add_student_div}>
@@ -259,32 +278,52 @@ const FormStudent = ({
             alt="icone aniversario"
           />
         </div>
+
         <div className={styles.add_student_div}>
-          <label className={styles.add_student_input_label}>
-            Data da Mat.:
-          </label>
+          <label className={styles.add_student_label}>Dia de Aula:</label>
+
           <input
-            readOnly={readSelect}
-            placeholder="__/__/____"
-            className={styles.add_student_input}
-            type="text"
-            value={valueRegistrationDate || ""}
-            onChange={({ target }) =>
-              setRegistrationDate(
-                target.value
-                  .replace(/\D/g, "")
-                  .replace(/(\d{2})(\d)/, "$1/$2")
-                  .replace(/(\d{2})(\d)/, "$1/$2")
-                  .replace(/(\d{4})\d+?$/, "$1")
-              )
-            }
-          />
-          <img
-            className={styles.add_student_icon}
-            src={iconCalendar}
-            alt="icone data matricula"
+            onChange={(e) => {
+              // add to list
+              if (e.target.checked) {
+                setPeopleInfo(e.target.value);
+              } else {
+                // remove from list
+                setPeopleInfo("");
+              }
+            }}
+            value="Segunda"
+            type="checkbox"
+            name="check"
           />
         </div>
+
+        {/*<div className={styles.add_student_div}>*/}
+        {/*  <label className={styles.add_student_input_label}>*/}
+        {/*    Data da Mat.:*/}
+        {/*  </label>*/}
+        {/*  <input*/}
+        {/*    readOnly={readSelect}*/}
+        {/*    placeholder="__/__/____"*/}
+        {/*    className={styles.add_student_input}*/}
+        {/*    type="text"*/}
+        {/*    value={valueRegistrationDate || ""}*/}
+        {/*    onChange={({ target }) =>*/}
+        {/*      setRegistrationDate(*/}
+        {/*        target.value*/}
+        {/*          .replace(/\D/g, "")*/}
+        {/*          .replace(/(\d{2})(\d)/, "$1/$2")*/}
+        {/*          .replace(/(\d{2})(\d)/, "$1/$2")*/}
+        {/*          .replace(/(\d{4})\d+?$/, "$1")*/}
+        {/*      )*/}
+        {/*    }*/}
+        {/*  />*/}
+        {/*  <img*/}
+        {/*    className={styles.add_student_icon}*/}
+        {/*    src={iconCalendar}*/}
+        {/*    alt="icone data matricula"*/}
+        {/*  />*/}
+        {/*</div>*/}
         <div className={styles.add_student_div}>
           <Link className={styles.add_student_link} to="/login/aluno/lista">
             Cancelar
