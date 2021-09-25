@@ -9,6 +9,12 @@ import iconEstudo from "../../Assets/book-with-bookmark-educational-tool-outline
 import iconEmail from "../../Assets/email-outlined-envelope-back-symbol_icon-icons.com_57846.svg";
 import iconContrato from "../../Assets/contract_icon-icons.com_64813.png";
 import iconSelect from "../../Assets/check.png";
+import iconHorario from "../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
+import iconSeg from "../../Assets/seg.png";
+import iconTer from "../../Assets/ter.png";
+import iconQua from "../../Assets/qua.png";
+import iconQui from "../../Assets/qui.png";
+import iconSex from "../../Assets/sex.png";
 
 const FormStudent = ({
   onSubmit,
@@ -37,6 +43,7 @@ const FormStudent = ({
   disabledSelect = false,
   buttonApears = "",
   readSelect = false,
+  required = false,
 }) => {
   const [peopleInfo, setPeopleInfo] = React.useState([]);
 
@@ -46,6 +53,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Nome:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="digite seu nome"
             type="text"
@@ -63,6 +71,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Email:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="digite seu email"
             type="email"
@@ -80,6 +89,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Endereço:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="digite seu endereço"
             type="text"
@@ -127,6 +137,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Telefone:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="(__) _____-____"
             className={styles.add_student_input}
@@ -152,6 +163,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label>Contrato Nº:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="_____"
             className={styles.add_student_input}
@@ -174,7 +186,6 @@ const FormStudent = ({
           <label>Situação:</label>
           <div className={styles.add_student_select_style}>
             <select
-              readOnly={readSelect}
               disabled={disabledSelect}
               className={styles.add_student_select}
               value={valueSituation || ""}
@@ -194,47 +205,127 @@ const FormStudent = ({
           </div>
         </div>
 
-        <div className={styles.add_student_div}>
-          <label className={styles.add_student_label}>Horários:</label>
-          <select
-            readOnly={readSelect}
-            disabled={disabledSelect}
-            className={styles.add_student_select}
-            value={valueGrade || ""}
-            onChange={({ target }) => setGrade(target.value)}
-          >
-            <option defaultValue={true} hidden={true}>
-              Selecione
-            </option>
-            <option value="08h:00min as 09h:00min">
-              08h:00min as 09h:00min
-            </option>
-            <option value="09h:00min as 10h:00min">
-              09h:00min as 10h:00min
-            </option>
-            <option value="10h:00min as 11h:30min">
-              10h:00min as 11h:30min
-            </option>
-            <option value="13h:30min as 15h:00min">
-              13h:30min as 15h:00min
-            </option>
-            <option value="15h:00min as 16h:00min">
-              15h:30min as 16h:30min
-            </option>
-            <option value="16h:30min as 17h:30min">
-              16h:30min as 17h:30min
-            </option>
-          </select>
-          <img
-            className={styles.add_student_icon}
-            src={iconEstudo}
-            alt="icone escolaridade"
-          />
-        </div>
+        {/*<div className={styles.add_student_div}>*/}
+        {/*<label className={styles.add_student_label}>Horários:</label>*/}
+        {/*<select*/}
+        {/*  disabled={disabledSelect}*/}
+        {/*  className={styles.add_student_select}*/}
+        {/*  value={valueGrade || ""}*/}
+        {/*  onChange={({ target }) => setGrade(target.value)}*/}
+        {/*>*/}
+        {/*  <option defaultValue={true} hidden={true}>*/}
+        {/*    Selecione*/}
+        {/*  </option>*/}
+        {/*  <option disabled={true}>Segunda-Feira</option>*/}
+        {/*  <option value="seg 08h:00min as 09h:00min">*/}
+        {/*    <span>*/}
+        {/*      <img src={iconSeg} alt="" />*/}
+        {/*    </span>{" "}*/}
+        {/*    Seg 08h:00min as 09h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="seg 09h:00min as 10h:00min">*/}
+        {/*    Seg 09h:00min as 10h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="seg 10h:00min as 11h:30min">*/}
+        {/*    Seg 10h:00min as 11h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="seg 13h:30min as 15h:00min">*/}
+        {/*    Seg 13h:30min as 15h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="seg 15h:00min as 16h:00min">*/}
+        {/*    Seg 15h:30min as 16h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="seg 16h:30min as 17h:30min">*/}
+        {/*    Seg 16h:30min as 17h:30min*/}
+        {/*  </option>{" "}*/}
+        {/*  <option disabled={true}>Terça-Feira</option>*/}
+        {/*  <option value="ter 08h:00min as 09h:00min">*/}
+        {/*    Ter 08h:00min as 09h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="ter 09h:00min as 10h:00min">*/}
+        {/*    Ter 09h:00min as 10h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="ter 10h:00min as 11h:30min">*/}
+        {/*    Ter 10h:00min as 11h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="ter 13h:30min as 15h:00min">*/}
+        {/*    Ter 13h:30min as 15h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="ter 15h:00min as 16h:00min">*/}
+        {/*    Ter 15h:30min as 16h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="ter 16h:30min as 17h:30min">*/}
+        {/*    Ter 16h:30min as 17h:30min*/}
+        {/*  </option>{" "}*/}
+        {/*  <option disabled={true}>Quarta-Feira</option>*/}
+        {/*  <option value="qua 08h:00min as 09h:00min">*/}
+        {/*    Qua 08h:00min as 09h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="qua 09h:00min as 10h:00min">*/}
+        {/*    Qua 09h:00min as 10h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="qua 10h:00min as 11h:30min">*/}
+        {/*    Qua 10h:00min as 11h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="qua 13h:30min as 15h:00min">*/}
+        {/*    Qua 13h:30min as 15h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="qua 15h:00min as 16h:00min">*/}
+        {/*    Qua 15h:30min as 16h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="qua 16h:30min as 17h:30min">*/}
+        {/*    Qua 16h:30min as 17h:30min*/}
+        {/*  </option>{" "}*/}
+        {/*  <option disabled={true}>Quinta-Feira</option>*/}
+        {/*  <option value="qui 08h:00min as 09h:00min">*/}
+        {/*    Qui 08h:00min as 09h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="qui 09h:00min as 10h:00min">*/}
+        {/*    Qui 09h:00min as 10h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="qui 10h:00min as 11h:30min">*/}
+        {/*    Qui 10h:00min as 11h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="qui 13h:30min as 15h:00min">*/}
+        {/*    Qui 13h:30min as 15h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="qui 15h:00min as 16h:00min">*/}
+        {/*    Qui 15h:30min as 16h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="qui 16h:30min as 17h:30min">*/}
+        {/*    Qui 16h:30min as 17h:30min*/}
+        {/*  </option>{" "}*/}
+        {/*  <option disabled={true}>Sexta-Feira</option>*/}
+        {/*  <option value="sex 08h:00min as 09h:00min">*/}
+        {/*    Sex 08h:00min as 09h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="sex 09h:00min as 10h:00min">*/}
+        {/*    Sex 09h:00min as 10h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="sex 10h:00min as 11h:30min">*/}
+        {/*    Sex 10h:00min as 11h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="sex 13h:30min as 15h:00min">*/}
+        {/*    Sex 13h:30min as 15h:00min*/}
+        {/*  </option>*/}
+        {/*  <option value="sex 15h:00min as 16h:00min">*/}
+        {/*    Sex 15h:30min as 16h:30min*/}
+        {/*  </option>*/}
+        {/*  <option value="sex 16h:30min as 17h:30min">*/}
+        {/*    Sex 16h:30min as 17h:30min*/}
+        {/*  </option>{" "}*/}
+        {/*</select>*/}
+        {/*  <img*/}
+        {/*    className={styles.add_student_icon}*/}
+        {/*    src={iconHorario}*/}
+        {/*    alt="icone horario"*/}
+        {/*  />*/}
+        {/*</div>*/}
 
         <div className={styles.add_student_div}>
           <label>Data Pgto.:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="__/__/____"
             className={styles.add_student_input}
@@ -255,6 +346,7 @@ const FormStudent = ({
         <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Data Nasc.:</label>
           <input
+            required={required}
             readOnly={readSelect}
             placeholder="__/__/____"
             align="center"
@@ -279,23 +371,71 @@ const FormStudent = ({
           />
         </div>
 
-        <div className={styles.add_student_div}>
+        <div className={styles.add_student_checkbox}>
           <label className={styles.add_student_label}>Dia de Aula:</label>
-
-          <input
-            onChange={(e) => {
-              // add to list
-              if (e.target.checked) {
-                setPeopleInfo(e.target.value);
-              } else {
-                // remove from list
-                setPeopleInfo("");
-              }
-            }}
-            value="Segunda"
-            type="checkbox"
-            name="check"
-          />
+          <div className={styles.student_checkbox_list}>
+            {" "}
+            <label>
+              <input
+                type="checkbox"
+                onChange={(e) => setRegistrationDate(e.target.value)}
+                name="seg"
+              />
+              <img
+                className={styles.add_checkbox_icon}
+                src={iconSeg}
+                alt="icone segunda"
+              />
+            </label>{" "}
+            <label>
+              <input
+                type="checkbox"
+                onChange={(e) => setRegistrationDate(e.target.value)}
+                name="ter"
+              />
+              <img
+                className={styles.add_checkbox_icon}
+                src={iconTer}
+                alt="icone terça"
+              />
+            </label>{" "}
+            <label>
+              <input
+                type="checkbox"
+                onChange={(e) => setRegistrationDate(e.target.value)}
+                name="qua"
+              />
+              <img
+                className={styles.add_checkbox_icon}
+                src={iconQua}
+                alt="icone quarta"
+              />
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                onChange={(e) => setRegistrationDate(e.target.value)}
+                name="qui"
+              />
+              <img
+                className={styles.add_checkbox_icon}
+                src={iconQui}
+                alt="icone quinta"
+              />
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                onChange={(e) => setRegistrationDate(e.target.value)}
+                name="sex"
+              />
+              <img
+                className={styles.add_checkbox_icon}
+                src={iconSex}
+                alt="icone sexta"
+              />
+            </label>
+          </div>
         </div>
 
         {/*<div className={styles.add_student_div}>*/}

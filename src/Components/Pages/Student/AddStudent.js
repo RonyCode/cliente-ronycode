@@ -61,6 +61,7 @@ const AddStudent = () => {
         setPhone={setPhone}
         setRegistrationDate={setRegistrationDate}
         onSubmit={handleSubmit}
+        required={true}
       />
     </div>
   );
