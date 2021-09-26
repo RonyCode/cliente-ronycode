@@ -56,32 +56,34 @@
   grid-row: 4/4;
 }
 
-/*.add_student_div:nth-child(8) {*/
-/*  grid-column: 3/5;*/
-/*  grid-row: 3/3;*/
-/*}*/
+.add_student_div:nth-child(8) {
+  grid-column: 2/2;
+  grid-row: 3/3;
+}
 .add_student_checkbox {
   grid-column: 3/5;
   grid-row: 3/3;
+  position: relative;
+
 }
 
-.add_student_div:nth-child(8) {
+.add_student_div:nth-child(9) {
   grid-column: 4/4;
   grid-row: 4/4;
 }
 
-.add_student_div:nth-child(9) {
+.add_student_div:nth-child(10) {
   grid-column: 2/2;
   grid-row: 3/3;
 }
 
-.add_student_div:nth-child(10) {
+.add_student_div:nth-child(11) {
   grid-column: 1/1;
   grid-row: 4/4;
   margin-top: 1rem;
 }
 
-.add_student_div:nth-child(11) {
+.add_student_div:nth-child(12) {
   grid-column: 2/2;
   grid-row: 4/4;
   margin-top: 1rem;
@@ -166,13 +168,7 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
-/*.add_student_icon {*/
-/*  width: 32px;*/
-/*}*/
-.add_checkbox_icon {
-  width: 42px;
-  opacity: 0.5;
-}
+
 .student_checkbox_list {
   padding: .5rem;
   border-radius: 5px;

@@ -97,11 +97,11 @@ h3 {
   width: 30px;
 }
 
-@media (max-width: 40rem) {
+@media (min-width: 40rem) {
   .list_student_link {
-    padding: 0.7rem;
+    padding: 0.5rem;
   }
   .icons {
-    width: 30px;
+    width: 31px;
   }
 }

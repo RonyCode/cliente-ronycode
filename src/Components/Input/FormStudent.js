@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./FormStudent.module.css";
 import iconAluno from "../../Assets/user_icon-icons.com_48201.png";
 import iconCalendar from "../../Assets/3586371-calendar-date-event-schedule_107943.svg";
 import iconPhone from "../../Assets/phone_icon-icons.com_48251.png";
@@ -10,11 +9,9 @@ import iconEmail from "../../Assets/email-outlined-envelope-back-symbol_icon-ico
 import iconContrato from "../../Assets/contract_icon-icons.com_64813.png";
 import iconSelect from "../../Assets/check.png";
 import iconHorario from "../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
-import iconSeg from "../../Assets/seg.png";
-import iconTer from "../../Assets/ter.png";
-import iconQua from "../../Assets/qua.png";
-import iconQui from "../../Assets/qui.png";
-import iconSex from "../../Assets/sex.png";
+import styles from "./FormStudent.module.css";
+
+import Select from "./Select";
 
 const FormStudent = ({
   onSubmit,
@@ -45,7 +42,22 @@ const FormStudent = ({
   readSelect = false,
   required = false,
 }) => {
-  const [peopleInfo, setPeopleInfo] = React.useState([]);
+  const [dayWeek, setDayWeek] = React.useState([]);
+  const [addClass, setAddClass] = React.useState("select_expand");
+
+  const handleChange = (e) => {
+    if (e.target.checked) {
+      setDayWeek((dayWeek) => [...dayWeek, e.target.value]);
+    } else {
+      // remove from list
+      setDayWeek(dayWeek.filter((people) => people !== e.target.value));
+    }
+    if (e.target.checked && addClass === e.target.value) {
+      setAddClass("select_expand");
+    } else {
+      setAddClass("");
+    }
+  };
 
   return (
     <div className={styles.add_student}>
@@ -205,123 +217,6 @@ const FormStudent = ({
           </div>
         </div>
 
-        {/*<div className={styles.add_student_div}>*/}
-        {/*<label className={styles.add_student_label}>Horários:</label>*/}
-        {/*<select*/}
-        {/*  disabled={disabledSelect}*/}
-        {/*  className={styles.add_student_select}*/}
-        {/*  value={valueGrade || ""}*/}
-        {/*  onChange={({ target }) => setGrade(target.value)}*/}
-        {/*>*/}
-        {/*  <option defaultValue={true} hidden={true}>*/}
-        {/*    Selecione*/}
-        {/*  </option>*/}
-        {/*  <option disabled={true}>Segunda-Feira</option>*/}
-        {/*  <option value="seg 08h:00min as 09h:00min">*/}
-        {/*    <span>*/}
-        {/*      <img src={iconSeg} alt="" />*/}
-        {/*    </span>{" "}*/}
-        {/*    Seg 08h:00min as 09h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="seg 09h:00min as 10h:00min">*/}
-        {/*    Seg 09h:00min as 10h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="seg 10h:00min as 11h:30min">*/}
-        {/*    Seg 10h:00min as 11h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="seg 13h:30min as 15h:00min">*/}
-        {/*    Seg 13h:30min as 15h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="seg 15h:00min as 16h:00min">*/}
-        {/*    Seg 15h:30min as 16h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="seg 16h:30min as 17h:30min">*/}
-        {/*    Seg 16h:30min as 17h:30min*/}
-        {/*  </option>{" "}*/}
-        {/*  <option disabled={true}>Terça-Feira</option>*/}
-        {/*  <option value="ter 08h:00min as 09h:00min">*/}
-        {/*    Ter 08h:00min as 09h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="ter 09h:00min as 10h:00min">*/}
-        {/*    Ter 09h:00min as 10h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="ter 10h:00min as 11h:30min">*/}
-        {/*    Ter 10h:00min as 11h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="ter 13h:30min as 15h:00min">*/}
-        {/*    Ter 13h:30min as 15h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="ter 15h:00min as 16h:00min">*/}
-        {/*    Ter 15h:30min as 16h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="ter 16h:30min as 17h:30min">*/}
-        {/*    Ter 16h:30min as 17h:30min*/}
-        {/*  </option>{" "}*/}
-        {/*  <option disabled={true}>Quarta-Feira</option>*/}
-        {/*  <option value="qua 08h:00min as 09h:00min">*/}
-        {/*    Qua 08h:00min as 09h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="qua 09h:00min as 10h:00min">*/}
-        {/*    Qua 09h:00min as 10h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="qua 10h:00min as 11h:30min">*/}
-        {/*    Qua 10h:00min as 11h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="qua 13h:30min as 15h:00min">*/}
-        {/*    Qua 13h:30min as 15h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="qua 15h:00min as 16h:00min">*/}
-        {/*    Qua 15h:30min as 16h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="qua 16h:30min as 17h:30min">*/}
-        {/*    Qua 16h:30min as 17h:30min*/}
-        {/*  </option>{" "}*/}
-        {/*  <option disabled={true}>Quinta-Feira</option>*/}
-        {/*  <option value="qui 08h:00min as 09h:00min">*/}
-        {/*    Qui 08h:00min as 09h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="qui 09h:00min as 10h:00min">*/}
-        {/*    Qui 09h:00min as 10h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="qui 10h:00min as 11h:30min">*/}
-        {/*    Qui 10h:00min as 11h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="qui 13h:30min as 15h:00min">*/}
-        {/*    Qui 13h:30min as 15h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="qui 15h:00min as 16h:00min">*/}
-        {/*    Qui 15h:30min as 16h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="qui 16h:30min as 17h:30min">*/}
-        {/*    Qui 16h:30min as 17h:30min*/}
-        {/*  </option>{" "}*/}
-        {/*  <option disabled={true}>Sexta-Feira</option>*/}
-        {/*  <option value="sex 08h:00min as 09h:00min">*/}
-        {/*    Sex 08h:00min as 09h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="sex 09h:00min as 10h:00min">*/}
-        {/*    Sex 09h:00min as 10h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="sex 10h:00min as 11h:30min">*/}
-        {/*    Sex 10h:00min as 11h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="sex 13h:30min as 15h:00min">*/}
-        {/*    Sex 13h:30min as 15h:00min*/}
-        {/*  </option>*/}
-        {/*  <option value="sex 15h:00min as 16h:00min">*/}
-        {/*    Sex 15h:30min as 16h:30min*/}
-        {/*  </option>*/}
-        {/*  <option value="sex 16h:30min as 17h:30min">*/}
-        {/*    Sex 16h:30min as 17h:30min*/}
-        {/*  </option>{" "}*/}
-        {/*</select>*/}
-        {/*  <img*/}
-        {/*    className={styles.add_student_icon}*/}
-        {/*    src={iconHorario}*/}
-        {/*    alt="icone horario"*/}
-        {/*  />*/}
-        {/*</div>*/}
-
         <div className={styles.add_student_div}>
           <label>Data Pgto.:</label>
           <input
@@ -373,97 +268,16 @@ const FormStudent = ({
 
         <div className={styles.add_student_checkbox}>
           <label className={styles.add_student_label}>Dia de Aula:</label>
-          <div className={styles.student_checkbox_list}>
-            {" "}
-            <label>
-              <input
-                type="checkbox"
-                onChange={(e) => setRegistrationDate(e.target.value)}
-                name="seg"
-              />
-              <img
-                className={styles.add_checkbox_icon}
-                src={iconSeg}
-                alt="icone segunda"
-              />
-            </label>{" "}
-            <label>
-              <input
-                type="checkbox"
-                onChange={(e) => setRegistrationDate(e.target.value)}
-                name="ter"
-              />
-              <img
-                className={styles.add_checkbox_icon}
-                src={iconTer}
-                alt="icone terça"
-              />
-            </label>{" "}
-            <label>
-              <input
-                type="checkbox"
-                onChange={(e) => setRegistrationDate(e.target.value)}
-                name="qua"
-              />
-              <img
-                className={styles.add_checkbox_icon}
-                src={iconQua}
-                alt="icone quarta"
-              />
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                onChange={(e) => setRegistrationDate(e.target.value)}
-                name="qui"
-              />
-              <img
-                className={styles.add_checkbox_icon}
-                src={iconQui}
-                alt="icone quinta"
-              />
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                onChange={(e) => setRegistrationDate(e.target.value)}
-                name="sex"
-              />
-              <img
-                className={styles.add_checkbox_icon}
-                src={iconSex}
-                alt="icone sexta"
-              />
-            </label>
-          </div>
+          <label>
+            <Select addClass={addClass} onChange={handleChange} />
+          </label>
+          <img
+            className={styles.add_student_icon}
+            src={iconHorario}
+            alt="icone aniversario"
+          />
         </div>
 
-        {/*<div className={styles.add_student_div}>*/}
-        {/*  <label className={styles.add_student_input_label}>*/}
-        {/*    Data da Mat.:*/}
-        {/*  </label>*/}
-        {/*  <input*/}
-        {/*    readOnly={readSelect}*/}
-        {/*    placeholder="__/__/____"*/}
-        {/*    className={styles.add_student_input}*/}
-        {/*    type="text"*/}
-        {/*    value={valueRegistrationDate || ""}*/}
-        {/*    onChange={({ target }) =>*/}
-        {/*      setRegistrationDate(*/}
-        {/*        target.value*/}
-        {/*          .replace(/\D/g, "")*/}
-        {/*          .replace(/(\d{2})(\d)/, "$1/$2")*/}
-        {/*          .replace(/(\d{2})(\d)/, "$1/$2")*/}
-        {/*          .replace(/(\d{4})\d+?$/, "$1")*/}
-        {/*      )*/}
-        {/*    }*/}
-        {/*  />*/}
-        {/*  <img*/}
-        {/*    className={styles.add_student_icon}*/}
-        {/*    src={iconCalendar}*/}
-        {/*    alt="icone data matricula"*/}
-        {/*  />*/}
-        {/*</div>*/}
         <div className={styles.add_student_div}>
           <Link className={styles.add_student_link} to="/login/aluno/lista">
             Cancelar
