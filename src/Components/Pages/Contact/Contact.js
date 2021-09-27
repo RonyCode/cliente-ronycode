@@ -5,7 +5,6 @@ import Select from "../../Input/Select";
 
 const Contato = () => {
   const [dayWeek, setDayWeek] = React.useState([]);
-  const [addClass, setAddClass] = React.useState("select_expand");
 
   const handleChange = (e) => {
     if (e.target.checked) {
@@ -13,11 +12,6 @@ const Contato = () => {
     } else {
       // remove from list
       setDayWeek(dayWeek.filter((people) => people !== e.target.value));
-    }
-    if (e.target.checked && addClass === e.target.value) {
-      setAddClass("select_expand");
-    } else {
-      setAddClass("");
     }
   };
 
@@ -28,7 +22,7 @@ const Contato = () => {
           <div className={styles.add_student_checkbox}>
             <label className={styles.add_student_label}>Dia de Aula:</label>
             <label>
-              <Select addClass={addClass} onChange={handleChange} />
+              <Select onChange={handleChange} />
             </label>
           </div>
         </div>

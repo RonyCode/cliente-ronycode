@@ -7,8 +7,9 @@
   text-align-all: center;
   margin-top: 0.5rem;
   font-size: 0.79rem;
-  /*position: absolute;*/
+  position: absolute;
   vertical-align: center;
+
 }
 .select_container {
   width: 100%;
@@ -17,6 +18,9 @@
   /*display: none;*/
   /*opacity: 0;*/
   padding: 1rem;
+  box-shadow: 0 -1px 7px -2px rgba(0, 0, 0, 0.3);
+
+
 }
 .select_container h4 {
   margin: 1rem 0;
@@ -33,20 +37,21 @@
   background: rgba(221, 221, 221, 0.7);
   padding: 0.5rem 0;
 }
-.item_checkbox:checked + .select input {
-display: block;
+#button_expand:checked ~ .select_expand {
+  display: block;
 }
-
-
 .select input {
   display: none;
 }
 
 .select_expand {
   display: none;
-  width: 520px;
-  height: 520px;
-  background: #4e8025;
+  width: 80%;
+  height: 300px;
+  overflow: scroll;
+  margin: 1rem auto auto auto;
+
+
 }
 .select_label {
   display: flex;

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Select.css";
-import styles from "./Select.css";
 import iconSeg from "../../Assets/seg.png";
 import iconTer from "../../Assets/ter.png";
 import iconQua from "../../Assets/qua.png";
 import iconQui from "../../Assets/qui.png";
 import iconSex from "../../Assets/sex.png";
+import iconCancelar from "../../Assets/cancelar.svg";
 
-const Select = ({ onChange, value, onCLick, selectExpand, addClass }) => {
+const Select = ({ onChange }) => {
   const hours = [
     "08h:00min as 09h:00min",
     "09h:00min as 10h:00min",
@@ -22,17 +22,9 @@ const Select = ({ onChange, value, onCLick, selectExpand, addClass }) => {
       <div className="select_container">
         <label>
           <p>Selecione</p>
-          <input
-            type="checkbox"
-            checked={addClass === "select_expand"}
-            onChange={onChange}
-            value={addClass}
-            id="button_expand"
-          />
-        </label>
+          <input type="checkbox" onChange={onChange} id="button_expand" />
 
-        <div className={addClass}>
-          <div className="select_item">
+          <div className="select_expand">
             <h4>Segunda-Feira</h4>
             {hours.map((item) => (
               <label key={item} className="select_label">
@@ -50,84 +42,85 @@ const Select = ({ onChange, value, onCLick, selectExpand, addClass }) => {
                 <p>{item}</p>
               </label>
             ))}
+            <div>
+              <h4>Terça-Feira</h4>
+              {hours.map((item) => (
+                <label key={item} className="select_label">
+                  <input
+                    type="checkbox"
+                    value={"ter " + item}
+                    onChange={onChange}
+                    className="item_checkbox"
+                  />
+                  <img
+                    className="add_checkbox_icon"
+                    src={iconTer}
+                    alt="icone checkbox"
+                  />
+                  <p>{item}</p>
+                </label>
+              ))}
+              s
+            </div>
+            <div>
+              <h4>Quarta-Feira</h4>
+              {hours.map((item) => (
+                <label key={item} className="select_label">
+                  <input
+                    type="checkbox"
+                    value={"qua " + item}
+                    onChange={onChange}
+                    className="item_checkbox"
+                  />
+                  <img
+                    className="add_checkbox_icon"
+                    src={iconQua}
+                    alt="icone checkbox"
+                  />
+                  <p>{item}</p>
+                </label>
+              ))}
+            </div>
+            <div>
+              <h4>Quinta-Feira</h4>
+              {hours.map((item) => (
+                <label key={item} className="select_label">
+                  <input
+                    type="checkbox"
+                    value={"qui " + item}
+                    onChange={onChange}
+                    className="item_checkbox"
+                  />
+                  <img
+                    className="add_checkbox_icon"
+                    src={iconQui}
+                    alt="icone checkbox"
+                  />
+                  <p>{item}</p>
+                </label>
+              ))}
+            </div>
+            <div>
+              <h4>Sexta-Feira</h4>
+              {hours.map((item) => (
+                <label key={item} className="select_label">
+                  <input
+                    type="checkbox"
+                    value={"sex " + item}
+                    onChange={onChange}
+                    className="item_checkbox"
+                  />
+                  <img
+                    className="add_checkbox_icon"
+                    src={iconSex}
+                    alt="icone checkbox"
+                  />
+                  <p>{item}</p>
+                </label>
+              ))}
+            </div>
           </div>
-          <div>
-            <h4>Terça-Feira</h4>
-            {hours.map((item) => (
-              <label key={item} className="select_label">
-                <input
-                  type="checkbox"
-                  value={"ter " + item}
-                  onChange={onChange}
-                  className="item_checkbox"
-                />
-                <img
-                  className="add_checkbox_icon"
-                  src={iconTer}
-                  alt="icone checkbox"
-                />
-                <p>{item}</p>
-              </label>
-            ))}
-          </div>
-          <div>
-            <h4>Quarta-Feira</h4>
-            {hours.map((item) => (
-              <label key={item} className="select_label">
-                <input
-                  type="checkbox"
-                  value={"qua " + item}
-                  onChange={onChange}
-                  className="item_checkbox"
-                />
-                <img
-                  className="add_checkbox_icon"
-                  src={iconQua}
-                  alt="icone checkbox"
-                />
-                <p>{item}</p>
-              </label>
-            ))}
-          </div>
-          <div>
-            <h4>Quinta-Feira</h4>
-            {hours.map((item) => (
-              <label key={item} className="select_label">
-                <input
-                  type="checkbox"
-                  value={"qui " + item}
-                  onChange={onChange}
-                  className="item_checkbox"
-                />
-                <img
-                  className="add_checkbox_icon"
-                  src={iconQui}
-                  alt="icone checkbox"
-                />
-                <p>{item}</p>
-              </label>
-            ))}
-          </div>
-          <div>
-            <h4>Sexta-Feira</h4>
-            {hours.map((item) => (
-              <label key={item} className="select_label">
-                <input
-                  type="checkbox"
-                  value={"sex " + item}
-                  onChange={onChange}
-                  className="item_checkbox"
-                />
-                <img
-                  className="add_checkbox_icon"
-                  src={iconSex}
-                  alt="icone checkbox"
-                />
-                <p>{item}</p>
-              </label>
-            ))}
-          </div>
-        </div>
+        </label>
       </div>
     </div>
   );
