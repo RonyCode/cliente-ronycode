@@ -20,11 +20,11 @@ const Select = ({ onChange }) => {
   return (
     <div className="select">
       <div className="select_container">
-        <label>
+        <label htmlFor="button_expand">
           <p>Selecione</p>
           <input type="checkbox" onChange={onChange} id="button_expand" />
 
-          <div className="select_expand">
+          <div className="select_expand" id="teste">
             <h4>Segunda-Feira</h4>
             {hours.map((item) => (
               <label key={item} className="select_label">
@@ -60,7 +60,6 @@ const Select = ({ onChange }) => {
                   <p>{item}</p>
                 </label>
               ))}
-              s
             </div>
             <div>
               <h4>Quarta-Feira</h4>

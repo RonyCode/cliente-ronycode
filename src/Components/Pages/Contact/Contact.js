@@ -15,6 +15,8 @@ const Contato = () => {
     }
   };
 
+  console.log(dayWeek);
+
   return (
     <div className={styles.contact}>
       <form className={styles.add_student_container}>

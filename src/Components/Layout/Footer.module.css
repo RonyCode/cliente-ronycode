@@ -100,3 +100,12 @@
 .footer_copry {
   padding-bottom: 1rem;
 }
+
+@media (min-width: 40rem) {
+  .footer_div_links_img {
+    width: 64px;
+  }
+  .footer_img {
+    width: 48px;
+  }
+}
