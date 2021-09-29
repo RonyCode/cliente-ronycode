@@ -13,8 +13,8 @@ const AddStudent = () => {
   const [contractNumber, setContractNumber] = React.useState();
   const [situation, setSituation] = React.useState();
   const [datePayment, setDatePayment] = React.useState();
-  const [registrationDate, setRegistrationDate] = React.useState();
-  const [dateExpiresContract, setDateExpiresContract] = React.useState();
+  const [dayStudent, setDayStudent] = React.useState([]);
+
   const { addStudent } = useContext(StudentContext);
 
   const formData = new FormData();
@@ -25,8 +25,7 @@ const AddStudent = () => {
   formData.append("birthday", birthday);
   formData.append("grade", grade);
   formData.append("contract_number", contractNumber);
-  formData.append("registration_date", registrationDate);
-  formData.append("date_expires_contract", dateExpiresContract);
+  formData.append("day_student", dayStudent);
   formData.append("date_payment", datePayment);
   formData.append("situation", situation);
 
@@ -34,6 +33,15 @@ const AddStudent = () => {
     event.preventDefault();
     addStudent(formData);
   }
+
+  const handleChange = (e) => {
+    if (e.target.checked) {
+      setDayStudent((dayStudent) => [...dayStudent, e.target.value]);
+    } else {
+      // remove from list
+      setDayStudent(dayStudent.filter((people) => people !== e.target.value));
+    }
+  };
 
   return (
     <div>
@@ -45,22 +53,21 @@ const AddStudent = () => {
         valuePhone={phone}
         valueGrade={grade}
         valueContractNumber={contractNumber}
-        valueDateExpiresContract={dateExpiresContract}
+        valueDayStudent={dayStudent}
         valueDatePayment={datePayment}
-        valueRegistrationDate={registrationDate}
         valueSituation={situation}
         setName={setName}
         setAddress={setAddress}
         setContractNumber={setContractNumber}
         setBirthday={setBirthday}
         setSituation={setSituation}
-        setDateExpiresContract={setDateExpiresContract}
+        setDayStudent={setDayStudent}
         setDatePayment={setDatePayment}
         setEmail={setEmail}
         setGrade={setGrade}
         setPhone={setPhone}
-        setRegistrationDate={setRegistrationDate}
         onSubmit={handleSubmit}
+        onChange={handleChange}
         required={true}
       />
     </div>

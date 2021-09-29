@@ -23,13 +23,13 @@ const SelectStudent = () => {
           valuePhone={stdData.phone || ""}
           valueGrade={stdData.grade || ""}
           valueContractNumber={stdData.contractNumber || ""}
-          valueDateExpiresContract={stdData.dateExpiresContract || ""}
+          valueDayStudent={stdData.dayStudent || ""}
           valueDatePayment={stdData.datePayment || ""}
-          valueRegistrationDate={stdData.registrationDate || ""}
           valueSituation={stdData.situation || ""}
           disabledSelect={true}
           buttonApears={"none"}
           readSelect={true}
+          selectPatern={true}
         />
       }
     </div>

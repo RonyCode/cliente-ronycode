@@ -22,9 +22,8 @@ const FormStudent = ({
   valueGrade,
   valueSituation,
   valueBirthday,
-  valueRegistrationDate,
   valueDatePayment,
-  valueDateExpiresContract,
+  valueDayStudent,
   valueContractNumber,
   setName,
   setEmail,
@@ -33,32 +32,21 @@ const FormStudent = ({
   setGrade,
   setSituation,
   setBirthday,
-  setRegistrationDate,
   setDatePayment,
-  setDateExpiresContract,
+  setDayStudent,
   setContractNumber,
   disabledSelect = false,
   buttonApears = "",
   readSelect = false,
   required = false,
+  onChange,
+  selectPatern = false,
 }) => {
-  const [dayWeek, setDayWeek] = React.useState([]);
-  const [addClass, setAddClass] = React.useState("select_expand");
-
-  const handleChange = (e) => {
-    if (e.target.checked) {
-      setDayWeek((dayWeek) => [...dayWeek, e.target.value]);
-    } else {
-      // remove from list
-      setDayWeek(dayWeek.filter((people) => people !== e.target.value));
-    }
-    if (e.target.checked && addClass === e.target.value) {
-      setAddClass("select_expand");
-    } else {
-      setAddClass("");
-    }
-  };
-
+  {
+    valueDayStudent &&
+      valueDayStudent.split(",").map((item) => setDayStudent(item));
+  }
+  console.log(setDayStudent);
   return (
     <div className={styles.add_student}>
       <form className={styles.add_student_container} onSubmit={onSubmit}>
@@ -269,8 +257,25 @@ const FormStudent = ({
         <div className={styles.add_student_checkbox}>
           <label className={styles.add_student_label}>Dia de Aula:</label>
           <label>
-            <Select addClass={addClass} onChange={handleChange} />
+            <Select
+              valueSelect={valueDayStudent}
+              selectPatern={selectPatern}
+              onChange={onChange}
+            />
           </label>
+
+          <div
+            hidden={!selectPatern}
+            className={styles.add_student_select_style}
+          >
+            <select className={styles.add_student_select}>
+              {valueDayStudent &&
+                valueDayStudent
+                  .split(",")
+                  .map((item) => <option value={item}>{setDayStudent}</option>)}
+            </select>
+          </div>
+
           <img
             className={styles.add_student_icon}
             src={iconHorario}

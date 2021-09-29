@@ -101,7 +101,7 @@
   padding-bottom: 1rem;
 }
 
-@media (min-width: 40rem) {
+@media (max-width: 40rem) {
   .footer_div_links_img {
     width: 64px;
   }

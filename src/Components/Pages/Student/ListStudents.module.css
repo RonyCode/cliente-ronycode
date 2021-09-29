@@ -97,7 +97,7 @@ h3 {
   width: 30px;
 }
 
-@media (min-width: 40rem) {
+@media (max-width: 40rem) {
   .list_student_link {
     padding: 0.5rem;
   }

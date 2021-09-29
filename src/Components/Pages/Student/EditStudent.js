@@ -16,8 +16,7 @@ const EditStudent = () => {
   const [contractNumber, setContractNumber] = React.useState("");
   const [situation, setSituation] = React.useState("");
   const [datePayment, setDatePayment] = React.useState();
-  const [registrationDate, setRegistrationDate] = React.useState("");
-  const [dateExpiresContract, setDateExpiresContract] = React.useState("");
+  const [dayStudent, setDayStudent] = React.useState("");
   const { updateStudent, selectStudent, stdData } =
     React.useContext(StudentContext);
 
@@ -30,8 +29,7 @@ const EditStudent = () => {
     setPhone(stdData.phone);
     setGrade(stdData.grade);
     setBirthday(stdData.birthday);
-    setRegistrationDate(stdData.registrationDate);
-    setDateExpiresContract(stdData.dateExpiresContract);
+    setDayStudent(stdData.dayStudent);
     setSituation(stdData.situation);
     setDatePayment(stdData.datePayment);
     setContractNumber(stdData.contractNumber);
@@ -42,8 +40,8 @@ const EditStudent = () => {
     stdData.address,
     stdData.grade,
     stdData.birthday,
-    stdData.registrationDate,
     stdData.situation,
+    stdData.dayStudent,
     stdData.datePayment,
     stdData.contractNumber,
   ]);
@@ -57,8 +55,7 @@ const EditStudent = () => {
   formData.append("birthday", birthday);
   formData.append("grade", grade);
   formData.append("contract_number", contractNumber);
-  formData.append("registration_date", registrationDate);
-  formData.append("date_expires_contract", dateExpiresContract);
+  formData.append("day_student", dayStudent);
   formData.append("date_payment", datePayment);
   formData.append("situation", situation);
 
@@ -78,21 +75,19 @@ const EditStudent = () => {
         valuePhone={phone}
         valueGrade={grade}
         valueContractNumber={contractNumber}
-        valueDateExpiresContract={dateExpiresContract}
+        valueDayStudent={dayStudent}
         valueDatePayment={datePayment}
-        valueRegistrationDate={registrationDate}
         valueSituation={situation}
         setName={setName}
         setAddress={setAddress}
         setContractNumber={setContractNumber}
         setBirthday={setBirthday}
         setSituation={setSituation}
-        setDateExpiresContract={setDateExpiresContract}
+        setDayStudent={setDayStudent}
         setDatePayment={setDatePayment}
         setEmail={setEmail}
         setGrade={setGrade}
         setPhone={setPhone}
-        setRegistrationDate={setRegistrationDate}
         onSubmit={handleSubmit}
       />
     </div>
