@@ -10,8 +10,8 @@ import iconContrato from "../../Assets/contract_icon-icons.com_64813.png";
 import iconSelect from "../../Assets/check.png";
 import iconHorario from "../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
 import styles from "./FormStudent.module.css";
-
 import Select from "./Select";
+import SelectList from "./SelectList";
 
 const FormStudent = ({
   onSubmit,
@@ -40,13 +40,8 @@ const FormStudent = ({
   readSelect = false,
   required = false,
   onChange,
-  selectPatern = false,
+  showSelected,
 }) => {
-  {
-    valueDayStudent &&
-      valueDayStudent.split(",").map((item) => setDayStudent(item));
-  }
-  console.log(setDayStudent);
   return (
     <div className={styles.add_student}>
       <form className={styles.add_student_container} onSubmit={onSubmit}>
@@ -258,29 +253,17 @@ const FormStudent = ({
           <label className={styles.add_student_label}>Dia de Aula:</label>
           <label>
             <Select
+              showSelected={showSelected}
               valueSelect={valueDayStudent}
-              selectPatern={selectPatern}
               onChange={onChange}
             />
+
+            <img
+              className={styles.add_student_icon}
+              src={iconHorario}
+              alt="icone aniversario"
+            />
           </label>
-
-          <div
-            hidden={!selectPatern}
-            className={styles.add_student_select_style}
-          >
-            <select className={styles.add_student_select}>
-              {valueDayStudent &&
-                valueDayStudent
-                  .split(",")
-                  .map((item) => <option value={item}>{setDayStudent}</option>)}
-            </select>
-          </div>
-
-          <img
-            className={styles.add_student_icon}
-            src={iconHorario}
-            alt="icone aniversario"
-          />
         </div>
 
         <div className={styles.add_student_div}>

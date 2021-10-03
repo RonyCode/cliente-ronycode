@@ -29,7 +29,7 @@ const SelectStudent = () => {
           disabledSelect={true}
           buttonApears={"none"}
           readSelect={true}
-          selectPatern={true}
+          showSelected={true}
         />
       }
     </div>

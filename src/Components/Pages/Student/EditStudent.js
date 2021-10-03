@@ -1,7 +1,6 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { SELECT_STD, UPDATE_STD } from "../../../api/api";
-import axios from "axios";
+import { useParams } from "react-router-dom";
+
 import FormStudent from "../../Input/FormStudent";
 import { StudentContext } from "../../StudentStorage";
 
@@ -89,6 +88,7 @@ const EditStudent = () => {
         setGrade={setGrade}
         setPhone={setPhone}
         onSubmit={handleSubmit}
+        selectPatern={true}
       />
     </div>
   );
