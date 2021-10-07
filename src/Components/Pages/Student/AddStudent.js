@@ -33,6 +33,16 @@ const AddStudent = () => {
     event.preventDefault();
     addStudent(formData);
   }
+  const hours = [
+    "08h:00min as 09h:00min",
+    "09h:00min as 10h:00min",
+    "10h:00min as 11h:30min",
+    "13h:30min as 15h:00min",
+    "15h:00min as 16h:00min",
+    "16h:00min as 17h:30min",
+  ];
+  const days = ["seg ", "ter ", "qua ", "qui ", "sex "];
+  const valueAdd = days.map((item) => hours.map((itemH) => item + itemH));
 
   const handleChange = (e) => {
     if (e.target.checked) {
@@ -69,6 +79,7 @@ const AddStudent = () => {
         onSubmit={handleSubmit}
         onChange={handleChange}
         required={true}
+        valueAdd={valueAdd}
       />
     </div>
   );

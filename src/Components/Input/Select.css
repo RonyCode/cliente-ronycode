@@ -10,6 +10,7 @@
   position: absolute;
   vertical-align: center;
   color: black;
+  transition:  .4s ease;
 
 }
 
@@ -18,13 +19,14 @@
   height: 100%;
   overflow: scroll;
   padding: 1rem;
+  transition:  .3s ease;
+
 }
 
-
-.label_container{
-
+.label_container {
   width: 100%;
   height: 100%;
+  transition:  .3s ease;
 
 }
 
@@ -34,22 +36,30 @@
 .add_checkbox_icon {
   width: 32px;
   opacity: 0.5;
+  transition:  .3s ease;
+
 }
 
-.item_checkbox:checked ~ .add_checkbox_icon {
+#item_checkbox:checked ~ .select_item_icon img {
   opacity: 1;
+  transition:  .3s ease;
+
 }
-.item_checkbox:checked ~ p {
-  background: #e1e1e1;
-  padding: 0.5rem 0;
+#item_checkbox:checked ~ .select_item_icon {
+  background: #c8c8c8;
+  transition:  .3s ease;
+
 }
 #button_expand:checked ~ .select:hover {
   background: #f1f1f1;
+  transition:  .4s ease;
 
 }
 #button_expand:checked ~ .select_expand {
   display: block;
   background: #f1f1f1;
+  transition:  .4s ease;
+
 }
 .select input {
   display: none;
@@ -61,6 +71,7 @@
   height: 300px;
   overflow: scroll;
   margin: 1rem auto auto auto;
+  transition:  .4s ease;
 }
 .select_label {
   display: flex;
@@ -70,16 +81,25 @@
   justify-content: space-around;
   position: relative;
   padding: 0.3rem;
+  transition:  .4s ease;
+
 }
+.select_divisor{
+  background: #c6c6c6c6;
+padding: 1rem 0;
+ }
 
 .select_item {
-  width: 100%;
+  padding: 1rem 0;
+  transition:  .4s ease;
+}
+.select_item_icon {
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: space-around;
-  position: relative;
-  padding: 0.3rem;
-  /*background: #4e8025;*/
-  margin-top: 1rem;
+  width: 100%;
+  transition:  .4s ease;
+
 }
 
 .select_label:hover,
@@ -87,4 +107,6 @@
   opacity: 1;
   background: #e1e1e1;
   cursor: pointer;
+  transition:  .4s ease;
+
 }

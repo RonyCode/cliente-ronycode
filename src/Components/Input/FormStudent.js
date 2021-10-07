@@ -11,7 +11,6 @@ import iconSelect from "../../Assets/check.png";
 import iconHorario from "../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
 import styles from "./FormStudent.module.css";
 import Select from "./Select";
-import SelectList from "./SelectList";
 
 const FormStudent = ({
   onSubmit,
@@ -41,6 +40,9 @@ const FormStudent = ({
   required = false,
   onChange,
   showSelected,
+  valueCheck,
+  valueAdd,
+  valueEdit,
 }) => {
   return (
     <div className={styles.add_student}>
@@ -253,8 +255,9 @@ const FormStudent = ({
           <label className={styles.add_student_label}>Dia de Aula:</label>
           <label>
             <Select
-              showSelected={showSelected}
-              valueSelect={valueDayStudent}
+              valueCheck={valueDayStudent || ""}
+              valueAdd={valueAdd || ""}
+              valueEdit={valueEdit || ""}
               onChange={onChange}
             />
 

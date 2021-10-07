@@ -43,10 +43,16 @@ const WeekPlanning = () => {
                       src={iconStudent}
                       alt=""
                     />
-                    <p>{item.name}</p>
-                    <p>{item.grade}</p>
-                    <p>{item.situation}</p>
-                    <Link to={"/login/aluno/editar/id/"}>
+
+                    <ul>
+                      <li>{item.name}</li>
+                      <li>
+                        {item.dayStudent.split(",").map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </li>
+                    </ul>
+                    <Link to={"/login/aluno/editar/id/" + item.id}>
                       <img
                         className={styles.icon_edit_student}
                         src={iconEditStudent}
