@@ -6,8 +6,8 @@ import iconTer from "../../../Assets/ter.png";
 import iconQua from "../../../Assets/qua.png";
 import iconQui from "../../../Assets/qui.png";
 import iconSex from "../../../Assets/sex.png";
-import iconEditStudent from "../../../Assets/edit.svg";
-import iconStudent from "../../../Assets/student_4872.png";
+import iconEditStudent from "../../../Assets/editAluno.svg";
+import iconStudent from "../../../Assets/estudante.svg";
 import { Link } from "react-router-dom";
 import { StudentContext } from "../../StudentStorage";
 
