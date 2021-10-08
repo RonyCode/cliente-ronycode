@@ -165,7 +165,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   list-style: none;
   color: white;
   text-shadow: #0d130c;

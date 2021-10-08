@@ -19,6 +19,13 @@ const WeekPlanning = () => {
     getAllStudents();
   }, []);
 
+  dataAllStudent &&
+    dataAllStudent.map((item) =>
+      item.dayStudent
+        .split(",")
+        .map((item2) => console.log(item2.substr(0, 3), item.name))
+    );
+
   return (
     <div className={styles.planning}>
       <div className={styles.planning_container}>
@@ -35,33 +42,38 @@ const WeekPlanning = () => {
           </div>
           <div className={styles.table_seg_content}>
             {dataAllStudent &&
-              dataAllStudent.map((item) => (
-                <div key={item.id} className={styles.table_content_list}>
-                  <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
+              dataAllStudent.map((item) =>
+                item.dayStudent.split(",").map((item2) =>
+                  item2.substr(0, 3) === "seg" ? (
+                    <div className={styles.table_content_list}>
+                      <div className={styles.content_list_item}>
+                        <img
+                          className={styles.content_list_img}
+                          src={iconStudent}
+                          alt=""
+                        />
 
-                    <ul>
-                      <li>{item.name}</li>
-                      <li>
-                        {item.dayStudent.split(",").map((item) => (
-                          <li>{item}</li>
-                        ))}
-                      </li>
-                    </ul>
-                    <Link to={"/login/aluno/editar/id/" + item.id}>
-                      <img
-                        className={styles.icon_edit_student}
-                        src={iconEditStudent}
-                        alt=""
-                      />
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                        <ul key={item.id}>
+                          <li>
+                            <b>{item.name}</b>
+                          </li>
+                          <li>{item.phone}</li>
+                          <li>{item2}</li>
+                        </ul>
+                        <Link to={"/login/aluno/editar/id/" + item.id}>
+                          <img
+                            className={styles.icon_edit_student}
+                            src={iconEditStudent}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )
+                )
+              )}
           </div>
           <div className={styles.planning_table_ter}>
             <div className={styles.table_item_header}>
@@ -75,20 +87,37 @@ const WeekPlanning = () => {
           </div>
           <div className={styles.table_ter_content}>
             {dataAllStudent &&
-              dataAllStudent.map((item) => (
-                <div key={item.id} className={styles.table_content_list}>
-                  <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-                    <p>{item.name}</p>
-                    <p>{item.grade}</p>
-                    <p>{item.situation}</p>
-                  </div>
-                </div>
-              ))}
+              dataAllStudent.map((item) =>
+                item.dayStudent.split(",").map((item2) =>
+                  item2.substr(0, 3) === "ter" ? (
+                    <div className={styles.table_content_list}>
+                      <div className={styles.content_list_item}>
+                        <img
+                          className={styles.content_list_img}
+                          src={iconStudent}
+                          alt=""
+                        />
+
+                        <ul key={item.id}>
+                          <b>{item.name}</b>
+                          <li>{item.phone}</li>
+
+                          <li>{item2}</li>
+                        </ul>
+                        <Link to={"/login/aluno/editar/id/" + item.id}>
+                          <img
+                            className={styles.icon_edit_student}
+                            src={iconEditStudent}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )
+                )
+              )}
           </div>
           <div className={styles.planning_table_qua}>
             <div className={styles.table_item_header}>
@@ -102,20 +131,37 @@ const WeekPlanning = () => {
           </div>
           <div className={styles.table_qua_content}>
             {dataAllStudent &&
-              dataAllStudent.map((item) => (
-                <div key={item.id} className={styles.table_content_list}>
-                  <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-                    <p>{item.name}</p>
-                    <p>{item.grade}</p>
-                    <p>{item.situation}</p>
-                  </div>
-                </div>
-              ))}
+              dataAllStudent.map((item) =>
+                item.dayStudent.split(",").map((item2) =>
+                  item2.substr(0, 3) === "qua" ? (
+                    <div className={styles.table_content_list}>
+                      <div className={styles.content_list_item}>
+                        <img
+                          className={styles.content_list_img}
+                          src={iconStudent}
+                          alt=""
+                        />
+
+                        <ul key={item.id}>
+                          <b>{item.name}</b>
+                          <li>{item.phone}</li>
+
+                          <li>{item2}</li>
+                        </ul>
+                        <Link to={"/login/aluno/editar/id/" + item.id}>
+                          <img
+                            className={styles.icon_edit_student}
+                            src={iconEditStudent}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )
+                )
+              )}
           </div>
           <div className={styles.planning_table_qui}>
             <div className={styles.table_item_header}>
@@ -129,20 +175,37 @@ const WeekPlanning = () => {
           </div>{" "}
           <div className={styles.table_qui_content}>
             {dataAllStudent &&
-              dataAllStudent.map((item) => (
-                <div key={item.id} className={styles.table_content_list}>
-                  <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-                    <p>{item.name}</p>
-                    <p>{item.grade}</p>
-                    <p>{item.situation}</p>
-                  </div>
-                </div>
-              ))}
+              dataAllStudent.map((item) =>
+                item.dayStudent.split(",").map((item2) =>
+                  item2.substr(0, 3) === "qui" ? (
+                    <div className={styles.table_content_list}>
+                      <div className={styles.content_list_item}>
+                        <img
+                          className={styles.content_list_img}
+                          src={iconStudent}
+                          alt=""
+                        />
+
+                        <ul key={item.id}>
+                          <b>{item.name}</b>
+                          <li>{item.phone}</li>
+
+                          <li>{item2}</li>
+                        </ul>
+                        <Link to={"/login/aluno/editar/id/" + item.id}>
+                          <img
+                            className={styles.icon_edit_student}
+                            src={iconEditStudent}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )
+                )
+              )}
           </div>
           <div className={styles.planning_table_sex}>
             <div className={styles.table_item_header}>
@@ -156,20 +219,37 @@ const WeekPlanning = () => {
           </div>
           <div className={styles.table_sex_content}>
             {dataAllStudent &&
-              dataAllStudent.map((item) => (
-                <div key={item.id} className={styles.table_content_list}>
-                  <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-                    <p>{item.name}</p>
-                    <p>{item.grade}</p>
-                    <p>{item.situation}</p>
-                  </div>
-                </div>
-              ))}
+              dataAllStudent.map((item) =>
+                item.dayStudent.split(",").map((item2) =>
+                  item2.substr(0, 3) === "sex" ? (
+                    <div className={styles.table_content_list}>
+                      <div className={styles.content_list_item}>
+                        <img
+                          className={styles.content_list_img}
+                          src={iconStudent}
+                          alt=""
+                        />
+
+                        <ul key={item.id}>
+                          <b>{item.name}</b>
+                          <li>{item.phone}</li>
+
+                          <li>{item2}</li>
+                        </ul>
+                        <Link to={"/login/aluno/editar/id/" + item.id}>
+                          <img
+                            className={styles.icon_edit_student}
+                            src={iconEditStudent}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )
+                )
+              )}
           </div>
         </main>
       </div>
