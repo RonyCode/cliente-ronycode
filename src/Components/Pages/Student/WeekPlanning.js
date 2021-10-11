@@ -58,7 +58,7 @@ const WeekPlanning = () => {
                             <b>{item.name}</b>
                           </li>
                           <li>{item.phone}</li>
-                          <li>{item2}</li>
+                          <li>{parseInt(item2.substr(4, 2))}</li>
                         </ul>
                         <Link to={"/login/aluno/editar/id/" + item.id}>
                           <img

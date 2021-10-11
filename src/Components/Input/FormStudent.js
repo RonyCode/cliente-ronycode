@@ -192,7 +192,7 @@ const FormStudent = ({
                 Selecione
               </option>
               <option value="adimplente">Adimplente</option>
-              <option value="inadimplemte">Inadimplente</option>
+              <option value="inadimplente">Inadimplente</option>
             </select>
             <img
               className={styles.add_student_icon}

@@ -1,5 +1,73 @@
-.financialStudent {
-  width: 100vw;
-  height: 100vh;
-  background: mediumpurple;
+.finan_std {
+  width: 100%;
+  height: 100%;
+  /*background: mediumpurple;*/
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+position: relative;
+}
+
+.finan_itens,.finan_itens2{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+.finan_labels {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+
+}
+
+.finan_iten {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+  display: flex;
+}
+.finan_iten_link {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+}
+.finan_iten_label {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
+}
+.finan_iten_links {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.finan_buttons{
+ display: flex;
+  width: 100%;
+}
+
+                                                    .icons {
+  width: 32px;
+}
+.finan_list_link {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: .7rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
 }
