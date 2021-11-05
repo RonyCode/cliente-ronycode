@@ -30,14 +30,23 @@ const UserForm = () => {
           />
           <p className={styles.icon_name}>Adicionar aluno</p>
         </Link>
-        <Link className={styles.icon} to="/login/aluno/planejamento">
+        <Link className={styles.icon} to="/login/aluno/grade">
           <img
             className={styles.img_icon}
             src="https://i.ibb.co/sw579BW/education-the-Board-876.png"
             alt="education-the-Board-876"
             border="0"
           />
-          <p className={styles.icon_name}>Planejamento Semanal </p>
+          <p className={styles.icon_name}>Grade alunos </p>
+        </Link>
+        <Link className={styles.icon} to="/login/aluno/planejamento">
+          <img
+            className={styles.img_icon}
+            src="https://i.ibb.co/ryy0fRj/calendar-tasks-1030.png"
+            alt="calendar-tasks-1030"
+            border="0"
+          />
+          <p className={styles.icon_name}>Planejamento semanal</p>
         </Link>
         <Link className={styles.icon} to="/login/aluno/financeiro">
           <img
@@ -66,16 +75,6 @@ const UserForm = () => {
             border="0"
           />
           <p className={styles.icon_name}>Editar/Remover aluno</p>
-        </Link>
-
-        <Link className={styles.icon} to="/login/usuario/eventos">
-          <img
-            className={styles.img_icon}
-            src="https://i.ibb.co/ryy0fRj/calendar-tasks-1030.png"
-            alt="calendar-tasks-1030"
-            border="0"
-          />
-          <p className={styles.icon_name}>Eventos da semana</p>
         </Link>
 
         <Link className={styles.icon} to="/login/usuario/eventos">

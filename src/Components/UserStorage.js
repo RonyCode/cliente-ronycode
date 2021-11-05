@@ -1,5 +1,5 @@
 import React from "react";
-import { GET_USER, POST_LOGIN } from "../api/api";
+import { GET_USER, PHOTO_USER, POST_LOGIN } from "../api/api";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,7 @@ export const UserStorage = ({ children }) => {
   const [id, setId] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [token, setToken] = React.useState(null);
+  const [postImgProfile, setPostImgProfile] = React.useState(null);
   const [username, setUsername] = React.useState(null);
   const [userFirstName, setUserFirstName] = React.useState(null);
   const [photo_name, setPhotoName] = React.useState(null);
@@ -39,6 +40,17 @@ export const UserStorage = ({ children }) => {
     },
     [navigate]
   );
+
+  const userImgProfile = async (body) => {
+    try {
+      const { url, options } = PHOTO_USER(body);
+      const response = await axios(url, options);
+      setPostImgProfile(response.data);
+      // if (response) window.location.reload();
+    } catch (response) {
+      console.log(response.error);
+    }
+  };
 
   async function userLogin(body) {
     try {
@@ -162,10 +174,8 @@ export const UserStorage = ({ children }) => {
           error,
           login,
           loading,
-          setBrand,
-          brand,
-          link,
-          setLink,
+          userImgProfile,
+          postImgProfile,
         }}
       >
         {children}

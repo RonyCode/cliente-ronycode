@@ -9,8 +9,9 @@ import Dashboard from "../../Layout/Dashboard";
 import { UserContext } from "../../UserStorage";
 import DeleteStudent from "./DeleteStudent";
 import EditStudent from "./EditStudent";
-import WeekPlanning from "./WeekPlanning";
+import StudentGrade from "./StudentGrade";
 import FinancialStudent from "./FinancialStudent";
+import WeekPlanning from "./WeekPlanning";
 
 const Student = () => {
   const { brand } = React.useContext(UserContext);
@@ -41,6 +42,7 @@ const Student = () => {
           <Route path="editar/id/:id" element={<EditStudent />} />
           <Route path="adicionar" element={<AddStudent />} />
           <Route path="deletar/id/:id" element={<DeleteStudent />} />
+          <Route path="grade/" element={<StudentGrade />} />
           <Route path="planejamento/" element={<WeekPlanning />} />
           <Route path="financeiro/" element={<FinancialStudent />} />
         </Routes>

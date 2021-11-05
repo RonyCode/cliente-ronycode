@@ -1,40 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Contact.module.css";
-
-import Select from "../../Input/Select";
+import { StudentContext } from "../../StudentStorage";
 
 const Contato = () => {
-  const [dayWeek, setDayWeek] = React.useState([]);
+  const { getAllStudents, dataAllStudent } = React.useContext(StudentContext);
+  let arraySeg = [];
 
-  const handleChange = (e) => {
-    if (e.target.checked) {
-      setDayWeek((dayWeek) => [...dayWeek, e.target.value]);
-    } else {
-      // remove from list
-      setDayWeek(dayWeek.filter((people) => people !== e.target.value));
-    }
-  };
+  React.useEffect(() => {
+    getAllStudents();
+  }, []);
 
-  console.log(dayWeek);
-
+  let test2 = dataAllStudent && dataAllStudent.map((item) => item.dayStudent);
+  // test2.sort((a, b) => a.name - b.name);
+  console.log(test2 && test2.sort((a, b) => a - b).map((item) => item));
   return (
     <div className={styles.contact}>
-      <form className={styles.add_student_container}>
-        <div className={styles.add_student_div}>
-          <div className={styles.add_student_checkbox}>
-            <label className={styles.add_student_label}>Dia de Aula:</label>
-            <label>
-              <Select onChange={handleChange} />
-            </label>
-          </div>
+      <div className={styles.add_student_div}>
+        <div className={styles.add_student_checkbox}>
+          {test2 && test2.sort().map((item) => <li>{item}</li>)}
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        {dayWeek.map((item) => item)}
-      </form>
+      </div>
     </div>
   );
 };

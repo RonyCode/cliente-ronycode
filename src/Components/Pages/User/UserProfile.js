@@ -4,27 +4,40 @@ import axios from "axios";
 import { UserContext } from "../../UserStorage";
 import styles from "./UserProfile.module.css";
 import Input from "../../Input/Input";
+import Login from "../Login/Login";
 
 const UserProfile = () => {
   const [img, setImg] = React.useState("");
-  const { src, id, photo_name, username, email } = useContext(UserContext);
+  const [prevImg, setPrevImg] = React.useState("");
+  const {
+    src,
+    id,
+    photo_name,
+    username,
+    email,
+    userImgProfile,
+    postImgProfile,
+  } = useContext(UserContext);
   const formData = new FormData();
   formData.append("photo", img);
   formData.append("id", id);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const { url, options } = PHOTO_USER(formData);
-      const response = await axios(url, options);
-      console.log(response.data);
-      if (response) window.location.reload();
-    } catch (response) {
-      console.log(response.error);
-    }
+  React.useEffect(() => {
+    setImg(postImgProfile);
+  }, [postImgProfile, src]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    userImgProfile(formData);
   };
   const handleFile = (e) => {
     setImg(e.target.files[0]);
+    setPrevImg(src);
+
+    console.log(e.target.filesAdded);
+    setPrevImg(e.target.src);
+    console.log(prevImg);
   };
 
   return (
@@ -32,7 +45,7 @@ const UserProfile = () => {
       <div className={styles.container}>
         <h1> PERFIL</h1>
         <form onSubmit={handleSubmit} className={styles.input_photo}>
-          <img className={styles.img_form} src={src} alt={photo_name} />
+          <img className={styles.img_form} src={prevImg} alt={photo_name} />
           <label className={styles.label} htmlFor="photo">
             Selecione sua foto
           </label>
@@ -59,7 +72,7 @@ const UserProfile = () => {
             className={styles.input}
             label="Email:"
             name="email"
-            value={email || ""}
+            value={email}
             type="text"
           />
         </div>

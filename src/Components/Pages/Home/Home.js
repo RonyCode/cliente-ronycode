@@ -393,7 +393,7 @@ const Home = () => {
 
               <p className={styles.deployment_card_text}>
                 &apos; Desde que entreguei meus filhos ao espaço Educar só tenho
-                notado meliorates, está sendo fundamental esse auxílio, a
+                notado melhoras, está sendo fundamental esse auxílio, a
                 Professora Gisele é muito atenciosa, e carinhosa. Estamos amando
                 essa experiência! &apos;
               </p>
