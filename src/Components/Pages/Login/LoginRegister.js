@@ -1,13 +1,11 @@
 import React from "react";
-import { POST_CREATE_LOGIN } from "../../../api/api";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../UserStorage";
 
 const LoginRegister = () => {
   const [email, setEmail] = React.useState();
   const [pass, setPass] = React.useState();
   const [name, setName] = React.useState();
-  const navigate = useNavigate();
+  const { createUser } = React.useContext(UserContext);
 
   const formData = new FormData();
   formData.append("email", email);
@@ -16,19 +14,7 @@ const LoginRegister = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = POST_CREATE_LOGIN(formData);
-
-    axios(url, options)
-      .then((response) => {
-        console.log("Success: ", response);
-        if (response.ok) {
-          alert("Cadastrado com sucesso");
-          navigate("/login");
-        }
-      })
-      .catch((error) => {
-        console.log("Error: ", error.response.data);
-      });
+    createUser(formData);
   }
 
   return (

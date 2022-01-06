@@ -1,12 +1,19 @@
 import React, { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { GET_ALL_STD, POST_ADD_STD, SELECT_STD, UPDATE_STD } from "../api/api";
+import {
+  GET_ALL_DAY_STD,
+  GET_ALL_STD,
+  POST_ADD_STD,
+  SELECT_STD,
+  UPDATE_STD,
+} from "../api/api";
 import axios from "axios";
 
 export const StudentContext = createContext();
 
 export const StudentStorage = ({ children }) => {
   const [dataAllStudent, setDataAllStudent] = useState("");
+  const [dataDayAllStudent, setDataDayAllStudent] = useState("");
   const [stdData, setStdData] = useState("");
   const navigate = useNavigate();
 
@@ -28,10 +35,8 @@ export const StudentStorage = ({ children }) => {
       .then(function (response) {
         alert(response.data.message);
         navigate("/login/aluno/lista");
-        console.log("Success: ", response.data.message);
       })
       .catch(function (error) {
-        console.log("Error: ", error.data);
         alert(error.response.data.message);
       });
   };
@@ -61,6 +66,17 @@ export const StudentStorage = ({ children }) => {
     }
   };
 
+  const getAllDayStudents = async () => {
+    try {
+      const { url, options } = GET_ALL_DAY_STD();
+      const response = await axios(url, options);
+      response && setDataDayAllStudent(response.data.data);
+      console.log(response.data.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div>
       <StudentContext.Provider
@@ -71,6 +87,8 @@ export const StudentStorage = ({ children }) => {
           updateStudent,
           getAllStudents,
           dataAllStudent,
+          getAllDayStudents,
+          dataDayAllStudent,
         }}
       >
         {children}

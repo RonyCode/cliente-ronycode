@@ -40,7 +40,6 @@ function LoginForm() {
       <h1 className={styles.tittle}> Login </h1>
       <div className={styles.container}>
         <div className={styles.columnLeft + " animeRight"}></div>
-
         <div className={styles.columnRight + " animeLeft"}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.div_input}>

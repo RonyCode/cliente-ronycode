@@ -12,15 +12,7 @@
         src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script>
-  function loginApi() {
-    $.ajax({
-      url: "http://localhost/api-ronycode/public/login",
-      method: "POST",
-      data: {email: "rony@teste", pass: "123"},
-    }).done(function (data) {
-      console.log(data)
-      localStorage.setItem("token", data);
-    });
+
   }
 </script>
 
