@@ -1,25 +1,17 @@
 import React, { useContext } from "react";
-
 import { UserContext } from "../../UserStorage";
 import styles from "./UserProfile.module.css";
 import Input from "../../Input/Input";
 
 const UserProfile = () => {
   const [img, setImg] = React.useState("");
-  const {
-    src,
-    id,
-    photo_name,
-    username,
-    email,
-    userImgProfile,
-    postImgProfile,
-  } = useContext(UserContext);
+  const { src, id, photo_name, username, email, userImgProfile } =
+    useContext(UserContext);
   const formData = new FormData();
   formData.append("photo", img);
   formData.append("id", id);
 
-  React.useEffect(() => {}, [postImgProfile, src]);
+  React.useEffect(() => {}, [src]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +35,6 @@ const UserProfile = () => {
           ) : (
             <img className={styles.img_form} src={src} alt={photo_name} />
           )}
-
           <label className={styles.label} htmlFor="photo">
             Selecione sua foto
           </label>
@@ -52,7 +43,7 @@ const UserProfile = () => {
             type="file"
             name="photo"
             className={styles.input}
-            onChange={(e) => handleFile(e)}
+            onChange={handleFile}
           />
           <button className={styles.button}>Enviar</button>
         </form>

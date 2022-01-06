@@ -1,5 +1,10 @@
 import React from "react";
-import { GET_USER, PHOTO_USER, POST_LOGIN } from "../api/api";
+import {
+  GET_USER,
+  PHOTO_USER,
+  POST_CREATE_LOGIN,
+  POST_LOGIN,
+} from "../api/api";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -18,8 +23,6 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
-  const [brand, setBrand] = React.useState("");
-  const [link, setLink] = React.useState("");
   const navigate = useNavigate();
 
   const userLogout = React.useCallback(
@@ -91,6 +94,21 @@ export const UserStorage = ({ children }) => {
       setLoading(false);
     }
   }
+
+  const createUser = (formData) => {
+    const { url, options } = POST_CREATE_LOGIN(formData);
+
+    axios(url, options)
+      .then((response) => {
+        console.log(response);
+        response && alert(response.data.message);
+        navigate("/login");
+      })
+      .catch((error) => {
+        alert(error.response.response);
+        console.log(error.response);
+      });
+  };
 
   function parseJwt(tokenData) {
     const base64Url = tokenData.split(".")[1];
@@ -176,6 +194,7 @@ export const UserStorage = ({ children }) => {
           loading,
           userImgProfile,
           postImgProfile,
+          createUser,
         }}
       >
         {children}

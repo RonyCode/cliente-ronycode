@@ -106,6 +106,18 @@ export function GET_ALL_STD() {
   };
 }
 
+export function GET_ALL_DAY_STD() {
+  return {
+    url: API_URL + "/aluno/grade",
+    options: {
+      method: "get",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+    },
+  };
+}
+
 export function SELECT_STD(id) {
   return {
     url: API_URL + `/aluno/id/${id}`,
