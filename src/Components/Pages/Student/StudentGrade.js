@@ -42,7 +42,7 @@ const StudentGrade = () => {
               dataAllStudent.map((item) =>
                 item.dayStudent
                   .split(",")
-                  .sort((a, b) => a - b)
+                  .sort()
                   .map((item2) =>
                     item2.substr(0, 3) === "seg" ? (
                       <div className={styles.table_content_list}>

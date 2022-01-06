@@ -33,6 +33,7 @@ const AddStudent = () => {
     event.preventDefault();
     addStudent(formData);
   }
+
   const hours = [
     "08h:00min as 09h:00min",
     "09h:00min as 10h:00min",

@@ -46,7 +46,7 @@ export const UserStorage = ({ children }) => {
       const { url, options } = PHOTO_USER(body);
       const response = await axios(url, options);
       setPostImgProfile(response.data);
-      // if (response) window.location.reload();
+      if (response) window.location.reload();
     } catch (response) {
       console.log(response.error);
     }
