@@ -13,13 +13,78 @@ import { StudentContext } from "../../StudentStorage";
 
 const StudentGrade = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
-  const { getAllDayStudents, dataDayAllStudent } =
-    React.useContext(StudentContext);
+  const { getAllStudents, dataAllStudent } = React.useContext(StudentContext);
   const [arraySeg, setArraySeg] = React.useState([]);
 
   React.useEffect(() => {
-    getAllDayStudents();
+    getAllStudents();
   }, []);
+
+  let monDays = [];
+  let tuesDays = [];
+  let wedDays = [];
+  let thuDays = [];
+  let friDays = [];
+
+  dataAllStudent &&
+    dataAllStudent.map((item) =>
+      item.dayStudent
+        .split(",")
+        .map((day) =>
+          day.includes("seg")
+            ? monDays.push({ hora: day, nome: item.name, id: item.id })
+            : ""
+        )
+    );
+  monDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
+
+  dataAllStudent &&
+    dataAllStudent.map((item) =>
+      item.dayStudent
+        .split(",")
+        .map((day) =>
+          day.includes("ter")
+            ? tuesDays.push({ hora: day, nome: item.name, id: item.id })
+            : ""
+        )
+    );
+  tuesDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
+
+  dataAllStudent &&
+    dataAllStudent.map((item) =>
+      item.dayStudent
+        .split(",")
+        .map((day) =>
+          day.includes("qua")
+            ? wedDays.push({ hora: day, nome: item.name, id: item.id })
+            : ""
+        )
+    );
+  wedDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
+
+  dataAllStudent &&
+    dataAllStudent.map((item) =>
+      item.dayStudent
+        .split(",")
+        .map((day) =>
+          day.includes("qui")
+            ? thuDays.push({ hora: day, nome: item.name, id: item.id })
+            : ""
+        )
+    );
+  thuDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
+
+  dataAllStudent &&
+    dataAllStudent.map((item) =>
+      item.dayStudent
+        .split(",")
+        .map((day) =>
+          day.includes("sex")
+            ? friDays.push({ hora: day, nome: item.name, id: item.id })
+            : ""
+        )
+    );
+  friDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
 
   return (
     <div className={styles.planning}>
@@ -36,230 +101,179 @@ const StudentGrade = () => {
             </div>
           </div>
           <div className={styles.table_seg_content}>
-            {/*{dataDayAllStudent &&*/}
-            {/*  dataDayAllStudent*/}
-            {/*    .sort((a, b) => (a.mon > b.mon ? 1 : -1))*/}
-            {/*    .map((item) => (*/}
-            {/*      <div key={item.id_student}>*/}
-            {/*        <li>{item.name + " " + item.mon}</li>*/}
-            {/*      </div>*/}
-            {/*    ))}*/}
+            {monDays &&
+              monDays.map((item) => (
+                <div key={item.id} className={styles.table_content_list}>
+                  <div className={styles.content_list_item}>
+                    <img
+                      className={styles.content_list_img}
+                      src={iconStudent}
+                      alt=""
+                    />
 
-            {dataDayAllStudent &&
-              dataDayAllStudent
-                .sort((a, b) => (a.mon > b.mon ? 1 : -1))
-                .map((item) =>
-                  item.mon ? (
-                    <div className={styles.table_content_list}>
-                      <div className={styles.content_list_item}>
-                        <img
-                          className={styles.content_list_img}
-                          src={iconStudent}
-                          alt=""
-                        />
-
-                        <ul key={item.id_student}>
-                          <li>
-                            <b>{item.id_student}</b>
-                          </li>
-                          <li>
-                            <b>{item.name}</b>
-                          </li>
-                          <li>{item.mon}</li>
-                        </ul>
-                        <Link to={"/login/aluno/editar/id/" + item.id_student}>
-                          <img
-                            className={styles.icon_edit_student}
-                            src={iconEditStudent}
-                            alt=""
-                          />
-                        </Link>
-                      </div>
-                    </div>
-                  ) : (
-                    ""
-                  )
-                )}
+                    <ul>
+                      <b>{item.nome}</b>
+                      <li>{item.hora}</li>
+                    </ul>
+                    <Link to={"/login/aluno/editar/id/" + item.id}>
+                      <img
+                        className={styles.icon_edit_student}
+                        src={iconEditStudent}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
           </div>
-          {/*<div className={styles.planning_table_ter}>*/}
-          {/*  <div className={styles.table_item_header}>*/}
-          {/*    <img*/}
-          {/*      className={styles.planning_table_img}*/}
-          {/*      src={iconTer}*/}
-          {/*      alt="icone terça"*/}
-          {/*    />*/}
-          {/*    <p>{ter}</p>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className={styles.table_ter_content}>*/}
-          {/*  {dataAllStudent &&*/}
-          {/*    dataAllStudent.map((item) =>*/}
-          {/*      item.dayStudent*/}
-          {/*        .split(",")*/}
-          {/*        .sort()*/}
-          {/*        .map((item2) =>*/}
-          {/*          item2.substr(0, 3) === "ter" ? (*/}
-          {/*            <div key={item.id} className={styles.table_content_list}>*/}
-          {/*              <div className={styles.content_list_item}>*/}
-          {/*                <img*/}
-          {/*                  className={styles.content_list_img}*/}
-          {/*                  src={iconStudent}*/}
-          {/*                  alt=""*/}
-          {/*                />*/}
 
-          {/*                <ul>*/}
-          {/*                  <b>{item.name}</b>*/}
-          {/*                  <li>{item.phone}</li>*/}
+          <div className={styles.planning_table_ter}>
+            <div className={styles.table_item_header}>
+              <img
+                className={styles.planning_table_img}
+                src={iconTer}
+                alt="icone terça"
+              />
+              <p>{ter}</p>
+            </div>
+          </div>
+          <div className={styles.table_ter_content}>
+            {tuesDays &&
+              tuesDays.map((item) => (
+                <div key={item.id} className={styles.table_content_list}>
+                  <div className={styles.content_list_item}>
+                    <img
+                      className={styles.content_list_img}
+                      src={iconStudent}
+                      alt=""
+                    />
 
-          {/*                  <li>{item2}</li>*/}
-          {/*                </ul>*/}
-          {/*                <Link to={"/login/aluno/editar/id/" + item.id}>*/}
-          {/*                  <img*/}
-          {/*                    className={styles.icon_edit_student}*/}
-          {/*                    src={iconEditStudent}*/}
-          {/*                    alt=""*/}
-          {/*                  />*/}
-          {/*                </Link>*/}
-          {/*              </div>*/}
-          {/*            </div>*/}
-          {/*          ) : (*/}
-          {/*            ""*/}
-          {/*          )*/}
-          {/*        )*/}
-          {/*    )}*/}
-          {/*</div>*/}
-          {/*<div className={styles.planning_table_qua}>*/}
-          {/*  <div className={styles.table_item_header}>*/}
-          {/*    <img*/}
-          {/*      className={styles.planning_table_img}*/}
-          {/*      src={iconQua}*/}
-          {/*      alt="icone quarta"*/}
-          {/*    />*/}
-          {/*    <p>{qua}</p>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className={styles.table_qua_content}>*/}
-          {/*  {dataAllStudent &&*/}
-          {/*    dataAllStudent.map((item) =>*/}
-          {/*      item.dayStudent.split(",").map((item2) =>*/}
-          {/*        item2.substr(0, 3) === "qua" ? (*/}
-          {/*          <div key={item.id} className={styles.table_content_list}>*/}
-          {/*            <div className={styles.content_list_item}>*/}
-          {/*              <img*/}
-          {/*                className={styles.content_list_img}*/}
-          {/*                src={iconStudent}*/}
-          {/*                alt=""*/}
-          {/*              />*/}
+                    <ul>
+                      <b>{item.nome}</b>
+                      <li>{item.hora}</li>
+                    </ul>
+                    <Link to={"/login/aluno/editar/id/" + item.id}>
+                      <img
+                        className={styles.icon_edit_student}
+                        src={iconEditStudent}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+          </div>
 
-          {/*              <ul>*/}
-          {/*                <b>{item.name}</b>*/}
-          {/*                <li>{item.phone}</li>*/}
+          <div className={styles.planning_table_qua}>
+            <div className={styles.table_item_header}>
+              <img
+                className={styles.planning_table_img}
+                src={iconQua}
+                alt="icone quarta"
+              />
+              <p>{qua}</p>
+            </div>
+          </div>
+          <div className={styles.table_qua_content}>
+            {wedDays &&
+              wedDays.map((item) => (
+                <div key={item.id} className={styles.table_content_list}>
+                  <div className={styles.content_list_item}>
+                    <img
+                      className={styles.content_list_img}
+                      src={iconStudent}
+                      alt=""
+                    />
 
-          {/*                <li>{item2}</li>*/}
-          {/*              </ul>*/}
-          {/*              <Link to={"/login/aluno/editar/id/" + item.id}>*/}
-          {/*                <img*/}
-          {/*                  className={styles.icon_edit_student}*/}
-          {/*                  src={iconEditStudent}*/}
-          {/*                  alt=""*/}
-          {/*                />*/}
-          {/*              </Link>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        ) : (*/}
-          {/*          ""*/}
-          {/*        )*/}
-          {/*      )*/}
-          {/*    )}*/}
-          {/*</div>*/}
-          {/*<div className={styles.planning_table_qui}>*/}
-          {/*  <div className={styles.table_item_header}>*/}
-          {/*    <img*/}
-          {/*      className={styles.planning_table_img}*/}
-          {/*      src={iconQui}*/}
-          {/*      alt="icone quinta"*/}
-          {/*    />*/}
-          {/*    <p>{qui}</p>*/}
-          {/*  </div>*/}
-          {/*</div>{" "}*/}
-          {/*<div className={styles.table_qui_content}>*/}
-          {/*  {dataAllStudent &&*/}
-          {/*    dataAllStudent.map((item) =>*/}
-          {/*      item.dayStudent.split(",").map((item2) =>*/}
-          {/*        item2.substr(0, 3) === "qui" ? (*/}
-          {/*          <div key={item.id} className={styles.table_content_list}>*/}
-          {/*            <div className={styles.content_list_item}>*/}
-          {/*              <img*/}
-          {/*                className={styles.content_list_img}*/}
-          {/*                src={iconStudent}*/}
-          {/*                alt=""*/}
-          {/*              />*/}
+                    <ul>
+                      <b>{item.nome}</b>
+                      <li>{item.hora}</li>
+                    </ul>
+                    <Link to={"/login/aluno/editar/id/" + item.id}>
+                      <img
+                        className={styles.icon_edit_student}
+                        src={iconEditStudent}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+          </div>
 
-          {/*              <ul>*/}
-          {/*                <b>{item.name}</b>*/}
-          {/*                <li>{item.phone}</li>*/}
+          <div className={styles.planning_table_qui}>
+            <div className={styles.table_item_header}>
+              <img
+                className={styles.planning_table_img}
+                src={iconQui}
+                alt="icone qui"
+              />
+              <p>{qui}</p>
+            </div>
+          </div>
+          <div className={styles.table_qui_content}>
+            {thuDays &&
+              thuDays.map((item) => (
+                <div key={item.id} className={styles.table_content_list}>
+                  <div className={styles.content_list_item}>
+                    <img
+                      className={styles.content_list_img}
+                      src={iconStudent}
+                      alt=""
+                    />
 
-          {/*                <li>{item2}</li>*/}
-          {/*              </ul>*/}
-          {/*              <Link to={"/login/aluno/editar/id/" + item.id}>*/}
-          {/*                <img*/}
-          {/*                  className={styles.icon_edit_student}*/}
-          {/*                  src={iconEditStudent}*/}
-          {/*                  alt=""*/}
-          {/*                />*/}
-          {/*              </Link>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        ) : (*/}
-          {/*          ""*/}
-          {/*        )*/}
-          {/*      )*/}
-          {/*    )}*/}
-          {/*</div>*/}
-          {/*<div className={styles.planning_table_sex}>*/}
-          {/*  <div className={styles.table_item_header}>*/}
-          {/*    <img*/}
-          {/*      className={styles.planning_table_img}*/}
-          {/*      src={iconSex}*/}
-          {/*      alt="icone sexta"*/}
-          {/*    />*/}
-          {/*    <p>{sex}</p>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className={styles.table_sex_content}>*/}
-          {/*  {dataAllStudent &&*/}
-          {/*    dataAllStudent.map((item) =>*/}
-          {/*      item.dayStudent.split(",").map((item2) =>*/}
-          {/*        item2.substr(0, 3) === "sex" ? (*/}
-          {/*          <div key={item.id} className={styles.table_content_list}>*/}
-          {/*            <div className={styles.content_list_item}>*/}
-          {/*              <img*/}
-          {/*                className={styles.content_list_img}*/}
-          {/*                src={iconStudent}*/}
-          {/*                alt=""*/}
-          {/*              />*/}
+                    <ul>
+                      <b>{item.nome}</b>
+                      <li>{item.hora}</li>
+                    </ul>
+                    <Link to={"/login/aluno/editar/id/" + item.id}>
+                      <img
+                        className={styles.icon_edit_student}
+                        src={iconEditStudent}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+          </div>
 
-          {/*              <ul>*/}
-          {/*                <b>{item.name}</b>*/}
-          {/*                <li>{item.phone}</li>*/}
+          <div className={styles.planning_table_sex}>
+            <div className={styles.table_item_header}>
+              <img
+                className={styles.planning_table_img}
+                src={iconSex}
+                alt="icone sexta"
+              />
+              <p>{sex}</p>
+            </div>
+          </div>
+          <div className={styles.table_sex_content}>
+            {friDays &&
+              friDays.map((item) => (
+                <div key={item.id} className={styles.table_content_list}>
+                  <div className={styles.content_list_item}>
+                    <img
+                      className={styles.content_list_img}
+                      src={iconStudent}
+                      alt=""
+                    />
 
-          {/*                <li>{item2}</li>*/}
-          {/*              </ul>*/}
-          {/*              <Link to={"/login/aluno/editar/id/" + item.id}>*/}
-          {/*                <img*/}
-          {/*                  className={styles.icon_edit_student}*/}
-          {/*                  src={iconEditStudent}*/}
-          {/*                  alt=""*/}
-          {/*                />*/}
-          {/*              </Link>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        ) : (*/}
-          {/*          ""*/}
-          {/*        )*/}
-          {/*      )*/}
-          {/*    )}*/}
-          {/*</div>*/}
+                    <ul>
+                      <b>{item.nome}</b>
+                      <li>{item.hora}</li>
+                    </ul>
+                    <Link to={"/login/aluno/editar/id/" + item.id}>
+                      <img
+                        className={styles.icon_edit_student}
+                        src={iconEditStudent}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+          </div>
         </main>
       </div>
     </div>
