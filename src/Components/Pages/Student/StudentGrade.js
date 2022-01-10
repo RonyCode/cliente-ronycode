@@ -14,7 +14,6 @@ import { StudentContext } from "../../StudentStorage";
 const StudentGrade = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
   const { getAllStudents, dataAllStudent } = React.useContext(StudentContext);
-  const [arraySeg, setArraySeg] = React.useState([]);
 
   React.useEffect(() => {
     getAllStudents();
@@ -28,61 +27,81 @@ const StudentGrade = () => {
 
   dataAllStudent &&
     dataAllStudent.map((item) =>
-      item.dayStudent
-        .split(",")
-        .map((day) =>
-          day.includes("seg")
-            ? monDays.push({ hora: day, nome: item.name, id: item.id })
-            : ""
-        )
+      item.dayStudent.split(",").map((day) =>
+        day.includes("seg")
+          ? monDays.push({
+              hora: day,
+              nome: item.name,
+              id: item.id,
+              grade: item.grade,
+              progress: item.progress,
+            })
+          : ""
+      )
     );
   monDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
 
   dataAllStudent &&
     dataAllStudent.map((item) =>
-      item.dayStudent
-        .split(",")
-        .map((day) =>
-          day.includes("ter")
-            ? tuesDays.push({ hora: day, nome: item.name, id: item.id })
-            : ""
-        )
+      item.dayStudent.split(",").map((day) =>
+        day.includes("ter")
+          ? tuesDays.push({
+              hora: day,
+              nome: item.name,
+              id: item.id,
+              grade: item.grade,
+              progress: item.progress,
+            })
+          : ""
+      )
     );
   tuesDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
 
   dataAllStudent &&
     dataAllStudent.map((item) =>
-      item.dayStudent
-        .split(",")
-        .map((day) =>
-          day.includes("qua")
-            ? wedDays.push({ hora: day, nome: item.name, id: item.id })
-            : ""
-        )
+      item.dayStudent.split(",").map((day) =>
+        day.includes("qua")
+          ? wedDays.push({
+              hora: day,
+              nome: item.name,
+              id: item.id,
+              grade: item.grade,
+              progress: item.progress,
+            })
+          : ""
+      )
     );
   wedDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
 
   dataAllStudent &&
     dataAllStudent.map((item) =>
-      item.dayStudent
-        .split(",")
-        .map((day) =>
-          day.includes("qui")
-            ? thuDays.push({ hora: day, nome: item.name, id: item.id })
-            : ""
-        )
+      item.dayStudent.split(",").map((day) =>
+        day.includes("qui")
+          ? thuDays.push({
+              hora: day,
+              nome: item.name,
+              id: item.id,
+              grade: item.grade,
+              progress: item.progress,
+            })
+          : ""
+      )
     );
   thuDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
 
   dataAllStudent &&
     dataAllStudent.map((item) =>
-      item.dayStudent
-        .split(",")
-        .map((day) =>
-          day.includes("sex")
-            ? friDays.push({ hora: day, nome: item.name, id: item.id })
-            : ""
-        )
+      item.dayStudent.split(",").map((day) =>
+        day.includes("sex")
+          ? friDays.push({
+              hora: day,
+              nome: item.name,
+              id: item.id,
+              grade: item.grade,
+              progress: item.progress,
+            })
+          : ""
+      )
     );
   friDays.sort((a, b) => (a.hora > b.hora ? 1 : b.hora > a.hora ? -1 : 0));
 
@@ -112,8 +131,10 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <b>{item.nome}</b>
                       <li>{item.hora}</li>
+                      <b>{item.nome}</b>
+                      <li>{item.grade}</li>
+                      <li>{item.progress}</li>
                     </ul>
                     <Link to={"/login/aluno/editar/id/" + item.id}>
                       <img
@@ -149,8 +170,10 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <b>{item.nome}</b>
                       <li>{item.hora}</li>
+                      <b>{item.nome}</b>
+                      <li>{item.grade}</li>
+                      <li>{item.progress}</li>
                     </ul>
                     <Link to={"/login/aluno/editar/id/" + item.id}>
                       <img
@@ -186,8 +209,10 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <b>{item.nome}</b>
                       <li>{item.hora}</li>
+                      <b>{item.nome}</b>
+                      <li>{item.grade}</li>
+                      <li>{item.progress}</li>
                     </ul>
                     <Link to={"/login/aluno/editar/id/" + item.id}>
                       <img
@@ -223,8 +248,10 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <b>{item.nome}</b>
                       <li>{item.hora}</li>
+                      <b>{item.nome}</b>
+                      <li>{item.grade}</li>
+                      <li>{item.progress}</li>
                     </ul>
                     <Link to={"/login/aluno/editar/id/" + item.id}>
                       <img
@@ -260,8 +287,10 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <b>{item.nome}</b>
                       <li>{item.hora}</li>
+                      <b>{item.nome}</b>
+                      <li>{item.grade}</li>
+                      <li>{item.progress}</li>
                     </ul>
                     <Link to={"/login/aluno/editar/id/" + item.id}>
                       <img

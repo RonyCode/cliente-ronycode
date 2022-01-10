@@ -1,0 +1,15 @@
+.report {
+    width: 80%;
+    padding: 4rem;
+    margin:   auto;
+}
+
+.report_select {
+    margin: 2rem 0;
+}
+
+.report_matriz {
+
+    padding: 4rem;
+    border: solid 2px #333;
+}

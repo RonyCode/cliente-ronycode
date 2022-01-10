@@ -22,10 +22,13 @@ const SelectStudent = () => {
           valueEmail={stdData.email || ""}
           valuePhone={stdData.phone || ""}
           valueGrade={stdData.grade || ""}
+          valueProgress={stdData.progress || ""}
           valueContractNumber={stdData.contractNumber || ""}
           valueDayStudent={stdData.dayStudent || ""}
           valueDatePayment={stdData.datePayment || ""}
           valueSituation={stdData.situation || ""}
+          valueResponsible={stdData.responsible || ""}
+          valueResponsiblePhone={stdData.responsiblePhone || ""}
           disabledSelect={true}
           buttonApears={"none"}
           readSelect={true}

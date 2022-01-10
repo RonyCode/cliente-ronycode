@@ -19,20 +19,26 @@ const FormStudent = ({
   valueAddress,
   valuePhone,
   valueGrade,
+  valueProgress,
   valueSituation,
   valueBirthday,
   valueDatePayment,
   valueDayStudent,
   valueContractNumber,
+  valueResponsible,
+  valueResponsiblePhone,
   setName,
   setEmail,
   setAddress,
   setPhone,
   setGrade,
+  setProgress,
   setSituation,
   setBirthday,
   setDatePayment,
   setContractNumber,
+  setResponsible,
+  setResponsiblePhone,
   disabledSelect = false,
   buttonApears = "",
   readSelect = false,
@@ -54,6 +60,26 @@ const FormStudent = ({
             name="name"
             value={valueName || ""}
             onChange={({ target }) => setName(target.value)}
+          />
+          <img
+            className={styles.add_student_icon}
+            src={iconAluno}
+            alt="icone aluno"
+          />
+        </div>
+
+        <div className={styles.add_student_div}>
+          <label className={styles.add_student_input_label}>
+            Nome Responsável:
+          </label>
+          <input
+            required={required}
+            readOnly={readSelect}
+            placeholder="digite o nome do responsável"
+            type="text"
+            name="name"
+            value={valueResponsible || ""}
+            onChange={({ target }) => setResponsible(target.value)}
           />
           <img
             className={styles.add_student_icon}
@@ -129,6 +155,36 @@ const FormStudent = ({
         </div>
 
         <div className={styles.add_student_div}>
+          <div className={styles.add_student_div_progress}>
+            <label className={styles.add_student_input_label}>
+              Progressão Aluno:
+            </label>{" "}
+            <div className={styles.add_student_progress_style}>
+              <select
+                disabled={disabledSelect}
+                className={styles.add_student_progress}
+                value={valueProgress || ""}
+                onChange={({ target }) => setProgress(target.value)}
+              >
+                <option defaultValue={true} hidden={true}>
+                  Selecione
+                </option>
+                <option value="pre-silábico">Pré-silábico</option>
+                <option value="silábico sem valor">Silábico sem valor</option>
+                <option value="silábico com valor">Silábico com valor</option>
+                <option value="silábico alfabético">Silábico alfabético</option>
+                <option value="alfabetizado">Alfabetizado</option>
+              </select>
+              <img
+                className={styles.add_student_icon}
+                src={iconEstudo}
+                alt="icone escolaridade"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.add_student_div}>
           <label className={styles.add_student_input_label}>Telefone:</label>
           <input
             required={required}
@@ -139,6 +195,34 @@ const FormStudent = ({
             value={valuePhone || ""}
             onChange={({ target }) =>
               setPhone(
+                target.value
+                  .replace(/\D/g, "")
+                  .replace(/(\d{2})(\d)/, "($1) $2")
+                  .replace(/(\d{5})(\d)/, "$1-$2")
+                  .replace(/(-\d{4})\d+?$/, "$1")
+              )
+            }
+          />
+          <img
+            className={styles.add_student_icon}
+            src={iconPhone}
+            alt="icone telefone"
+          />
+        </div>
+
+        <div className={styles.add_student_div}>
+          <label className={styles.add_student_input_label}>
+            Tel. Responsável:
+          </label>
+          <input
+            required={required}
+            readOnly={readSelect}
+            placeholder="(__) _____-____"
+            className={styles.add_student_input}
+            type="text"
+            value={valueResponsiblePhone || ""}
+            onChange={({ target }) =>
+              setResponsiblePhone(
                 target.value
                   .replace(/\D/g, "")
                   .replace(/(\d{2})(\d)/, "($1) $2")

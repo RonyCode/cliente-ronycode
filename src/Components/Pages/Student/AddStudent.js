@@ -10,8 +10,11 @@ const AddStudent = () => {
   const [address, setAddress] = React.useState();
   const [birthday, setBirthday] = React.useState();
   const [grade, setGrade] = React.useState();
+  const [progress, setProgress] = React.useState();
   const [contractNumber, setContractNumber] = React.useState();
   const [situation, setSituation] = React.useState();
+  const [responsible, setResponsible] = React.useState();
+  const [responsiblePhone, setResponsiblePhone] = React.useState();
   const [datePayment, setDatePayment] = React.useState();
   const [dayStudent, setDayStudent] = React.useState([]);
 
@@ -24,10 +27,13 @@ const AddStudent = () => {
   formData.append("address", address);
   formData.append("birthday", birthday);
   formData.append("grade", grade);
+  formData.append("progress", progress);
   formData.append("contract_number", contractNumber);
   formData.append("day_student", dayStudent);
   formData.append("date_payment", datePayment);
   formData.append("situation", situation);
+  formData.append("responsible", responsible);
+  formData.append("responsible_phone", responsiblePhone);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -63,10 +69,13 @@ const AddStudent = () => {
         valueEmail={email}
         valuePhone={phone}
         valueGrade={grade}
+        valueProgress={progress}
         valueContractNumber={contractNumber}
         valueDayStudent={dayStudent}
         valueDatePayment={datePayment}
         valueSituation={situation}
+        valueResponsible={responsible}
+        valueResponsiblePhone={responsiblePhone}
         setName={setName}
         setAddress={setAddress}
         setContractNumber={setContractNumber}
@@ -76,7 +85,10 @@ const AddStudent = () => {
         setDatePayment={setDatePayment}
         setEmail={setEmail}
         setGrade={setGrade}
+        setProgress={setProgress}
         setPhone={setPhone}
+        setResponsible={setResponsible}
+        setResponsiblePhone={setResponsiblePhone}
         onSubmit={handleSubmit}
         onChange={handleChange}
         required={true}

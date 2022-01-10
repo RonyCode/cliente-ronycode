@@ -46,7 +46,7 @@ const UserForm = () => {
             alt="calendar-tasks-1030"
             border="0"
           />
-          <p className={styles.icon_name}>Planejamento semanal</p>
+          <p className={styles.icon_name}>Relatório Pedagógico</p>
         </Link>
         <Link className={styles.icon} to="/login/aluno/financeiro">
           <img
