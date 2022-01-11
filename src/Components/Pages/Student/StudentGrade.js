@@ -131,8 +131,8 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <li>{item.hora}</li>
                       <b>{item.nome}</b>
+                      <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
                     </ul>
@@ -170,8 +170,8 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <li>{item.hora}</li>
                       <b>{item.nome}</b>
+                      <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
                     </ul>
@@ -209,8 +209,8 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <li>{item.hora}</li>
                       <b>{item.nome}</b>
+                      <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
                     </ul>
@@ -248,8 +248,8 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <li>{item.hora}</li>
                       <b>{item.nome}</b>
+                      <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
                     </ul>
@@ -287,8 +287,8 @@ const StudentGrade = () => {
                     />
 
                     <ul>
-                      <li>{item.hora}</li>
                       <b>{item.nome}</b>
+                      <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
                     </ul>

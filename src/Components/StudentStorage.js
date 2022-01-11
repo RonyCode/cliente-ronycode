@@ -13,7 +13,6 @@ export const StudentContext = createContext();
 
 export const StudentStorage = ({ children }) => {
   const [dataAllStudent, setDataAllStudent] = useState("");
-  const [dataDayAllStudent, setDataDayAllStudent] = useState("");
   const [stdData, setStdData] = useState("");
   const navigate = useNavigate();
 
@@ -66,17 +65,6 @@ export const StudentStorage = ({ children }) => {
     }
   };
 
-  const getAllDayStudents = async () => {
-    try {
-      const { url, options } = GET_ALL_DAY_STD();
-      const response = await axios(url, options);
-      response && setDataDayAllStudent(response.data.data);
-      console.log(response.data.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   return (
     <div>
       <StudentContext.Provider
@@ -87,8 +75,6 @@ export const StudentStorage = ({ children }) => {
           updateStudent,
           getAllStudents,
           dataAllStudent,
-          getAllDayStudents,
-          dataDayAllStudent,
         }}
       >
         {children}
