@@ -42,7 +42,7 @@ body {
 .planning_table_qui,
 .planning_table_sex {
   display: grid;
-  min-width: 600px;
+  min-width: 450px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   /*margin: auto;*/
@@ -152,8 +152,8 @@ body {
 }
 
 .table_content_list {
-  width: 185px;
-  height: 210px;
+  width: 135px;
+  height: 150px;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
