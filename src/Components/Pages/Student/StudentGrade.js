@@ -31,7 +31,7 @@ const StudentGrade = () => {
         day.includes("seg")
           ? monDays.push({
               hora: day,
-              nome: item.name,
+              nome: item.name.split(" ", 2),
               id: item.id,
               grade: item.grade,
               progress: item.progress,
@@ -47,7 +47,7 @@ const StudentGrade = () => {
         day.includes("ter")
           ? tuesDays.push({
               hora: day,
-              nome: item.name,
+              nome: item.name.split(" ", 2),
               id: item.id,
               grade: item.grade,
               progress: item.progress,
@@ -63,7 +63,7 @@ const StudentGrade = () => {
         day.includes("qua")
           ? wedDays.push({
               hora: day,
-              nome: item.name,
+              nome: item.name.split(" ", 2),
               id: item.id,
               grade: item.grade,
               progress: item.progress,
@@ -79,7 +79,7 @@ const StudentGrade = () => {
         day.includes("qui")
           ? thuDays.push({
               hora: day,
-              nome: item.name,
+              nome: item.name.split(" ", 2),
               id: item.id,
               grade: item.grade,
               progress: item.progress,
@@ -95,7 +95,7 @@ const StudentGrade = () => {
         day.includes("sex")
           ? friDays.push({
               hora: day,
-              nome: item.name,
+              nome: item.name.split(" ", 2),
               id: item.id,
               grade: item.grade,
               progress: item.progress,
@@ -124,14 +124,9 @@ const StudentGrade = () => {
               monDays.map((item) => (
                 <div key={item.id} className={styles.table_content_list}>
                   <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-
                     <ul>
-                      <b>{item.nome}</b>
+                      <li>{"id aluno: " + item.id}</li>
+                      <li>{item.nome.join(" ")}</li>
                       <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
@@ -163,14 +158,10 @@ const StudentGrade = () => {
               tuesDays.map((item) => (
                 <div key={item.id} className={styles.table_content_list}>
                   <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-
                     <ul>
-                      <b>{item.nome}</b>
+                      <li>{"id aluno: " + item.id}</li>
+
+                      <li>{item.nome.join(" ")}</li>
                       <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
@@ -202,14 +193,10 @@ const StudentGrade = () => {
               wedDays.map((item) => (
                 <div key={item.id} className={styles.table_content_list}>
                   <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-
                     <ul>
-                      <b>{item.nome}</b>
+                      <li>{"id aluno: " + item.id}</li>
+
+                      <li>{item.nome.join(" ")}</li>
                       <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
@@ -241,14 +228,9 @@ const StudentGrade = () => {
               thuDays.map((item) => (
                 <div key={item.id} className={styles.table_content_list}>
                   <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-
                     <ul>
-                      <b>{item.nome}</b>
+                      <li>{"id aluno: " + item.id}</li>
+                      <li>{item.nome.join(" ")}</li>
                       <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>
@@ -280,14 +262,9 @@ const StudentGrade = () => {
               friDays.map((item) => (
                 <div key={item.id} className={styles.table_content_list}>
                   <div className={styles.content_list_item}>
-                    <img
-                      className={styles.content_list_img}
-                      src={iconStudent}
-                      alt=""
-                    />
-
                     <ul>
-                      <b>{item.nome}</b>
+                      <li>{"id aluno: " + item.id}</li>
+                      <li>{item.nome.join(" ")}</li>
                       <li>{item.hora}</li>
                       <li>{item.grade}</li>
                       <li>{item.progress}</li>

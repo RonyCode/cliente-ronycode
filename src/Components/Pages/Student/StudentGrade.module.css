@@ -47,6 +47,7 @@ body {
   grid-template-rows: 1fr 1fr;
   /*margin: auto;*/
   /*background: #541bc1;*/
+
 }
 
 .table_item_header {
@@ -60,14 +61,14 @@ body {
   box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 1);
   padding: 1rem;
   background: linear-gradient(
-    45deg,
-    rgba(255, 0, 0, 0.7),
-    rgba(255, 165, 0, 0.7),
-    rgba(255, 255, 0, 0.7),
-    rgba(0, 128, 0, 0.7),
-    rgba(173, 213, 230, 0.7),
-    rgba(0, 0, 255, 0.7),
-    rgba(128, 0, 128, 0.7)
+      45deg,
+      rgba(255, 0, 0, 0.7),
+      rgba(255, 165, 0, 0.7),
+      rgba(255, 255, 0, 0.7),
+      rgba(0, 128, 0, 0.7),
+      rgba(173, 213, 230, 0.7),
+      rgba(0, 0, 255, 0.7),
+      rgba(128, 0, 128, 0.7)
   );
   text-shadow: #0d130c;
   font-weight: 600;
@@ -86,6 +87,7 @@ body {
   transition: 3s;
   background: linear-gradient(-135deg, cornflowerblue, blue, darkblue);
   text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+
 }
 
 .table_ter_content {
@@ -113,7 +115,7 @@ body {
   /*flex-direction: column;*/
   flex-wrap: wrap;
   padding: 1rem;
-  background: linear-gradient(-135deg, lightgreen,forestgreen,green);
+  background: linear-gradient(-135deg, lightgreen, forestgreen, green);
   text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 }
 
@@ -127,8 +129,9 @@ body {
   /*flex-direction: column;*/
   flex-wrap: wrap;
   padding: 1rem;
-  background: linear-gradient(-135deg, orangered,red,darkred);
+  background: linear-gradient(-135deg, orangered, red, darkred);
   text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+
 }
 
 .table_sex_content {
@@ -165,19 +168,31 @@ body {
 .content_list_item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   list-style: none;
   color: white;
   text-shadow: #0d130c;
+  align-items: center;
 }
+
 
 .content_list_item li {
   font-size: 0.8rem;
   list-style: none;
+  border-bottom: 2px outset rgba(0, 0, 0, 0.1);
 }
 
- .content_list_img,
+.content_list_item ul {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 1rem;
+
+}
+.list_img_div{
+  display: flex;
+}
+
+.content_list_img,
 .icon_edit_student {
   width: 32px;
   opacity: 0.5;
@@ -186,16 +201,18 @@ body {
 }
 
 
-#icon_svg_student{
+#icon_svg_student {
   fill: #0d130c;
   width: 32px;
 
 }
-#icon_svg_edit-student{
+
+#icon_svg_edit-student {
   fill: #0d130c;
   width: 32px;
 
 }
+
 .icon_edit_student:hover {
   opacity: 1;
 }
