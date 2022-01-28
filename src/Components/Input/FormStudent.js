@@ -11,6 +11,7 @@ import iconSelect from "../../Assets/check.png";
 import iconHorario from "../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
 import styles from "./FormStudent.module.css";
 import Select from "./Select";
+import SelectNormal from "./SelectNormal";
 
 const FormStudent = ({
   onSubmit,
@@ -31,21 +32,23 @@ const FormStudent = ({
   setEmail,
   setAddress,
   setPhone,
-  setGrade,
-  setProgress,
-  setSituation,
   setBirthday,
   setDatePayment,
   setContractNumber,
   setResponsible,
   setResponsiblePhone,
-  disabledSelect = false,
   buttonApears = "",
   readSelect = false,
   required = false,
   onChange,
   valueAdd,
   valueEdit,
+  valueSelectProgress,
+  valueSelectGrade,
+  valueSelectSituation,
+  onChangeSelectProgress,
+  onChangeSelectGrade,
+  onChangeSelectSituation,
 }) => {
   return (
     <div className={styles.add_student}>
@@ -129,22 +132,12 @@ const FormStudent = ({
               Escolaridade:
             </label>{" "}
             <div className={styles.add_student_select_style}>
-              <select
-                disabled={disabledSelect}
-                className={styles.add_student_select}
-                value={valueGrade || ""}
-                onChange={({ target }) => setGrade(target.value)}
-              >
-                <option defaultValue={true} hidden={true}>
-                  Selecione
-                </option>
-                <option value="alfabetização">Alfabetização</option>
-                <option value="1º ano">1º Ano</option>
-                <option value="2º ano">2º Ano</option>
-                <option value="3º ano">3º Ano</option>
-                <option value="4º ano">4º Ano</option>
-                <option value="5º ano">5º Ano</option>
-              </select>
+              <SelectNormal
+                valueAdd={valueSelectGrade}
+                icon={iconEstudo}
+                onChange={onChangeSelectGrade}
+                valueCheck={valueGrade}
+              />
               <img
                 className={styles.add_student_icon}
                 src={iconEstudo}
@@ -160,21 +153,13 @@ const FormStudent = ({
               Progressão Aluno:
             </label>{" "}
             <div className={styles.add_student_progress_style}>
-              <select
-                disabled={disabledSelect}
-                className={styles.add_student_progress}
-                value={valueProgress || ""}
-                onChange={({ target }) => setProgress(target.value)}
-              >
-                <option defaultValue={true} hidden={true}>
-                  Selecione
-                </option>
-                <option value="pre-silábico">Pré-silábico</option>
-                <option value="silábico sem valor">Silábico sem valor</option>
-                <option value="silábico com valor">Silábico com valor</option>
-                <option value="silábico alfabético">Silábico alfabético</option>
-                <option value="alfabetizado">Alfabetizado</option>
-              </select>
+              <SelectNormal
+                icon={iconEstudo}
+                onChange={onChangeSelectProgress}
+                valueCheck={valueProgress}
+                valueAdd={valueSelectProgress}
+              />
+
               <img
                 className={styles.add_student_icon}
                 src={iconEstudo}
@@ -263,18 +248,12 @@ const FormStudent = ({
         <div className={styles.add_student_div_select}>
           <label>Situação:</label>
           <div className={styles.add_student_select_style}>
-            <select
-              disabled={disabledSelect}
-              className={styles.add_student_select}
-              value={valueSituation || ""}
-              onChange={({ target }) => setSituation(target.value)}
-            >
-              <option defaultValue={true} hidden={true}>
-                Selecione
-              </option>
-              <option value="adimplente">Adimplente</option>
-              <option value="inadimplente">Inadimplente</option>
-            </select>
+            <SelectNormal
+              valueCheck={valueSituation}
+              valueAdd={valueSelectSituation}
+              onChange={onChangeSelectSituation}
+              icon={iconSelect}
+            />
             <img
               className={styles.add_student_icon}
               src={iconSelect}

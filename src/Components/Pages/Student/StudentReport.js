@@ -19,20 +19,24 @@ const StudentReport = () => {
     <div className={styles.report}>
       <div className={styles.container}>
         <h1>Relatório Pedagógico do Aluno </h1>
-        <div className={styles.report_select}>
-          <label htmlFor="select_aluno">Por favor selecione um aluno</label>
-          <select name="select_aluno" value={data} onChange={handleSelect}>
-            {dataAllStudent &&
-              dataAllStudent.map((item) => (
-                <>
-                  <option key={item.id} defaultValue={true} hidden={true}>
-                    Selecione
-                  </option>
-                  <option value={item.email}>{item.name}</option>
-                </>
-              ))}
-          </select>
+
+        <div className={styles.report_select_div}>
+          <div className={styles.report_select}>
+            <label htmlFor="select_aluno">Por favor selecione um aluno</label>
+            <select name="select_aluno" value={data} onChange={handleSelect}>
+              {dataAllStudent &&
+                dataAllStudent.map((item) => (
+                  <>
+                    <option key={item.id} defaultValue={true} hidden={true}>
+                      Selecione
+                    </option>
+                    <option value={item.email}>{item.name}</option>
+                  </>
+                ))}
+            </select>
+          </div>
         </div>
+
         <div className={styles.report_matriz}>
           {dataAllStudent &&
             dataAllStudent.map((item) => (

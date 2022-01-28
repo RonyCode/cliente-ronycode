@@ -3,13 +3,15 @@
   padding: 4rem;
   margin: auto;
 }
+.container{
 
-.report_select {
-  margin: 2rem 0;
+}
+
+.report_select_div{
+  position: relative;
 }
 
 .report_matriz {
-
   padding: 4rem;
   border: solid 2px #333;
 }
@@ -24,8 +26,7 @@
   grid-column: 1/8;
   width: 100%;
   border: solid 1px #333;
-  padding: .7rem;
-
+  padding: 0.7rem;
 
 }
 
@@ -34,7 +35,6 @@
   grid-row: 1/1;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(3) {
@@ -55,7 +55,6 @@
   grid-row: 3/3;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(6) {
@@ -63,7 +62,6 @@
   grid-row: 3/3;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(7) {
@@ -71,7 +69,6 @@
   grid-row: 4/4;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(8) {
@@ -79,7 +76,6 @@
   grid-row: 4/4;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(9) {
@@ -87,7 +83,6 @@
   grid-row: 4/4;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(10) {
@@ -95,7 +90,6 @@
   grid-row: 5/5;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(11) {
@@ -103,7 +97,6 @@
   grid-row: 5/5;
   width: 100%;
   border: solid 1px #333;
-
 }
 
 .report_cell:nth-child(12) {
@@ -118,28 +111,47 @@
   grid-column: 1/13;
   grid-row: 6;
   width: 100%;
-  /*border: none!important;*/
 
+
+  /*border: none!important;*/
 }
+
 .report_cell:nth-child(14) {
   grid-column: 1/13;
   grid-row: 7;
   width: 100%;
   /*border: none!important;*/
-
 }
 
+.report_select option{
+  background: transparent;
+  width: 150px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 64px;
+}
 
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #printable, #printable * {
-    visibility: visible;
-  }
-  #printable {
-    position: fixed;
-    left: 0;
-    top: 0;
-  }
+.report_select{
+  padding: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
+  background: white;
+  text-align: center;
+  text-align-all: center;
+  margin-top: 0.5rem;
+  font-size: 0.79rem;
+}
+
+.report_select:disabled{
+  color: #0d130c;
+}
+
+.report_select::-ms-expand {
+  display: none; /* remove default arrow on ie10 and ie11 */
 }
