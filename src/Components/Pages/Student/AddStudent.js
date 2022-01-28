@@ -10,7 +10,7 @@ const AddStudent = () => {
   const [address, setAddress] = React.useState();
   const [birthday, setBirthday] = React.useState();
   const [grade, setGrade] = React.useState();
-  const [progress, setProgress] = React.useState();
+  const [progress, setProgress] = React.useState([]);
   const [contractNumber, setContractNumber] = React.useState();
   const [situation, setSituation] = React.useState();
   const [responsible, setResponsible] = React.useState();
@@ -48,6 +48,24 @@ const AddStudent = () => {
     "15h:00min as 16h:00min",
     "16h:00min as 17h:30min",
   ];
+  const progressArr = [
+    "Pré-silábico",
+    "Silábico",
+    "Silábico sem valor",
+    "Silábico com valor",
+    "Alfabetizado",
+  ];
+
+  const gradeArr = [
+    "Alfabetização",
+    "1º Ano",
+    "2º Ano",
+    "3º Ano",
+    "4º Ano",
+    "5º Ano",
+  ];
+  const situationArr = ["Adimplente", "Inadimplente"];
+
   const days = ["seg ", "ter ", "qua ", "qui ", "sex "];
   const valueAdd = days.map((item) => hours.map((itemH) => item + itemH));
 
@@ -57,6 +75,22 @@ const AddStudent = () => {
     } else {
       // remove from list
       setDayStudent(dayStudent.filter((people) => people !== e.target.value));
+    }
+  };
+  const handleChangeProgress = (e) => {
+    if (e.target.checked) {
+      setProgress(e.target.value);
+    }
+  };
+
+  const handleChangeGrade = (e) => {
+    if (e.target.checked) {
+      setGrade(e.target.value);
+    }
+  };
+  const handleChangeSituation = (e) => {
+    if (e.target.checked) {
+      setSituation(e.target.value);
     }
   };
 
@@ -93,6 +127,12 @@ const AddStudent = () => {
         onChange={handleChange}
         required={true}
         valueAdd={valueAdd}
+        valueSelectProgress={progressArr}
+        valueSelectGrade={gradeArr}
+        valueSelectSituation={situationArr}
+        onChangeSelectProgress={handleChangeProgress}
+        onChangeSelectGrade={handleChangeGrade}
+        onChangeSelectSituation={handleChangeSituation}
       />
     </div>
   );

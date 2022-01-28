@@ -34,7 +34,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
               id="button_expand"
             />
 
-            <div className="select_expand" id="teste">
+            <div className="select_expand">
               {valueCheck.split &&
                 valueCheck.split(",").map((item) => (
                   <label key={item} className="select_label">
@@ -44,7 +44,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                       onChange={onChange}
                       id="item_checkbox"
                     />
-                    {item.substr(0, 3) === "seg" && (
+                    {item.includes("seg") && (
                       <div className="select_item_icon">
                         <img
                           className="add_checkbox_icon"
@@ -54,7 +54,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                         <p className={"select_item"}>{item}</p>
                       </div>
                     )}
-                    {item.substr(0, 3) === "ter" && (
+                    {item.includes("ter") && (
                       <div className="select_item_icon">
                         <img
                           className="add_checkbox_icon"
@@ -64,7 +64,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                         <p className={"select_item"}>{item}</p>
                       </div>
                     )}
-                    {item.substr(0, 3) === "qua" && (
+                    {item.includes("qua") && (
                       <div className="select_item_icon">
                         <img
                           className="add_checkbox_icon"
@@ -74,7 +74,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                         <p className={"select_item"}>{item}</p>
                       </div>
                     )}{" "}
-                    {item.substr(0, 3) === "qui" && (
+                    {item.includes("qui") && (
                       <div className="select_item_icon">
                         <img
                           className="add_checkbox_icon"
@@ -84,7 +84,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                         <p className={"select_item"}>{item}</p>
                       </div>
                     )}{" "}
-                    {item.substr(0, 3) === "sex" && (
+                    {item.includes("sex") && (
                       <div className="select_item_icon">
                         <img
                           className="add_checkbox_icon"
@@ -97,7 +97,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                   </label>
                 ))}
 
-              <h4 className="select_divisor">Selecione abaixo o dia</h4>
+              <h4 className="select_divisor">Selecione horario</h4>
               {valueAdd &&
                 valueAdd.map((item) =>
                   item.map((item2) => (
@@ -109,7 +109,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                           onChange={onChange}
                           id="item_checkbox"
                         />
-                        {item2.substr(0, 3) === "seg" && (
+                        {item2.includes("seg") && (
                           <div className="select_item_icon">
                             <img
                               className="add_checkbox_icon"
@@ -119,7 +119,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                             <p className={"select_item"}>{item2}</p>
                           </div>
                         )}
-                        {item2.substr(0, 3) === "ter" && (
+                        {item2.includes("ter") && (
                           <div className="select_item_icon">
                             <img
                               className="add_checkbox_icon"
@@ -129,7 +129,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                             <p className={"select_item"}>{item2}</p>
                           </div>
                         )}
-                        {item2.substr(0, 3) === "qua" && (
+                        {item2.includes("qua") && (
                           <div className="select_item_icon">
                             <img
                               className="add_checkbox_icon"
@@ -139,7 +139,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                             <p className={"select_item"}>{item2}</p>
                           </div>
                         )}
-                        {item2.substr(0, 3) === "qui" && (
+                        {item2.includes("qui") && (
                           <div className="select_item_icon">
                             <img
                               className="add_checkbox_icon"
@@ -149,7 +149,7 @@ const Select = ({ onChange, valueCheck, valueAdd }) => {
                             <p className={"select_item"}>{item2}</p>
                           </div>
                         )}
-                        {item2.substr(0, 3) === "sex" && (
+                        {item2.includes("sex") && (
                           <div className="select_item_icon">
                             <img
                               className="add_checkbox_icon"

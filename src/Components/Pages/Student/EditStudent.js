@@ -14,7 +14,7 @@ const EditStudent = () => {
   const [grade, setGrade] = React.useState("");
   const [responsible, setResponsible] = React.useState("");
   const [responsiblePhone, setResponsiblePhone] = React.useState("");
-  const [progress, setProgress] = React.useState("");
+  const [progress, setProgress] = React.useState([]);
   const [contractNumber, setContractNumber] = React.useState("");
   const [situation, setSituation] = React.useState("");
   const [datePayment, setDatePayment] = React.useState("");
@@ -78,13 +78,38 @@ const EditStudent = () => {
     updateStudent(formData);
   }
   const hours = [
-    "08h:00min as 09h:00min",
-    "09h:00min as 10h:00min",
-    "10h:00min as 11h:30min",
-    "13h:30min as 15h:00min",
-    "15h:00min as 16h:00min",
-    "16h:00min as 17h:30min",
+    "08h:00min",
+    "08h:30min",
+    "09h:00min",
+    "09h:30min",
+    "10h:00min",
+    "10h:30min",
+    "13h:30min",
+    "14h:00min",
+    "14h:30min",
+    "15h:00min",
+    "15h:30min",
+    "16h:00min",
+    "16h:30min",
   ];
+
+  const progressArr = [
+    "Pré-silábico",
+    "Silábico",
+    "Silábico sem valor",
+    "Silábico com valor",
+    "Alfabetizado",
+  ];
+
+  const gradeArr = [
+    "Alfabetização",
+    "1º Ano",
+    "2º Ano",
+    "3º Ano",
+    "4º Ano",
+    "5º Ano",
+  ];
+  const situationArr = ["Adimplente", "Inadimplente"];
   const days = ["seg ", "ter ", "qua ", "qui ", "sex "];
   const valueEdit = days.map((item) => hours.map((itemH) => item + itemH));
 
@@ -99,6 +124,21 @@ const EditStudent = () => {
       setEditDayStudent(
         editDayStudent.filter((dayItem) => dayItem !== e.target.value)
       );
+    }
+  };
+  const handleChangeProgress = (e) => {
+    if (e.target.checked) {
+      setProgress(e.target.value);
+    }
+  };
+  const handleChangeGrade = (e) => {
+    if (e.target.checked) {
+      setGrade(e.target.value);
+    }
+  };
+  const handleChangeSituation = (e) => {
+    if (e.target.checked) {
+      setSituation(e.target.value);
     }
   };
 
@@ -135,6 +175,12 @@ const EditStudent = () => {
         onSubmit={handleSubmit}
         onChange={handleChange}
         valueAdd={valueEdit || ""}
+        valueSelectProgress={progressArr}
+        valueSelectGrade={gradeArr}
+        valueSelectSituation={situationArr}
+        onChangeSelectProgress={handleChangeProgress}
+        onChangeSelectGrade={handleChangeGrade}
+        onChangeSelectSituation={handleChangeSituation}
       />
     </div>
   );
