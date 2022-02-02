@@ -1,17 +1,9 @@
 import React from "react";
 import "./SelectNormal.css";
 
-const Select = ({
-  onChange,
-  valueCheck,
-  valueAdd,
-  icon,
-  tittle,
-  uncheckSelect,
-}) => {
+const Select = ({ onChange, valueCheck, valueAdd, icon, tittle }) => {
   const [checked, setChecked] = React.useState("");
   const [change, setChange] = React.useState("");
-  const [unselect, setUnselect] = React.useState("select_label");
 
   const handleMouseLeave = (e) => {
     setChecked(false);
@@ -21,10 +13,7 @@ const Select = ({
   };
   React.useEffect(() => {
     valueCheck && change ? setChange(valueCheck) : setChange(() => "Selecione");
-    // if (valueCheck) {
-    //   setUnselect("hiden_checkbox");
-    // }
-  }, [valueCheck, uncheckSelect]);
+  }, [valueCheck]);
   return (
     <div>
       <div className="select">
@@ -37,19 +26,9 @@ const Select = ({
             {change}
             <input type="checkbox" checked={checked} id="button_expand" />
             <div className="select_expand">
-              <label>
-                <input
-                  type="checkbox"
-                  value={valueCheck}
-                  onChange={onChange}
-                  id="item_checkbox"
-                />
-              </label>
-
-              <h4 className="select_divisor">{tittle}</h4>
               {valueAdd &&
                 valueAdd.map((item) => (
-                  <div className={unselect} key={item}>
+                  <div key={item}>
                     <label className="select_label">
                       <input
                         type="checkbox"
@@ -58,7 +37,6 @@ const Select = ({
                         onChange={onChange}
                         id="item_checkbox"
                       />
-
                       <div className="select_item_icon">
                         <img
                           className="add_checkbox_icon"
