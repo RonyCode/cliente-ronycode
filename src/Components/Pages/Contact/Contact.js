@@ -14,7 +14,8 @@ const Contato = () => {
   const [dayStudent1, setDayStudent1] = React.useState([]);
   const [dayStudent2, setDayStudent2] = React.useState([]);
   const [dayStudent3, setDayStudent3] = React.useState([]);
-  const [pay, setPay] = React.useState();
+  const [button, setButton] = React.useState([]);
+  const [pay, setPay] = React.useState([]);
   const [drowmbox, setDrowmbox] = React.useState("");
   const formData = new FormData();
   formData.append("day_student", dayStudent1);
@@ -41,6 +42,9 @@ const Contato = () => {
   const handleChange1 = (e) => {
     if (e.target.checked) {
       setDayStudent1(e.target.value);
+    } else {
+      // remove from list
+      setDayStudent1("");
     }
   };
   const handleChange2 = (e) => {
@@ -59,7 +63,7 @@ const Contato = () => {
 
   React.useEffect(() => {
     if (dayStudent2 < dayStudent3) {
-      setPay(dayStudent1 + dayStudent2 + dayStudent3);
+      setPay(() => [dayStudent1 + dayStudent2 + dayStudent3]);
     } else setPay("");
   }, [dayStudent1, dayStudent2, dayStudent3]);
 
@@ -73,7 +77,14 @@ const Contato = () => {
   const handleMouseOver = () => {
     setDrowmbox(styles.drowmbox);
   };
-  console.log(pay);
+
+  const handleClick = () => {
+    // if (pay.length === 1) {
+    setButton(() => [pay, pay]);
+    // }
+  };
+
+  console.log(dayStudent1);
   return (
     <div className={styles.contact}>
       <div>
@@ -109,7 +120,7 @@ const Contato = () => {
             </div>
             <div className={styles.div_select}>{pay}</div>
             <div className={styles.div_select}>
-              <button>
+              <button onClick={handleClick}>
                 <img src={iconSelect} alt="icone check" width="36" />{" "}
               </button>
             </div>{" "}
