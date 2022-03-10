@@ -35,10 +35,10 @@
 }
 
 .add_checkbox_icon {
-    width: 32px;
+    width: 36px;
     opacity: 0.5;
     transition: .3s ease;
-
+    margin: auto;
 }
 
 #item_checkbox:checked ~ .select_item_icon img {
@@ -63,7 +63,7 @@
 }
 
 #button_expand:checked ~ .select_expand {
-    display: block;
+    display: inline-block;
     background: #f1f1f1;
     transition: .4s ease;
 
@@ -80,6 +80,7 @@
     overflow: scroll;
     margin: 1rem auto auto auto;
     transition: .4s ease;
+
 }
 
 .select_label {
@@ -97,18 +98,21 @@
 .select_divisor {
     background: #c6c6c6c6;
     padding: 1rem 0;
+
 }
 
 .select_item {
     padding: 1rem 0;
     transition: .4s ease;
+
 }
 
 .select_item_icon {
     display: grid;
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 30% 70%;
     width: 100%;
     transition: .4s ease;
+
 }
 
 .select_label:hover,

@@ -1,26 +1,32 @@
 import React from "react";
 import styles from "./Contact.module.css";
 import { StudentContext } from "../../StudentStorage";
-import Select from "../../Input/Select";
 import SelectNormal from "../../Input/SelectNormal";
 import iconSelect from "../../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
+import iconSeg from "../../../Assets/seg.png";
+import iconTer from "../../../Assets/ter.png";
+import iconQua from "../../../Assets/qua.png";
+import iconQui from "../../../Assets/qui.png";
+import iconSex from "../../../Assets/sex.png";
 
 const Contato = () => {
-  const { getAllStudents, dataAllStudent } = React.useContext(StudentContext);
+  const { getAllStudents } = React.useContext(StudentContext);
 
   React.useEffect(() => {
     getAllStudents();
   }, []);
-  const [dayStudent1, setDayStudent1] = React.useState([]);
-  const [dayStudent2, setDayStudent2] = React.useState([]);
-  const [dayStudent3, setDayStudent3] = React.useState([]);
-  const [button, setButton] = React.useState([]);
-  const [pay, setPay] = React.useState([]);
-  const [drowmbox, setDrowmbox] = React.useState("");
+  const [dayStudent, setDayStudent] = React.useState([]);
+  const [hourInput, setHourInput] = React.useState([]);
+  const [hourOutput, setHourOutput] = React.useState([]);
+  const [pay, setPay] = React.useState({
+    day: "",
+    hour_input: "",
+    hour_output: "",
+  });
+  const [drowmbox, setDrowmbox] = React.useState(styles.drowmbox);
+  const [saveData, setSaveData] = React.useState([]);
+  const [iconChange, setIconChange] = React.useState(null);
   const formData = new FormData();
-  formData.append("day_student", dayStudent1);
-  formData.append("day_student", dayStudent2);
-  formData.append("day_student", dayStudent3);
 
   const hour = [
     "08h:00min",
@@ -41,72 +47,82 @@ const Contato = () => {
 
   const handleChange1 = (e) => {
     if (e.target.checked) {
-      setDayStudent1(e.target.value);
-    } else {
-      // remove from list
-      setDayStudent1("");
+      setDayStudent(e.target.value);
     }
   };
   const handleChange2 = (e) => {
     if (e.target.checked) {
-      // if (e.target.checked < dayStudent3) {
-      //   setDayStudent2(e.target.value);
-      // }
-      setDayStudent2(e.target.value);
+      setHourInput(e.target.value);
     }
   };
   const handleChange3 = (e) => {
     if (e.target.checked) {
-      setDayStudent3(e.target.value);
+      setHourOutput(e.target.value);
     }
   };
 
   React.useEffect(() => {
-    if (dayStudent2 < dayStudent3) {
-      setPay(() => [dayStudent1 + dayStudent2 + dayStudent3]);
+    if (hourInput < hourOutput) {
+      setPay({
+        day: dayStudent,
+        hour_input: hourInput + " as ",
+        hour_output: hourOutput,
+      });
     } else setPay("");
-  }, [dayStudent1, dayStudent2, dayStudent3]);
+    days[0].includes("seg") && setIconChange(iconSeg);
+    days[1].includes("ter") && setIconChange(iconTer);
+    days[2].includes("qua") && setIconChange(iconQua);
+    days[3].includes("qui") && setIconChange(iconQui);
+    days[4].includes("sex") && setIconChange(iconSex);
+  }, [dayStudent, hourInput, hourOutput, iconChange, days]);
 
+  const handleClick = () => {
+    if (pay) {
+      setSaveData((saveData) => [...saveData, pay]);
+      setDayStudent("");
+      setHourInput("");
+      setHourOutput("");
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  const handleOnMouse = () => {
-    setDrowmbox(styles.drowmbox_expand);
-  };
-  const handleMouseOver = () => {
-    setDrowmbox(styles.drowmbox);
-  };
-
-  const handleClick = () => {
-    // if (pay.length === 1) {
-    setButton(() => [pay, pay]);
-    // }
+  const handleOnMouse = (e) => {
+    if (e.target.checked) {
+      setDrowmbox(styles.drowmbox_expand);
+    } else {
+      setDrowmbox(styles.drowmbox);
+    }
   };
 
-  console.log(dayStudent1);
+  console.log(saveData);
+  console.log(days[0].includes("seg"));
   return (
     <div className={styles.contact}>
       <div>
         <form className={styles.container} onSubmit={handleSubmit}>
-          <div
-            onMouseOver={handleOnMouse}
-            onMouseLeave={handleMouseOver}
-            className={drowmbox}
-          >
+          <div className={styles.label_div}>
+            <label className={styles.label_select} onChange={handleOnMouse}>
+              Selecione
+              <input id={styles.checkbox_toggle} type="checkbox" />
+            </label>
+          </div>
+
+          <div className={drowmbox}>
             <div className={styles.div_select}>
               <SelectNormal
                 onChange={handleChange1}
                 valueAdd={days}
-                valueCheck={dayStudent1}
-                icon={iconSelect}
+                valueCheck={dayStudent}
+                icon={iconChange}
               />
             </div>{" "}
             <div className={styles.div_select}>
               <SelectNormal
                 onChange={handleChange2}
                 valueAdd={hour}
-                valueCheck={dayStudent2}
+                valueCheck={hourInput}
                 icon={iconSelect}
               />
             </div>
@@ -114,16 +130,33 @@ const Contato = () => {
               <SelectNormal
                 onChange={handleChange3}
                 valueAdd={hour}
-                valueCheck={dayStudent2 < dayStudent3 && dayStudent3}
+                valueCheck={hourInput < hourOutput && hourOutput}
                 icon={iconSelect}
               />
             </div>
-            <div className={styles.div_select}>{pay}</div>
             <div className={styles.div_select}>
-              <button onClick={handleClick}>
+              <button onClick={handleClick} className={styles.button_check}>
                 <img src={iconSelect} alt="icone check" width="36" />{" "}
               </button>
             </div>{" "}
+            <label>
+              Dia:
+              {saveData.map((item) => (
+                <div>{item.day.includes("seg") && item.day}</div>
+              ))}
+            </label>
+            <label>
+              Horário Entrada:
+              {saveData.map((item) => (
+                <li>{item.hour_input}</li>
+              ))}
+            </label>
+            <label>
+              Horário saída:
+              {saveData.map((item) => (
+                <li> {item.hour_output}</li>
+              ))}
+            </label>
           </div>
         </form>
       </div>
