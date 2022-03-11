@@ -58,15 +58,6 @@ const SaveStudent = () => {
   formData.append("responsible", responsible);
   formData.append("responsible_phone", responsiblePhone);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (id) {
-      updateStudent(formData);
-    } else {
-      addStudent(formData);
-    }
-  }
-
   const hour = [
     "08h:00min",
     "08h:30min",
@@ -102,25 +93,32 @@ const SaveStudent = () => {
   ];
   const situationArr = ["Adimplente", "Inadimplente"];
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (!id) {
+      addStudent(formData);
+    } else if (saveData.length > 0) {
+      updateStudent(formData);
+    } else {
+      alert(
+        "É preciso selecionar novos dados no campo  dia, horário de entrada e saída do aluno!!!"
+      );
+    }
+  }
+
   const handleChangeDay = (e) => {
     if (e.target.checked) {
       setDayStudent(e.target.value);
-    } else {
-      setDayStudent(stdData.dayStudent.split(","));
     }
   };
   const handleChangeHourInput = (e) => {
     if (e.target.checked) {
       setHourInput(e.target.value);
-    } else {
-      setHourInput(hourEditInput);
     }
   };
   const handleChangeHourOutput = (e) => {
     if (e.target.checked) {
       setHourOutput(e.target.value);
-    } else {
-      setHourOutput(hourEditOutput);
     }
   };
 
@@ -142,8 +140,6 @@ const SaveStudent = () => {
   };
 
   React.useEffect(() => {
-    dayEditStudent && setDayStudent(stdData.dayStudent.split(",", 1));
-
     if (id) {
       selectStudent(id);
       setName(stdData.name);
@@ -161,11 +157,6 @@ const SaveStudent = () => {
       setResponsiblePhone(stdData.responsiblePhone);
       setEditData(stdData.dayStudent);
       setShowSelected(styles.container_show);
-      // setPay({
-      //   day: dayEditStudent,
-      //   hour_input: hourEditInput,
-      //   hour_output: hourEditOutput,
-      // });
     }
 
     if (dayStudent && hourInput && hourOutput) {
@@ -185,10 +176,6 @@ const SaveStudent = () => {
     dayStudent,
     hourInput,
     hourOutput,
-    // dayEditStudent,
-    // hourEditInput,
-    // hourEditOutput,
-    stdData.name,
     stdData.name,
     stdData.phone,
     stdData.email,
@@ -205,16 +192,16 @@ const SaveStudent = () => {
   ]);
 
   const handleClick = () => {
-    if (pay) {
+    if (pay && pay.hour_input < pay.hour_output) {
       setSaveData((saveData) => [...saveData, pay]);
       setShowSelected(styles.container_show);
+    } else {
+      setSaveData(null);
+      alert("O horário de saída não pode ser menor que o de entrada");
     }
-    // else {
-    //   setPay("");
-    // }
   };
 
-  console.log(dayEditStudent);
+  console.log(saveData.length);
 
   return (
     <div>
