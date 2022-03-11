@@ -10,8 +10,8 @@ import iconContrato from "../../Assets/contract_icon-icons.com_64813.png";
 import iconSelect from "../../Assets/check.png";
 import iconHorario from "../../Assets/clock-time-control-tool-1_icon-icons.com_56823.svg";
 import styles from "./FormStudent.module.css";
-import Select from "./Select";
 import SelectNormal from "./SelectNormal";
+import FormSelectDays from "./FormSelectDays";
 
 const FormStudent = ({
   onSubmit,
@@ -40,15 +40,25 @@ const FormStudent = ({
   buttonApears = "",
   readSelect = false,
   required = false,
-  onChange,
-  valueAdd,
-  valueEdit,
+  valueSelectDays,
+  valueSelectHour,
+  valueCheckSelectDay,
+  valueCheckSelectHourInput,
+  valueCheckSelectHourOutput,
+  onChangeDay,
+  onChangeHourInput,
+  onChangeHourOutput,
   valueSelectProgress,
   valueSelectGrade,
   valueSelectSituation,
+  valueCheckFormFinal,
   onChangeSelectProgress,
   onChangeSelectGrade,
   onChangeSelectSituation,
+  saveData,
+  editData,
+  onClick,
+  showSelected,
 }) => {
   return (
     <div className={styles.add_student}>
@@ -314,11 +324,20 @@ const FormStudent = ({
         <div className={styles.add_student_checkbox}>
           <label className={styles.add_student_label}>Dia de Aula:</label>
           <label>
-            <Select
-              valueCheck={valueDayStudent || ""}
-              valueAdd={valueAdd || ""}
-              valueEdit={valueEdit || ""}
-              onChange={onChange}
+            <FormSelectDays
+              valueSelectDays={valueSelectDays}
+              valueSelectHour={valueSelectHour}
+              valueCheckSelectDay={valueCheckSelectDay}
+              valueCheckSelectHourInput={valueCheckSelectHourInput}
+              valueCheckSelectHourOutput={valueCheckSelectHourOutput}
+              valueCheckFormFinal={valueCheckFormFinal}
+              onChangeDay={onChangeDay}
+              onChangeHourInput={onChangeHourInput}
+              onChangeHourOutput={onChangeHourOutput}
+              saveData={saveData}
+              editData={editData}
+              onClick={onClick}
+              showSelected={showSelected}
             />
 
             <img

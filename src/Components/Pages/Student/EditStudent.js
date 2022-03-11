@@ -20,7 +20,6 @@ const EditStudent = () => {
   const [datePayment, setDatePayment] = React.useState("");
   const [dayStudent, setDayStudent] = React.useState("");
   const [editDayStudent, setEditDayStudent] = React.useState([]);
-  const [teste, setTeste] = React.useState([]);
   const { updateStudent, selectStudent, stdData } =
     React.useContext(StudentContext);
 
@@ -110,8 +109,6 @@ const EditStudent = () => {
     "5º Ano",
   ];
   const situationArr = ["Adimplente", "Inadimplente"];
-  const days = ["seg ", "ter ", "qua ", "qui ", "sex "];
-  const valueEdit = days.map((item) => hours.map((itemH) => item + itemH));
 
   const handleChange = (e) => {
     if (e.target.checked) {
@@ -174,7 +171,8 @@ const EditStudent = () => {
         setResponsiblePhone={setResponsiblePhone}
         onSubmit={handleSubmit}
         onChange={handleChange}
-        valueAdd={valueEdit || ""}
+        valueAdd={dayStudent || ""}
+        valueEdit={editDayStudent || ""}
         valueSelectProgress={progressArr}
         valueSelectGrade={gradeArr}
         valueSelectSituation={situationArr}
