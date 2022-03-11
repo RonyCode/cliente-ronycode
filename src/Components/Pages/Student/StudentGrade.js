@@ -7,12 +7,12 @@ import iconQua from "../../../Assets/qua.png";
 import iconQui from "../../../Assets/qui.png";
 import iconSex from "../../../Assets/sex.png";
 import iconEditStudent from "../../../Assets/editAluno.svg";
-import iconStudent from "../../../Assets/estudante.svg";
 import { Link } from "react-router-dom";
 import { StudentContext } from "../../StudentStorage";
 
 const StudentGrade = () => {
   const { seg, ter, qua, qui, sex } = WeekDay();
+  const [test, setTest] = React.useState("");
   const { getAllStudents, dataAllStudent } = React.useContext(StudentContext);
 
   React.useEffect(() => {
@@ -24,6 +24,9 @@ const StudentGrade = () => {
   let wedDays = [];
   let thuDays = [];
   let friDays = [];
+
+  dataAllStudent &&
+    dataAllStudent.map((item) => console.log(item.dayStudent.split("{&#34;")));
 
   dataAllStudent &&
     dataAllStudent.map((item) =>

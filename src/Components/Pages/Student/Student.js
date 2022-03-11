@@ -3,7 +3,7 @@ import { Link, NavLink, Route, Routes } from "react-router-dom";
 import HomeStudent from "./HomeStudent";
 import ListStudents from "./ListStudents";
 import SelectStudent from "./SelectStudent";
-import AddStudent from "./AddStudent";
+import SaveStudent from "./SaveStudent";
 import styles from "./Student.module.css";
 import Dashboard from "../../Layout/Dashboard";
 import { UserContext } from "../../UserStorage";
@@ -39,8 +39,8 @@ const Student = () => {
         <Routes>
           <Route path="lista" element={<ListStudents />} />{" "}
           <Route path="id/:id" element={<SelectStudent />} />
-          <Route path="editar/id/:id" element={<EditStudent />} />
-          <Route path="adicionar" element={<AddStudent />} />
+          <Route path="editar/id/:id" element={<SaveStudent />} />
+          <Route path="adicionar" element={<SaveStudent />} />
           <Route path="deletar/id/:id" element={<DeleteStudent />} />
           <Route path="grade/" element={<StudentGrade />} />
           <Route path="planejamento/" element={<StudentReport />} />

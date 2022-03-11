@@ -1,19 +1,15 @@
 import React, { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  GET_ALL_DAY_STD,
-  GET_ALL_STD,
-  POST_ADD_STD,
-  SELECT_STD,
-  UPDATE_STD,
-} from "../api/api";
+import { GET_ALL_STD, POST_ADD_STD, SELECT_STD, UPDATE_STD } from "../api/api";
 import axios from "axios";
+import { generateUniqueID } from "web-vitals/dist/modules/lib/generateUniqueID";
 
 export const StudentContext = createContext();
 
 export const StudentStorage = ({ children }) => {
   const [dataAllStudent, setDataAllStudent] = useState("");
   const [stdData, setStdData] = useState("");
+  const [dataSelect, setDataSelect] = useState([]);
   const navigate = useNavigate();
 
   const selectStudent = async (id) => {
@@ -65,6 +61,17 @@ export const StudentStorage = ({ children }) => {
     }
   };
 
+  const getDataSelect = (data) => {
+    data &&
+      data.map((item) => (
+        <div key={generateUniqueID}>
+          {setDataSelect((dataSelect) => [
+            ...dataSelect,
+            item.day + item.hour_input + " as " + item.hour_output,
+          ])}
+        </div>
+      ));
+  };
   return (
     <div>
       <StudentContext.Provider
@@ -75,6 +82,8 @@ export const StudentStorage = ({ children }) => {
           updateStudent,
           getAllStudents,
           dataAllStudent,
+          getDataSelect,
+          dataSelect,
         }}
       >
         {children}
